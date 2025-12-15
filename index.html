@@ -129,6 +129,75 @@
     cursor: default !important;
 }
 </style>
+<style>
+/* --- RADIAL MENU CSS --- */
+.radial-container {
+    --radius: 300px;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+/* Common Item Styles */
+.radial-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth rotation */
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* The 6 Fixed Positions */
+.item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); z-index: 20; }
+.item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
+.item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
+.item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
+.item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
+.item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
+
+/* Active State (Top Position) */
+.radial-item.active-circle .w-40 {
+    background-color: white !important;
+    border-color: #0F172A !important;
+    transform: scale(1.1);
+}
+.radial-item.active-circle span {
+    color: black !important;
+}
+/* FORCE Tooltip visible only when ACTIVE (not on hover) */
+.radial-item .tooltip-box {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+.radial-item.active-circle .tooltip-box {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Mobile Fallback */
+@media (max-width: 767px) {
+    .radial-container { display: none; }
+}
+@media (min-width: 768px) {
+    .grid-layout { display: none; }
+}
+
+/* Tooltip Positioning */
+.tooltip-box {
+    position: absolute;
+    top: 50%;
+    left: 100%; 
+    transform: translate(1rem, -50%); 
+    z-index: 10;
+    width: 280px;
+    pointer-events: none; /* Let clicks pass through */
+}
+</style>
 </head>
 <body>
 
@@ -2403,8 +2472,6 @@
             z-index: 5;
         }
     </style>
-    
-    ---
 
     ## 1. Radial Layout (Desktop/Tablet)
     <div class="hidden md:block"> 
@@ -2591,6 +2658,7 @@
 </section>
     </section>
 </section>
+
 
 
 
@@ -3134,7 +3202,9 @@
            `,
             // --- Customer Workflows Page (Simplified content for brevity, maintaining style) ---
             customerworkflows: () => `
-                <section class="bg-black"> <section class="bg-black text-white pt-16 sm:pt-20 pb-12 sm:pb-20 md:pt-20 md:pb-24 rounded-b-xl shadow-2xl relative overflow-hidden">
+<section class="bg-black text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <section class="pt-16 sm:pt-20 pb-12 sm:pb-20 md:pt-20 md:pb-24 rounded-b-xl shadow-2xl relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -3157,7 +3227,7 @@
 
             <div class="lg:flex lg:items-center">
                 <div class="lg:w-3/5">
-                    <h1 class="text-center font-aeonik px-2 text-2xl sm:text-4xl lg:text-5xl w-full text-wrap-balance font-extrabold mb-4 leading-tight">Customer Worklfows</h1>
+                    <h1 class="text-center font-aeonik px-2 text-2xl sm:text-4xl lg:text-5xl w-full text-wrap-balance font-extrabold mb-4 leading-tight">Customer Workflows</h1>
 
                     <p class="text-center text-base sm:text-lg text-slate-300 mb-6 sm:mb-6 max-w-3xl"> Customer workflows encompass the use of AI agents to orchestrate interactions between businesses and clients, ensuring consistent, timely, and effective engagement. Tailored for Indian SMBs and enterprises in retail, professional services, manufacturing, hospitality, healthcare administration, and digital sectors, this service focuses on automating responses, routing inquiries, and maintaining continuity across touchpoints. Agents serve as an invisible layer, connecting customer data with operational systems to deliver personalized experiences without disrupting your existing setup. Boost response times by 80%. Increase satisfaction scores by 50%.
                     </p>
@@ -3185,69 +3255,98 @@
         </div>
     </section>
 
-    <div class=" py-16 sm:py-20 max-w-6xl mx-auto space-y-20 text-left">
-    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-white">Practical Uses Across Business Functions</h2>
-    
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Inquiry Response</h3>
-            <p class="text-[17px] text-slate-300">AI agents consolidate product inquiries from web forms, WhatsApp, email, and social media into a unified queue. The system retrieves real-time inventory status, customer purchase history, and preference profiles to generate context-rich replies—highlighting availability, size/color options, or bundle suggestions. Agents apply urgency rules (e.g., low-stock alerts) and escalate complex queries to store staff with full conversation context, ensuring response times under 60 seconds while maintaining brand tone across channels.</p>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Workflow Routing" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
-    </div>
+    <!-- PRACTICAL USES -->
+<div class="py-16 sm:py-20 text-left">
+  <h2 class="text-2xl sm:text-4xl font-extrabold text-center mb-6 text-white">
+    Practical Uses Across Business Functions
+  </h2>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="md:order-2 space-y-4">
-            <h3 class="text-2xl font-bold text-white">Ticket Resolution</h3>
-            <p class="text-[17px] text-slate-300">Agents ingest support tickets from client portals, email threads, or helpdesk software, then classify them by issue type, SLA tier, and required expertise. The system auto-assigns to the optimal resolver—junior analyst for standard cases, senior specialist for compliance-sensitive matters—and tracks progress through predefined stages: acknowledgment, investigation, resolution, verification. Automated status updates are sent to clients at each milestone, with escalation triggers for stalled tickets, reducing average closure time and ensuring audit-ready documentation.</p>
-        </div>
-        <div class="md:order-1 mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Process Oversight" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 1. Inquiry Response (mobile: image first; desktop: text LEFT, image RIGHT) -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-8 md:mt-10">
+    <div class="md:order-2 mt-8 md:mt-0">
+      <img src="health.jpg" alt="Inquiry Response"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="md:order-1 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Inquiry Response</h3>
+      <p class="text-[17px] text-slate-300">
+        AI agents consolidate product inquiries from web forms, WhatsApp, email, and social media into a unified queue. The system retrieves real-time inventory status, customer purchase history, and preference profiles to generate context-rich replies—highlighting availability, size/color options, or bundle suggestions. Agents apply urgency rules (e.g., low-stock alerts) and escalate complex queries to store staff with full conversation context, ensuring response times under 60 seconds while maintaining brand tone across channels.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Lead Nurturing</h3>
-            <p class="text-[17px] text-slate-300">Upon lead capture via landing pages or ads, agents initiate segmented nurture sequences based on source, behavior, and firmographic data. The system schedules personalized content—case studies, webinars, or ROI calculators—delivered via email, SMS, or retargeting ads. Engagement signals (opens, clicks, downloads) dynamically adjust follow-up cadence and content, moving high-intent leads to sales handoff with full interaction history. For enterprise pipelines, agents align sequences with account-based marketing frameworks and CRM opportunity stages.</p>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Administrative Handling" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 2. Ticket Resolution (mobile: image first; desktop: image LEFT, text RIGHT) -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="md:order-1 mt-8 md:mt-0">
+      <img src="health.jpg" alt="Ticket Resolution"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="md:order-2 space-y-4 mt-4 md:mt-0">
+      <h3 class="text-2xl font-bold text-white mb-2">Ticket Resolution</h3>
+      <p class="text-[17px] text-slate-300">
+        Agents ingest support tickets from client portals, email threads, or helpdesk software, then classify them by issue type, SLA tier, and required expertise. The system auto-assigns to the optimal resolver—junior analyst for standard cases, senior specialist for compliance-sensitive matters—and tracks progress through predefined stages: acknowledgment, investigation, resolution, verification. Automated status updates are sent to clients at each milestone, with escalation triggers for stalled tickets, reducing average closure time and ensuring audit-ready documentation.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="md:order-2 space-y-4">
-            <h3 class="text-2xl font-bold text-white">Feedback Integration</h3>
-            <p class="text-[17px] text-slate-300">Post-stay or post-event, agents distribute micro-surveys via SMS, email, or in-app prompts, then aggregate responses into a centralized sentiment dashboard. The system applies NLP to extract themes—cleanliness, staff courtesy, F&B quality—and routes actionable insights to department heads with priority scoring. Negative feedback triggers immediate recovery workflows (e.g., apology + voucher), while positive reviews are auto-posted to review platforms with guest consent, closing the loop from experience to improvement.</p>
-        </div>
-        <div class="md:order-1 mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Resource Allocation" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 3. Lead Nurturing (mobile: image first; desktop: text LEFT, image RIGHT) -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="md:order-2 mt-8 md:mt-0">
+      <img src="health.jpg" alt="Lead Nurturing"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="md:order-1 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Lead Nurturing</h3>
+      <p class="text-[17px] text-slate-300">
+        Upon lead capture via landing pages or ads, agents initiate segmented nurture sequences based on source, behavior, and firmographic data. The system schedules personalized content—case studies, webinars, or ROI calculators—delivered via email, SMS, or retargeting ads. Engagement signals (opens, clicks, downloads) dynamically adjust follow-up cadence and content, moving high-intent leads to sales handoff with full interaction history. For enterprise pipelines, agents align sequences with account-based marketing frameworks and CRM opportunity stages.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Compliance Verification</h3>
-            <p class="text-[17px] text-slate-300">Agents monitor all outbound patient communications—appointment reminders, test results, prescription renewals—against regulatory templates (e.g., HIPAA-equivalent Indian guidelines). The system validates consent status, redacts PHI in non-secure channels, and enforces dual-authentication for sensitive disclosures. Automated audit logs timestamp every message, recipient confirmation, and read receipt, enabling instant retrieval for inspections. Integration with EHR ensures clinical data accuracy before transmission.</p>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Compliance Tracking" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 4. Feedback Integration (mobile: image first; desktop: image LEFT, text RIGHT) -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="md:order-1 mt-8 md:mt-0">
+      <img src="health.jpg" alt="Feedback Integration"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="md:order-2 space-y-4 mt-4 md:mt-0">
+      <h3 class="text-2xl font-bold text-white mb-2">Feedback Integration</h3>
+      <p class="text-[17px] text-slate-300">
+        Post-stay or post-event, agents distribute micro-surveys via SMS, email, or in-app prompts, then aggregate responses into a centralized sentiment dashboard. The system applies NLP to extract themes—cleanliness, staff courtesy, F&B quality—and routes actionable insights to department heads with priority scoring. Negative feedback triggers immediate recovery workflows (e.g., apology + voucher), while positive reviews are auto-posted to review platforms with guest consent, closing the loop from experience to improvement.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="md:order-2 space-y-4">
-            <h3 class="text-2xl font-bold text-white">Cross-Channel Coordination</h3>
-            <p class="text-[17px] text-slate-300">Agents synchronize order updates across buyer portals, email threads, ERP systems, and logistics platforms. Upon production milestone completion—material receipt, quality clearance, packing—the system broadcasts standardized status notifications to all stakeholders with embedded tracking links. Discrepancy detection (e.g., promised vs. actual dates) triggers exception workflows with root-cause templates. For government or enterprise buyers, agents generate compliance-ready shipment manifests and e-way bills in required formats, ensuring end-to-end visibility and regulatory adherence.</p>
-        </div>
-        <div class="md:order-1 mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Internal Communication" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 5. Compliance Verification (mobile: image first; desktop: text LEFT, image RIGHT) -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="md:order-2 mt-8 md:mt-0">
+      <img src="health.jpg" alt="Compliance Verification"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="md:order-1 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Compliance Verification</h3>
+      <p class="text-[17px] text-slate-300">
+        Agents monitor all outbound patient communications—appointment reminders, test results, prescription renewals—against regulatory templates (e.g., HIPAA-equivalent Indian guidelines). The system validates consent status, redacts PHI in non-secure channels, and enforces dual-authentication for sensitive disclosures. Automated audit logs timestamp every message, recipient confirmation, and read receipt, enabling instant retrieval for inspections. Integration with EHR ensures clinical data accuracy before transmission.
+      </p>
+    </div>
+  </div>
+
+  <!-- 6. Cross-Channel Coordination (mobile: image first; desktop: image LEFT, text RIGHT) -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="md:order-1 mt-8 md:mt-0">
+      <img src="health.jpg" alt="Cross-Channel Coordination"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
+    </div>
+    <div class="md:order-2 space-y-4 mt-4 md:mt-0">
+      <h3 class="text-2xl font-bold text-white mb-2">Cross-Channel Coordination</h3>
+      <p class="text-[17px] text-slate-300">
+        Agents synchronize order updates across buyer portals, email threads, ERP systems, and logistics platforms. Upon production milestone completion—material receipt, quality clearance, packing—the system broadcasts standardized status notifications to all stakeholders with embedded tracking links. Discrepancy detection (e.g., promised vs. actual dates) triggers exception workflows with root-cause templates. For government or enterprise buyers, agents generate compliance-ready shipment manifests and e-way bills in required formats, ensuring end-to-end visibility and regulatory adherence.
+      </p>
+    </div>
+  </div>
 </div>
+
+
     
 
    <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center">
@@ -3284,96 +3383,93 @@
 
 
     <div class="py-16 sm:py-20 max-w-7xl mx-auto">
-    <div class="md:grid md:grid-cols-2 md:gap-16 text-center mb-16 px-4 sm:px-0">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 md:mb-0">Real-World Challenges</h2>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">The Solutions</h2>
-    </div>
-
-    <div class="md:grid md:grid-cols-2 md:gap-16 space-y-5 md:space-y-0 px-4 sm:px-0">
-        
+    <!-- WRAPPER: Stacks vertically on mobile, side-by-side on desktop -->
+    <div class="flex flex-col md:grid md:grid-cols-2 md:gap-16 px-4 sm:px-0">
+        <!-- LEFT COLUMN: Challenges -->
         <div>
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Multi-Channel Fragmentation</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Interactions span WhatsApp, email, and social media, resulting in disjointed records and delayed responses.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Volume Variability</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Sudden spikes, like promotional campaigns in retail, overwhelm support capacities.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Personalization Gaps</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Generic replies fail to address individual needs, eroding trust in diverse markets.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Follow-Up Lapses</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Manual tracking leads to missed opportunities for retention or upselling.</p>
-            </details>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">Real-World Challenges</h2>
             
-            <details class="group cursor-pointer py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Scalability Barriers</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Growing customer bases strain resources without proportional gains in service quality.</p>
-            </details>
+            <div class="space-y-5">
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Multi-Channel Fragmentation</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Interactions span WhatsApp, email, and social media, resulting in disjointed records and delayed responses.</p>
+                </details>
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Volume Variability</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Sudden spikes, like promotional campaigns in retail, overwhelm support capacities.</p>
+                </details>
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Personalization Gaps</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Generic replies fail to address individual needs, eroding trust in diverse markets.</p>
+                </details>
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Follow-Up Lapses</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Manual tracking leads to missed opportunities for retention or upselling.</p>
+                </details>
+                
+                <details class="group cursor-pointer py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Scalability Barriers</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Growing customer bases strain resources without proportional gains in service quality.</p>
+                </details>
+            </div>
         </div>
-
-
-        <div>
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Channel Unification</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Agents aggregate data from all sources into a central view, eliminating silos and enabling consistent handling.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Capacity Scaling</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Built-in queuing and prioritization manage peaks, distributing loads across agents to avoid bottlenecks.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Contextual Customization</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Responses pull from customer-specific details, ensuring relevance and building rapport.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Automated Continuity</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Follow-ups are programmed based on interaction timelines, maintaining momentum without manual reminders.</p>
-            </details>
+        <!-- RIGHT COLUMN: Solutions (with mt-12 md:mt-0 for mobile spacing) -->
+        <div class="mt-12 md:mt-0">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">The Solutions</h2>
             
-            <details class="group cursor-pointer py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Resource Alignment</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">The system scales with demand, supporting increased volumes through efficient, configurable paths.</p>
-            </details>
+            <div class="space-y-5">
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Channel Unification</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Agents aggregate data from all sources into a central view, eliminating silos and enabling consistent handling.</p>
+                </details>
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Capacity Scaling</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Built-in queuing and prioritization manage peaks, distributing loads across agents to avoid bottlenecks.</p>
+                </details>
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Contextual Customization</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Responses pull from customer-specific details, ensuring relevance and building rapport.</p>
+                </details>
+                <details class="group cursor-pointer border-b border-slate-700 py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Automated Continuity</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Follow-ups are programmed based on interaction timelines, maintaining momentum without manual reminders.</p>
+                </details>
+                
+                <details class="group cursor-pointer py-4">
+                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
+                        <h3>Resource Alignment</h3>
+                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">The system scales with demand, supporting increased volumes through efficient, configurable paths.</p>
+                </details>
+            </div>
         </div>
     </div>
 </div>
@@ -3381,69 +3477,6 @@
 
 
 <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-    
-    <style>
-        /* Define the center point for rotation and the radius */
-        .radial-container {
-            /* Increased radius and size (600px across) to accommodate the central heading */
-            --radius: 300px;
-            position: relative;
-            width: 600px; 
-            height: 600px; 
-            margin: 0 auto;
-            margin-top: 3rem; 
-        }
-
-        .radial-item {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: 0 0;
-            transform: translate(-50%, -50%); /* Center the item */
-        }
-        
-        /* The CSS to position the 6 items in a circle. Each item is rotated by 60 degrees (360/6). */
-        .item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
-        .item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
-        .item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
-        .item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
-        .item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
-        .item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
-        
-        /* Mobile Fallback: Hide the radial layout on small screens */
-        @media (max-width: 767px) {
-            .radial-container { display: none; }
-        }
-        /* Desktop: Hide the simple grid and show the radial layout */
-        @media (min-width: 768px) {
-            .grid-layout { display: none; }
-        }
-
-        /* Tooltip positioning */
-        .tooltip-box {
-            position: absolute;
-            /* Key change: Position at 50% from top (vertical center) and 100% from left (right edge of parent) */
-            top: 50%;
-            left: 100%; 
-            /* Key change: Translate 1rem (spacing) horizontally and -50% vertically (to center the box) */
-            transform: translate(1rem, -50%); 
-            z-index: 10;
-        }
-
-        /* Center Content Styling */
-        .center-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centered both vertically and horizontally */
-            width: 250px; /* Max width for the title */
-            z-index: 5;
-        }
-    </style>
-    
-    ---
-
-    ## 1. Radial Layout (Desktop/Tablet)
     <div class="hidden md:block"> 
         <div class="radial-container">
 
@@ -3451,7 +3484,7 @@
                  <h2 class="text-4xl font-extrabold text-white">Standout Capabilities</h2>
             </div>
             
-            <div class="group radial-item item-1">
+            <div id="cap-circle-1" class="group radial-item item-1">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Intent</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Detection</span>
@@ -3463,7 +3496,7 @@
                 </div>
             </div>
 
-            <div class="group radial-item item-2">
+            <div id="cap-circle-2" class="group radial-item item-2">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Dynamic</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Routing</span>
@@ -3475,7 +3508,7 @@
                 </div>
             </div>
 
-            <div class="group radial-item item-3">
+            <div id="cap-circle-3" class="group radial-item item-3">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Response</span>
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Generation</span>
@@ -3487,7 +3520,7 @@
                 </div>
             </div>
 
-            <div class="group radial-item item-4">
+            <div id="cap-circle-4" class="group radial-item item-4">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Integration</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Depth</span>
@@ -3499,7 +3532,7 @@
                 </div>
             </div>
 
-            <div class="group radial-item item-5">
+            <div id="cap-circle-5" class="group radial-item item-5">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Feedback</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Processing</span>
@@ -3511,7 +3544,7 @@
                 </div>
             </div>
 
-            <div class="group radial-item item-6">
+            <div id="cap-circle-6" class="group radial-item item-6">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Compliance</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layer</span>
@@ -3526,9 +3559,8 @@
         </div>
     </div>
 
-    ---
-    
-    ## 2. Grid Layout (Mobile Fallback)
+
+
     <div class="grid-layout md:hidden">
         <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Standout Capabilities</h2>
         <div class="grid grid-cols-2 gap-y-12 gap-x-6 justify-items-center">
@@ -3623,8 +3655,8 @@
             </a>
         </div>
     </div>
-</section>
     </section>
+  </div>
 </section>
 
 
@@ -4433,13 +4465,26 @@
         };
 
         const renderPage = () => {
-            const contentDiv = document.getElementById('pageContent');
-            const pageHtml = pages[state.currentPage] ? pages[state.currentPage]() : pages.home();
-            contentDiv.innerHTML = pageHtml;
-        
+    const contentDiv = document.getElementById('pageContent');
+    const pageHtml = pages[state.currentPage] ? pages[state.currentPage]() : pages.home();
+    contentDiv.innerHTML = pageHtml;
 
-            // Update the browser history hash for back/forward navigation
-            history.pushState(state, '', `#${state.currentPage}`);
+    // Update history
+    history.pushState(state, '', `#${state.currentPage}`);
+    window.scrollTo(0, 0);
+    closeAllDesktopDropdowns();
+
+    // --- TRIGGER ANIMATIONS BASED ON PAGE ---
+    if (state.currentPage === 'customintegrations') {
+        // Wait 50ms for the DOM to be ready, then attach listeners
+        setTimeout(initRadialMenu, 50);
+        
+        // Also re-init on resize to handle mobile/desktop switching
+        window.onresize = initRadialMenu;
+    } else {
+        // Clean up resize listener on other pages
+        window.onresize = null;
+    }
 
             // --- Mobile Auto-Scroll Carousel Logic (Infinite Loop with Resume) ---
             if (state.currentPage === 'home') {
@@ -5096,6 +5141,82 @@ document.addEventListener('DOMContentLoaded', () => {
   // start at DOM index 1 (real slide 1)
   slideTo(currentIndex, false);
 });
+</script>
+
+<script>
+// --- RADIAL MENU LOGIC ---
+let radialOrder = [1, 2, 3, 4, 5, 6]; // Tracks which circle ID is in which position
+
+// 1. Function to Initialize the Menu
+function initRadialMenu() {
+    // Check if we are on the desktop view
+    if (window.innerWidth < 768) return;
+
+    // Attach Click Listeners
+    // We expect IDs: cap-circle-1, cap-circle-2, etc.
+    for (let i = 1; i <= 6; i++) {
+        const el = document.getElementById(`cap-circle-${i}`);
+        if (el) {
+            // Remove old listeners to prevent duplicates (cloning trick)
+            const newEl = el.cloneNode(true);
+            el.parentNode.replaceChild(newEl, el);
+            
+            // Add new listener
+            newEl.onclick = (e) => {
+                e.stopPropagation(); // Stop click from bubbling
+                rotateRadialTo(i);   // Rotate this specific circle to the top
+            };
+        }
+    }
+    
+    // Apply initial positioning
+    updateRadialClasses();
+}
+
+// 2. Logic to Rotate the Array
+function rotateRadialTo(targetId) {
+    // Find where the clicked circle is currently sitting in our order array
+    const currentIndex = radialOrder.indexOf(targetId);
+    
+    // We want to rotate the array so that 'currentIndex' becomes index 0 (Position 1)
+    // Example: if order is [1,2,3,4,5,6] and we click 3 (index 2)...
+    // We slice [3,4,5,6] and [1,2] and combine them -> [3,4,5,6,1,2]
+    
+    const part1 = radialOrder.slice(currentIndex);
+    const part2 = radialOrder.slice(0, currentIndex);
+    radialOrder = [...part1, ...part2];
+    
+    updateRadialClasses();
+}
+
+// 3. Apply CSS Classes based on new order
+function updateRadialClasses() {
+    // Clear all positioning classes first
+    for (let i = 1; i <= 6; i++) {
+        const el = document.getElementById(`cap-circle-${i}`);
+        if (el) {
+            // Remove all item-X classes
+            for (let k = 1; k <= 6; k++) el.classList.remove(`item-${k}`);
+            el.classList.remove('active-circle');
+        }
+    }
+
+    // Assign new classes based on the order array
+    // radialOrder[0] gets item-1 (Top/Active)
+    // radialOrder[1] gets item-2 (Top Right), etc.
+    radialOrder.forEach((circleId, posIndex) => {
+        const el = document.getElementById(`cap-circle-${circleId}`);
+        if (el) {
+            // The position class is 1-based (index + 1)
+            el.classList.add(`item-${posIndex + 1}`);
+            
+            // If it's at index 0 (Position 1), mark it active
+            if (posIndex === 0) {
+                el.classList.add('active-circle');
+            }
+        }
+    });
+}
 </script>
 
 
