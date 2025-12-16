@@ -129,75 +129,6 @@
     cursor: default !important;
 }
 </style>
-<style>
-/* --- RADIAL MENU CSS --- */
-.radial-container {
-    --radius: 300px;
-    position: relative;
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-    margin-top: 3rem;
-}
-
-/* Common Item Styles */
-.radial-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: 0 0;
-    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth rotation */
-    cursor: pointer;
-    z-index: 10;
-}
-
-/* The 6 Fixed Positions */
-.item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); z-index: 20; }
-.item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
-.item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
-.item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
-.item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
-.item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
-
-/* Active State (Top Position) */
-.radial-item.active-circle .w-40 {
-    background-color: white !important;
-    border-color: #0F172A !important;
-    transform: scale(1.1);
-}
-.radial-item.active-circle span {
-    color: black !important;
-}
-/* FORCE Tooltip visible only when ACTIVE (not on hover) */
-.radial-item .tooltip-box {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-}
-.radial-item.active-circle .tooltip-box {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Mobile Fallback */
-@media (max-width: 767px) {
-    .radial-container { display: none; }
-}
-@media (min-width: 768px) {
-    .grid-layout { display: none; }
-}
-
-/* Tooltip Positioning */
-.tooltip-box {
-    position: absolute;
-    top: 50%;
-    left: 100%; 
-    transform: translate(1rem, -50%); 
-    z-index: 10;
-    width: 280px;
-    pointer-events: none; /* Let clicks pass through */
-}
-</style>
 </head>
 <body>
 
@@ -2472,85 +2403,86 @@
             z-index: 5;
         }
     </style>
+    
+    ---
 
     ## 1. Radial Layout (Desktop/Tablet)
     <div class="hidden md:block"> 
         <div class="radial-container">
 
             <div class="center-content">
-                 <h2 class="text-4xl font-extrabold text-white">Capabilities</h2>
+                 <h2 class="text-4xl font-extrabold text-white">Standout Capabilities</h2>
             </div>
             
             <div class="group radial-item item-1">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">API</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bridging</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Intent</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Detection</span>
                 </div>
                 <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Direct links between platforms for instantaneous data movement.</p>
+                    <p class="text-[15px] text-slate-300">Agents parse language and context to classify and prioritize interactions accurately.</p>
                 </div>
             </div>
 
             <div class="group radial-item item-2">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Event-Driven</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Triggers</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Dynamic</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Routing</span>
                 </div>
                 <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Actions initiate based on system events, like new entries prompting updates.</p>
+                    <p class="text-[15px] text-slate-300">Logic directs queries to the best resolver, whether another agent or human specialist.</p>
                 </div>
             </div>
 
             <div class="group radial-item item-3">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bidirectional</span>
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Synchronization</span>
+                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Response</span>
+                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Generation</span>
                 </div>
                 <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Changes in one tool reflect across connected systems.</p>
+                    <p class="text-[15px] text-slate-300">Natural language creation ensures replies feel human while adhering to brand guidelines.</p>
                 </div>
             </div>
 
             <div class="group radial-item item-4">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Error Handling</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Protocols</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Integration</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Depth</span>
                 </div>
                 <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Automatic detection and correction of transfer issues.</p>
+                    <p class="text-[15px] text-slate-300">Links to CRMs, messaging apps, and analytics tools for comprehensive tracking.</p>
                 </div>
             </div>
 
             <div class="group radial-item item-5">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Scalability</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layers</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Feedback</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Processing</span>
                 </div>
                 <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Expansion options for growing data or user loads.</p>
+                    <p class="text-[15px] text-slate-300">Post-resolution analysis refines agent behavior, incorporating user input for evolution.</p>
                 </div>
             </div>
 
             <div class="group radial-item item-6">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Configuration</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Flexibility</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Compliance</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layer</span>
                 </div>
                 <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">User-defined rules for tailored behaviors.
-</p>
+                    <p class="text-[15px] text-slate-300">Automatic checks for legal and ethical standards in communications.</p>
                 </div>
             </div>
 
@@ -2561,78 +2493,78 @@
     
     ## 2. Grid Layout (Mobile Fallback)
     <div class="grid-layout md:hidden">
-        <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Capabilities</h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Standout Capabilities</h2>
         <div class="grid grid-cols-2 gap-y-12 gap-x-6 justify-items-center">
 
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">API</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bridging</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Intent</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Detection</span>
                 </div>
                 <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Direct links between platforms for instantaneous data movement.</p>
+                    <p class="text-[15px] text-slate-300">Agents parse language and context to classify and prioritize interactions accurately.</p>
                 </div>
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Event-Driven</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Triggers</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Dynamic</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Routing</span>
                 </div>
                 <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Actions initiate based on system events, like new entries prompting updates.</p>
+                    <p class="text-[15px] text-slate-300">Logic directs queries to the best resolver, whether another agent or human specialist.</p>
                 </div>
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bidirectional</span>
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Synchronization</span>
+                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Response</span>
+                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Generation</span>
                 </div>
                 <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Changes in one tool reflect across connected systems.</p>
+                    <p class="text-[15px] text-slate-300">Natural language creation ensures replies feel human while adhering to brand guidelines.</p>
                 </div>
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Error Handling</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Protocols</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Integration</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Depth</span>
                 </div>
                 <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Automatic detection and correction of transfer issues.</p>
+                    <p class="text-[15px] text-slate-300">Links to CRMs, messaging apps, and analytics tools for comprehensive tracking.</p>
                 </div>
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Scalability</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layers</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Feedback</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Processing</span>
                 </div>
                 <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Expansion options for growing data or user loads.</p>
+                    <p class="text-[15px] text-slate-300">Post-resolution analysis refines agent behavior, incorporating user input for evolution.</p>
                 </div>
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Configuration</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Flexibility</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Compliance</span>
+                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layer</span>
                 </div>
                 <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
                             opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
                             w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">User-defined rules for tailored behaviors.</p>
+                    <p class="text-[15px] text-slate-300">Automatic checks for legal and ethical standards in communications.</p>
                 </div>
             </div>
         </div>
@@ -3476,7 +3408,89 @@
 
 
 
+
 <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+    
+    <style>
+        /* Define the center point for rotation and the radius */
+        .radial-container {
+            /* Increased radius and size (600px across) to accommodate the central heading */
+            --radius: 300px;
+            position: relative;
+            width: 600px; 
+            height: 600px; 
+            margin: 0 auto;
+            margin-top: 3rem; 
+        }
+
+        .radial-item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+            transform: translate(-50%, -50%); /* Center the item */
+        }
+        
+        /* The CSS to position the 6 items in a circle. Each item is rotated by 60 degrees (360/6). */
+        .item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
+        .item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
+        .item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
+        .item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
+        .item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
+        .item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
+        
+        /* Mobile Fallback: Hide the radial layout on small screens */
+        @media (max-width: 767px) {
+            .radial-container { display: none; }
+        }
+        /* Desktop: Hide the simple grid and show the radial layout */
+        @media (min-width: 768px) {
+            .grid-layout { display: none; }
+        }
+
+        /* Tooltip positioning */
+.tooltip-box {
+    position: absolute;
+    top: 50%;
+    left: 100%; 
+    transform: translate(1rem, -50%); 
+    z-index: 10;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+
+        /* Center Content Styling */
+        .center-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centered both vertically and horizontally */
+            width: 250px; /* Max width for the title */
+            z-index: 5;
+        }
+
+        .mobile-cap-tooltip {
+  position: absolute;
+  width: 180px;
+  min-height: 120px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background-color: #020617;
+  border: 1px solid #1f2937;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.7);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+}
+.mobile-cap-tooltip p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+
+    </style>
+
     <div class="hidden md:block"> 
         <div class="radial-container">
 
@@ -3484,7 +3498,7 @@
                  <h2 class="text-4xl font-extrabold text-white">Standout Capabilities</h2>
             </div>
             
-            <div id="cap-circle-1" class="group radial-item item-1">
+            <div class="group radial-item item-1">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Intent</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Detection</span>
@@ -3496,7 +3510,7 @@
                 </div>
             </div>
 
-            <div id="cap-circle-2" class="group radial-item item-2">
+            <div class="group radial-item item-2">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Dynamic</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Routing</span>
@@ -3508,7 +3522,7 @@
                 </div>
             </div>
 
-            <div id="cap-circle-3" class="group radial-item item-3">
+            <div class="group radial-item item-3">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Response</span>
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Generation</span>
@@ -3520,7 +3534,7 @@
                 </div>
             </div>
 
-            <div id="cap-circle-4" class="group radial-item item-4">
+            <div class="group radial-item item-4">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Integration</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Depth</span>
@@ -3532,7 +3546,7 @@
                 </div>
             </div>
 
-            <div id="cap-circle-5" class="group radial-item item-5">
+            <div class="group radial-item item-5">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Feedback</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Processing</span>
@@ -3544,7 +3558,7 @@
                 </div>
             </div>
 
-            <div id="cap-circle-6" class="group radial-item item-6">
+            <div class="group radial-item item-6">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Compliance</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layer</span>
@@ -3558,7 +3572,6 @@
 
         </div>
     </div>
-
 
 
     <div class="grid-layout md:hidden">
@@ -5144,79 +5157,105 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-// --- RADIAL MENU LOGIC ---
-let radialOrder = [1, 2, 3, 4, 5, 6]; // Tracks which circle ID is in which position
+(function () {
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
 
-// 1. Function to Initialize the Menu
-function initRadialMenu() {
-    // Check if we are on the desktop view
-    if (window.innerWidth < 768) return;
+  let hideTimer = null;
+  let currentBox = null;
 
-    // Attach Click Listeners
-    // We expect IDs: cap-circle-1, cap-circle-2, etc.
-    for (let i = 1; i <= 6; i++) {
-        const el = document.getElementById(`cap-circle-${i}`);
-        if (el) {
-            // Remove old listeners to prevent duplicates (cloning trick)
-            const newEl = el.cloneNode(true);
-            el.parentNode.replaceChild(newEl, el);
-            
-            // Add new listener
-            newEl.onclick = (e) => {
-                e.stopPropagation(); // Stop click from bubbling
-                rotateRadialTo(i);   // Rotate this specific circle to the top
-            };
-        }
-    }
-    
-    // Apply initial positioning
-    updateRadialClasses();
-}
+  function setupMobileCapTooltips() {
+    if (!isMobile()) return;
 
-// 2. Logic to Rotate the Array
-function rotateRadialTo(targetId) {
-    // Find where the clicked circle is currently sitting in our order array
-    const currentIndex = radialOrder.indexOf(targetId);
-    
-    // We want to rotate the array so that 'currentIndex' becomes index 0 (Position 1)
-    // Example: if order is [1,2,3,4,5,6] and we click 3 (index 2)...
-    // We slice [3,4,5,6] and [1,2] and combine them -> [3,4,5,6,1,2]
-    
-    const part1 = radialOrder.slice(currentIndex);
-    const part2 = radialOrder.slice(0, currentIndex);
-    radialOrder = [...part1, ...part2];
-    
-    updateRadialClasses();
-}
+    const gridLayout = document.querySelector('.grid-layout.md\\:hidden');
+    if (!gridLayout) return;
 
-// 3. Apply CSS Classes based on new order
-function updateRadialClasses() {
-    // Clear all positioning classes first
-    for (let i = 1; i <= 6; i++) {
-        const el = document.getElementById(`cap-circle-${i}`);
-        if (el) {
-            // Remove all item-X classes
-            for (let k = 1; k <= 6; k++) el.classList.remove(`item-${k}`);
-            el.classList.remove('active-circle');
-        }
-    }
+    const grid = gridLayout.querySelector('.grid');
+    if (!grid) return;
 
-    // Assign new classes based on the order array
-    // radialOrder[0] gets item-1 (Top/Active)
-    // radialOrder[1] gets item-2 (Top Right), etc.
-    radialOrder.forEach((circleId, posIndex) => {
-        const el = document.getElementById(`cap-circle-${circleId}`);
-        if (el) {
-            // The position class is 1-based (index + 1)
-            el.classList.add(`item-${posIndex + 1}`);
-            
-            // If it's at index 0 (Position 1), mark it active
-            if (posIndex === 0) {
-                el.classList.add('active-circle');
-            }
-        }
+    const cards = Array.from(
+      grid.querySelectorAll('.group.relative.flex.flex-col.items-center.justify-center')
+    );
+    if (cards.length !== 6) return;
+
+    const descriptions = [
+      'Agents parse language and context to classify and prioritize interactions accurately.',    // Intent
+      'Logic directs queries to the best resolver, whether another agent or human specialist.',  // Dynamic
+      'Natural language creation ensures replies feel human while adhering to brand guidelines.',// Response
+      'Links to CRMs, messaging apps, and analytics tools for comprehensive tracking.',          // Integration
+      'Post-resolution analysis refines agent behavior, incorporating user input for evolution.',// Feedback
+      'Automatic checks for legal and ethical standards in communications.'                      // Compliance
+    ];
+
+    // Remove hover tooltips on mobile, ensure cards are positioned
+    cards.forEach(card => {
+      const hoverTip = card.querySelector('.absolute.top-full');
+      if (hoverTip) hoverTip.remove();
+      card.style.position = 'relative';
     });
+
+    // Create a single shared box, positioned relative to grid
+    if (!currentBox) {
+      currentBox = document.createElement('div');
+      currentBox.className = 'mobile-cap-tooltip';
+      currentBox.style.display = 'none';
+      currentBox.innerHTML = '<p></p>';
+      gridLayout.style.position = 'relative';
+      gridLayout.appendChild(currentBox);
+    }
+
+  function showBoxForTopFour(text) {
+  currentBox.style.display = 'flex';
+  currentBox.querySelector('p').textContent = text;
+
+  currentBox.style.top = '45%';
+  currentBox.style.left = '50%';
+  currentBox.style.transform = 'translate(-50%, -50%)';
 }
+
+function showBoxForBottomFour(text) {
+  currentBox.style.display = 'flex';
+  currentBox.querySelector('p').textContent = text;
+
+  currentBox.style.top = '75.2%';
+  currentBox.style.left = '50%';
+  currentBox.style.transform = 'translate(-50%, -50%)';
+}
+
+
+
+
+
+    function scheduleHide() {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        if (currentBox) currentBox.style.display = 'none';
+        hideTimer = null;
+      }, 5500); // ~5.5 seconds
+    }
+
+    // Attach click handlers
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        const text = descriptions[idx];
+
+        if (idx <= 3) {
+          // first four circles: show box in middle of top 2x2
+          showBoxForTopFour(text);
+        } else {
+          // last two circles: show box in middle of bottom four
+          showBoxForBottomFour(text);
+        }
+
+        scheduleHide();
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupMobileCapTooltips);
+  window.addEventListener('resize', setupMobileCapTooltips);
+})();
 </script>
 
 
