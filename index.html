@@ -2938,7 +2938,7 @@
     ## 2. Grid Layout (Mobile Fallback)
     <div class="grid-layout md:hidden">
         <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Advanced Features</h2>
-        <div class="grid grid-cols-2 gap-y-12 gap-x-6 justify-items-center">
+        <div class="grid grid-cols-1 tiny:grid-cols-2 gap-y-10 gap-x-6 justify-items-center">
             
             <div class="group relative flex flex-col items-center justify-center">
                 <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
@@ -3411,85 +3411,132 @@
 
 <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
     
-    <style>
-        /* Define the center point for rotation and the radius */
-        .radial-container {
-            /* Increased radius and size (600px across) to accommodate the central heading */
-            --radius: 300px;
-            position: relative;
-            width: 600px; 
-            height: 600px; 
-            margin: 0 auto;
-            margin-top: 3rem; 
-        }
-
-        .radial-item {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: 0 0;
-            transform: translate(-50%, -50%); /* Center the item */
-        }
-        
-        /* The CSS to position the 6 items in a circle. Each item is rotated by 60 degrees (360/6). */
-        .item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
-        .item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
-        .item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
-        .item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
-        .item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
-        .item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
-        
-        /* Mobile Fallback: Hide the radial layout on small screens */
-        @media (max-width: 767px) {
-            .radial-container { display: none; }
-        }
-        /* Desktop: Hide the simple grid and show the radial layout */
-        @media (min-width: 768px) {
-            .grid-layout { display: none; }
-        }
-
-        /* Tooltip positioning */
-.tooltip-box {
-    position: absolute;
-    top: 50%;
-    left: 100%; 
-    transform: translate(1rem, -50%); 
-    z-index: 10;
-    pointer-events: none; /* Allow clicks to pass through */
+   <style>
+/* ---------- RADIAL CONTAINER (Unchanged) ---------- */
+.radial-container {
+  --radius: 300px;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 3rem auto 0;
 }
-
-
-        /* Center Content Styling */
-        .center-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centered both vertically and horizontally */
-            width: 250px; /* Max width for the title */
-            z-index: 5;
-        }
-
-        .mobile-cap-tooltip {
+.radial-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: translate(-50%, -50%);
+}
+/* ---------- CIRCULAR POSITIONS (Unchanged) ---------- */
+.item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
+.item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
+.item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
+.item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
+.item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
+.item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
+/* ---------- CENTER CONTENT (Unchanged) ---------- */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  z-index: 5;
+}
+/* ---------- DESKTOP TOOLTIP (Unchanged) ---------- */
+.tooltip-box {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(1rem, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+/* ---------- MOBILE TOOLTIP CARD (Unchanged) ---------- */
+.mobile-cap-tooltip {
   position: absolute;
   width: 180px;
   min-height: 120px;
   padding: 12px 14px;
   border-radius: 12px;
-  background-color: #020617;
+  background: #020617;
   border: 1px solid #1f2937;
   box-shadow: 0 20px 35px rgba(0,0,0,0.7);
   z-index: 40;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .mobile-cap-tooltip p {
   font-size: 12px;
   line-height: 1.4;
+  text-align: center;
 }
-
-
-
-    </style>
+/* ---------- RESPONSIVE RULES (Unchanged) ---------- */
+@media (max-width: 767px) {
+  .radial-container { display: none; }
+}
+@media (min-width: 768px) {
+  .grid-layout { display: none; }
+}
+/* Default: 1 column under 300px, circles 8rem (stacked, no overlap) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap-y: 2rem;
+  justify-items: center;
+  width: 100%;
+}
+.cap-circle-mobile {
+  width: 8rem;
+  height: 8rem;
+}
+@media (min-width: 300px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap-y: 1rem; /* Reduced vertical for clean stack */
+    gap-x: 1rem; /* Reduced horizontal: side-by-side, no overlap */
+    justify-items: center;
+  }
+  .cap-circle-mobile {
+    width: 9rem; /* 144px: Clean iPhone 14 fit, no squeeze */
+    height: 9rem;
+  }
+}
+/* Under 300px: Row layout for each group (circle left, tooltip right) - Unchanged */
+@media (max-width: 299px) {
+  .grid-layout .group {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .grid-layout .group .absolute.top-full {
+    position: absolute !important;
+    left: calc(100% + 1rem);
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 150px;
+    min-height: auto;
+    padding: 0.75rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-top: 0 !important;
+  }
+  .grid-layout .group.active .absolute.top-full {
+    opacity: 1;
+    visibility: visible;
+  }
+  .mobile-cap-tooltip {
+    display: none !important;
+  }
+}
+</style>
 
     <div class="hidden md:block"> 
         <div class="radial-container">
@@ -3576,10 +3623,11 @@
 
     <div class="grid-layout md:hidden">
         <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Standout Capabilities</h2>
-        <div class="grid grid-cols-2 gap-y-12 gap-x-6 justify-items-center">
+         <div class="grid grid-cols-2 tiny:grid-cols-2 gap-y-10 gap-x-6 justify-items-center">
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Intent</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Detection</span>
                 </div>
@@ -3591,7 +3639,8 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Dynamic</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Routing</span>
                 </div>
@@ -3603,7 +3652,8 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Response</span>
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Generation</span>
                 </div>
@@ -3615,7 +3665,8 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Integration</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Depth</span>
                 </div>
@@ -3627,7 +3678,8 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Feedback</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Processing</span>
                 </div>
@@ -3639,7 +3691,8 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Compliance</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layer</span>
                 </div>
@@ -5158,14 +5211,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 (function () {
+  function isNarrowMobile() {
+    return window.innerWidth < 300;
+  }
   function isMobile() {
     return window.innerWidth < 768;
   }
-
   let hideTimer = null;
-  let currentBox = null;
+  let tooltipBox = null;
 
-  function setupMobileCapTooltips() {
+  function setupMobileTooltips() {
     if (!isMobile()) return;
 
     const gridLayout = document.querySelector('.grid-layout.md\\:hidden');
@@ -5175,86 +5230,106 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
 
     const cards = Array.from(
-      grid.querySelectorAll('.group.relative.flex.flex-col.items-center.justify-center')
+      grid.querySelectorAll(
+        '.group.relative.flex.flex-col.items-center.justify-center'
+      )
     );
     if (cards.length !== 6) return;
 
     const descriptions = [
-      'Agents parse language and context to classify and prioritize interactions accurately.',    // Intent
-      'Logic directs queries to the best resolver, whether another agent or human specialist.',  // Dynamic
-      'Natural language creation ensures replies feel human while adhering to brand guidelines.',// Response
-      'Links to CRMs, messaging apps, and analytics tools for comprehensive tracking.',          // Integration
-      'Post-resolution analysis refines agent behavior, incorporating user input for evolution.',// Feedback
-      'Automatic checks for legal and ethical standards in communications.'                      // Compliance
+      'Agents parse language and context to classify and prioritize interactions accurately.',
+      'Logic directs queries to the best resolver, whether another agent or human specialist.',
+      'Natural language creation ensures replies feel human while adhering to brand guidelines.',
+      'Links to CRMs, messaging apps, and analytics tools for comprehensive tracking.',
+      'Post-resolution analysis refines agent behavior, incorporating user input for evolution.',
+      'Automatic checks for legal and ethical standards in communications.'
     ];
 
-    // Remove hover tooltips on mobile, ensure cards are positioned
+    // Always remove hover tooltips, set relative positioning
     cards.forEach(card => {
       const hoverTip = card.querySelector('.absolute.top-full');
-      if (hoverTip) hoverTip.remove();
+      if (hoverTip && hoverTip.style.display !== 'none') {
+        // Update tooltip text if needed (but JS will handle show)
+        hoverTip.innerHTML = `<p class="text-[15px] text-slate-300">${descriptions[cards.indexOf(card)]}</p>`;
+      }
       card.style.position = 'relative';
+      card.classList.remove('active'); // Reset
     });
 
-    // Create a single shared box, positioned relative to grid
-    if (!currentBox) {
-      currentBox = document.createElement('div');
-      currentBox.className = 'mobile-cap-tooltip';
-      currentBox.style.display = 'none';
-      currentBox.innerHTML = '<p></p>';
-      gridLayout.style.position = 'relative';
-      gridLayout.appendChild(currentBox);
+    if (isNarrowMobile()) {
+      // Under 300px: Use individual row tooltips on click
+      cards.forEach((card, index) => {
+        const tip = card.querySelector('.absolute.top-full');
+        if (tip) tip.style.display = 'block'; // Show for layout calc
+
+        card.addEventListener('click', () => {
+          // Close others
+          cards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          scheduleHide();
+        });
+      });
+      // Hide shared box
+      if (tooltipBox) tooltipBox.style.display = 'none';
+    } else {
+      // 300px+: Shared center tooltip
+      cards.forEach(card => {
+        const tip = card.querySelector('.absolute.top-full');
+        if (tip) tip.style.display = 'none'; // Hide individuals
+      });
+
+      if (!tooltipBox) {
+        tooltipBox = document.createElement('div');
+        tooltipBox.className = 'mobile-cap-tooltip';
+        tooltipBox.style.display = 'none';
+        tooltipBox.innerHTML = '<p></p>';
+        gridLayout.style.position = 'relative';
+        gridLayout.appendChild(tooltipBox);
+      }
+
+      function showTop(text) {
+        tooltipBox.style.display = 'flex';
+        tooltipBox.querySelector('p').textContent = text;
+        tooltipBox.style.top = '45%';
+        tooltipBox.style.left = '50%';
+        tooltipBox.style.transform = 'translate(-50%, -50%)';
+      }
+      function showBottom(text) {
+        tooltipBox.style.display = 'flex';
+        tooltipBox.querySelector('p').textContent = text;
+        tooltipBox.style.top = '75.2%';
+        tooltipBox.style.left = '50%';
+        tooltipBox.style.transform = 'translate(-50%, -50%)';
+      }
+
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          const text = descriptions[index];
+          if (index <= 3) {
+            showTop(text);
+          } else {
+            showBottom(text);
+          }
+          scheduleHide();
+        });
+      });
     }
-
-  function showBoxForTopFour(text) {
-  currentBox.style.display = 'flex';
-  currentBox.querySelector('p').textContent = text;
-
-  currentBox.style.top = '45%';
-  currentBox.style.left = '50%';
-  currentBox.style.transform = 'translate(-50%, -50%)';
-}
-
-function showBoxForBottomFour(text) {
-  currentBox.style.display = 'flex';
-  currentBox.querySelector('p').textContent = text;
-
-  currentBox.style.top = '75.2%';
-  currentBox.style.left = '50%';
-  currentBox.style.transform = 'translate(-50%, -50%)';
-}
-
-
-
-
 
     function scheduleHide() {
       if (hideTimer) clearTimeout(hideTimer);
       hideTimer = setTimeout(() => {
-        if (currentBox) currentBox.style.display = 'none';
-        hideTimer = null;
-      }, 5500); // ~5.5 seconds
-    }
-
-    // Attach click handlers
-    cards.forEach((card, idx) => {
-      card.addEventListener('click', () => {
-        const text = descriptions[idx];
-
-        if (idx <= 3) {
-          // first four circles: show box in middle of top 2x2
-          showBoxForTopFour(text);
-        } else {
-          // last two circles: show box in middle of bottom four
-          showBoxForBottomFour(text);
+        if (isNarrowMobile()) {
+          cards.forEach(card => card.classList.remove('active'));
+        } else if (tooltipBox) {
+          tooltipBox.style.display = 'none';
         }
-
-        scheduleHide();
-      });
-    });
+        hideTimer = null;
+      }, 5500);
+    }
   }
 
-  document.addEventListener('DOMContentLoaded', setupMobileCapTooltips);
-  window.addEventListener('resize', setupMobileCapTooltips);
+  document.addEventListener('DOMContentLoaded', setupMobileTooltips);
+  window.addEventListener('resize', setupMobileTooltips);
 })();
 </script>
 
