@@ -5314,6 +5314,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Close tooltip when clicking outside any card
+    document.addEventListener('click', (e) => {
+      const clickedInsideCard = cards.some(card => card.contains(e.target));
+
+      if (!clickedInsideCard) {
+        if (isNarrowMobile()) {
+          cards.forEach(card => card.classList.remove('active'));
+        } else if (tooltipBox) {
+          tooltipBox.style.display = 'none';
+        }
+      }
+    }, true);
+
     function scheduleHide() {
       if (hideTimer) clearTimeout(hideTimer);
       hideTimer = setTimeout(() => {
