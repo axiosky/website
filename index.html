@@ -3414,96 +3414,161 @@
     </div>
 </div>
 
-    <div class="py-16 sm:py-20 max-w-7xl mx-auto">
-    <!-- WRAPPER: Stacks vertically on mobile, side-by-side on desktop -->
-    <div class="flex flex-col md:grid md:grid-cols-2 md:gap-16 px-4 sm:px-0">
-        <!-- LEFT COLUMN: Challenges -->
-        <div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">Real-World Challenges</h2>
-            
-            <div class="space-y-5">
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Multi-Channel Fragmentation</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Interactions span WhatsApp, email, and social media, resulting in disjointed records and delayed responses.</p>
-                </details>
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Volume Variability</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Sudden spikes, like promotional campaigns in retail, overwhelm support capacities.</p>
-                </details>
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Personalization Gaps</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Generic replies fail to address individual needs, eroding trust in diverse markets.</p>
-                </details>
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Follow-Up Lapses</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Manual tracking leads to missed opportunities for retention or upselling.</p>
-                </details>
-                
-                <details class="group cursor-pointer py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Scalability Barriers</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Growing customer bases strain resources without proportional gains in service quality.</p>
-                </details>
-            </div>
+<div class="py-16 sm:py-20 max-w-7xl mx-auto">
+  <div class="flex flex-col md:grid md:grid-cols-2 md:gap-16 px-4 sm:px-0">
+
+    <!-- LEFT: Real-World Challenges -->
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">
+        Real-World Challenges
+      </h2>
+
+      <div class="space-y-5 accordion" id="challenges-acc">
+        <!-- Item 1 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Multi-Channel Fragmentation</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Interactions span WhatsApp, email, and social media, resulting in disjointed records and delayed responses.
+          </div>
         </div>
-        <!-- RIGHT COLUMN: Solutions (with mt-12 md:mt-0 for mobile spacing) -->
-        <div class="mt-12 md:mt-0">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">The Solutions</h2>
-            
-            <div class="space-y-5">
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Channel Unification</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Agents aggregate data from all sources into a central view, eliminating silos and enabling consistent handling.</p>
-                </details>
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Capacity Scaling</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Built-in queuing and prioritization manage peaks, distributing loads across agents to avoid bottlenecks.</p>
-                </details>
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Contextual Customization</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Responses pull from customer-specific details, ensuring relevance and building rapport.</p>
-                </details>
-                <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Automated Continuity</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Follow-ups are programmed based on interaction timelines, maintaining momentum without manual reminders.</p>
-                </details>
-                
-                <details class="group cursor-pointer py-4">
-                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
-  <span class="text-left">Resource Alignment</span>
-                        <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </summary>
-                    <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">The system scales with demand, supporting increased volumes through efficient, configurable paths.</p>
-                </details>
-            </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Volume Variability</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Sudden spikes, like promotional campaigns in retail, overwhelm support capacities.
+          </div>
         </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Personalization Gaps</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Generic replies fail to address individual needs, eroding trust in diverse markets.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Follow-Up Lapses</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Manual tracking leads to missed opportunities for retention or upselling.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Scalability Barriers</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Growing customer bases strain resources without proportional gains in service quality.
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- RIGHT: The Solutions -->
+    <div class="mt-12 md:mt-0">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">
+        The Solutions
+      </h2>
+
+      <div class="space-y-5 accordion" id="solutions-acc">
+        <!-- Item 1 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Channel Unification</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Agents aggregate data from all sources into a central view, eliminating silos and enabling consistent handling.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Capacity Scaling</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Built-in queuing and prioritization manage peaks, distributing loads across agents to avoid bottlenecks.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Contextual Customization</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Responses pull from customer-specific details, ensuring relevance and building rapport.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Automated Continuity</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            Follow-ups are programmed based on interaction timelines, maintaining momentum without manual reminders.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Resource Alignment</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300">
+            The system scales with demand, supporting increased volumes through efficient, configurable paths.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 
 
 <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -4512,17 +4577,15 @@
     const contentDiv = document.getElementById('pageContent');
     const pageHtml = pages[state.currentPage] ? pages[state.currentPage]() : pages.home();
     contentDiv.innerHTML = pageHtml;
-
     // Update history
     history.pushState(state, '', `#${state.currentPage}`);
     window.scrollTo(0, 0);
     closeAllDesktopDropdowns();
-
     // --- TRIGGER ANIMATIONS BASED ON PAGE ---
     if (state.currentPage === 'customintegrations') {
         // Wait 50ms for the DOM to be ready, then attach listeners
         setTimeout(initRadialMenu, 50);
-        
+       
         // Also re-init on resize to handle mobile/desktop switching
         window.onresize = initRadialMenu;
     } else {
@@ -4530,38 +4593,41 @@
         window.onresize = null;
     }
 
+    // --- NEW: Setup accordions after rendering (for dynamic pages like customerworkflows) ---
+    if (state.currentPage === 'customerworkflows') {
+        // Small delay to ensure DOM is fully updated
+        setTimeout(() => {
+            setupAccordion('challenges-acc');
+            setupAccordion('solutions-acc');
+        }, 50);
+    }
+
             // --- Mobile Auto-Scroll Carousel Logic (Infinite Loop with Resume) ---
             if (state.currentPage === 'home') {
                 const scroller = document.getElementById('featureScrollContainer');
-
                 // Check for mobile screen size (less than md breakpoint: 768px)
                 if (scroller && window.innerWidth < 768) {
-
                     const cards = scroller.children;
                     // The cards array now includes 9 elements: 2 spacers, 6 cards, 1 clone.
-                    const cardCount = cards.length; 
+                    const cardCount = cards.length;
                     const totalOriginalCards = 6;
                     const scrollDuration = 3000; // Time per card (3 seconds)
                     const resumeDelay = 5000; // Resume auto-scroll after 5 seconds of inactivity
-
                     // Initialize scroll index. Start at 1 (the first actual card, skipping the spacer)
-                    let scrollIndex = 1; 
+                    let scrollIndex = 1;
                     if (window.featureScrollIndex === undefined) {
                             window.featureScrollIndex = 1;
                     } else {
                             // Ensure the index is valid for the new 9-element structure
-                            scrollIndex = window.featureScrollIndex; 
+                            scrollIndex = window.featureScrollIndex;
                     }
-
                     let resumeTimer;
-
                     // Clear any previous interval
                     if (window.featureScrollInterval) {
                         clearInterval(window.featureScrollInterval);
                     }
-                    
+                   
                     // --- CORE SCROLL FUNCTIONS ---
-
                     const resetScrollPosition = () => {
                         // Instantly jump to the position of the original Card 1 (index 1, skipping the spacer)
                         scroller.scrollTo({
@@ -4571,86 +4637,80 @@
                         scrollIndex = 1; // Reset tracking index
                         window.featureScrollIndex = 1;
                     };
-
                     const autoScroll = () => {
-                        
+                       
                         let targetIndex;
-                        
+                       
                         // Check if we just hit the CLONE card (index 7)
-                        if (scrollIndex === totalOriginalCards + 1) { 
+                        if (scrollIndex === totalOriginalCards + 1) {
                             // 1. Instantly jump back to the original Card 1
                             resetScrollPosition();
                             // 2. Set the next target to Card 2 (index 2)
-                            targetIndex = 2; 
+                            targetIndex = 2;
                         } else {
                             targetIndex = scrollIndex + 1; // Normal scroll to the next card
                         }
-                        
+                       
                         // Perform the smooth scroll to the target card
                         scroller.scrollTo({
                             left: cards[targetIndex].offsetLeft,
                             behavior: 'smooth'
                         });
-
                         // Update the tracking index
                         scrollIndex = targetIndex;
                         window.featureScrollIndex = targetIndex;
                     };
-                    
+                   
                     // --- AUTOSCROLL START/STOP LOGIC ---
-                    
+                   
                     const startAutoScroll = () => {
                          if (!window.featureScrollInterval) {
                              window.featureScrollInterval = setInterval(autoScroll, scrollDuration);
                          }
                     };
-                    
+                   
                     const stopAutoScroll = () => {
                         clearInterval(window.featureScrollInterval);
                         window.featureScrollInterval = null;
                         clearTimeout(resumeTimer);
                     };
-                    
+                   
                     const scheduleResume = () => {
                         clearTimeout(resumeTimer); // Clear any existing timer
                         // Restart auto-scroll after 5 seconds
                         resumeTimer = setTimeout(startAutoScroll, resumeDelay);
                     };
-
                     // Start the scroll loop immediately on page load
                     startAutoScroll();
-                    
+                   
                     // --- EVENT LISTENERS FOR USER INTERACTION (Manual Scroll Management) ---
-
                     const pauseScroll = () => {
                         stopAutoScroll();
                     };
-
                     const handleTouchEnd = () => {
                         // When the user lifts their finger, check if they scrolled to the clone card (index 7)
                         const currentScrollPos = scroller.scrollLeft;
                         const cloneCardPos = cards[7].offsetLeft;
-
                         // Give a small buffer (e.g., half a card width) for the snap to finish
                         if (currentScrollPos >= cloneCardPos - 50) {
                             // If user scrolled near the clone, perform the instant jump back to card 1
                             // This ensures the manual scroll loop works.
                             resetScrollPosition();
                         }
-                        
+                       
                         // Schedule resume only if interval is stopped (i.e., user interaction stopped it)
                         if (window.featureScrollInterval === null) {
                             scheduleResume();
                         }
                     };
-                    
+                   
                     // Events
                     scroller.addEventListener('touchstart', pauseScroll);
                     scroller.addEventListener('touchend', handleTouchEnd);
                     scroller.addEventListener('mousedown', pauseScroll);
                     scroller.addEventListener('mouseup', handleTouchEnd);
-                    scroller.addEventListener('mouseleave', handleTouchEnd); 
-                    
+                    scroller.addEventListener('mouseleave', handleTouchEnd);
+                   
                     // On any manual scroll event (user inertia), clear the current resume timer
                     scroller.addEventListener('scroll', () => {
                         // Clear the resume timer as long as the user is actively scrolling
@@ -5320,6 +5380,47 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', setupMobileTooltips);
   window.addEventListener('resize', setupMobileTooltips);
 })();
+</script>
+
+<script>
+  function setupAccordion(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const items = container.querySelectorAll('.accordion-item');
+
+    items.forEach((item) => {
+      const header = item.querySelector('.accordion-header');
+      const body = item.querySelector('.accordion-body');
+      const icon = item.querySelector('.accordion-icon');
+
+      // ensure everything starts closed
+      body.style.display = 'none';
+
+      header.addEventListener('click', () => {
+        const isOpen = body.style.display === 'block';
+
+        // close all in this container
+        items.forEach((other) => {
+          const otherBody = other.querySelector('.accordion-body');
+          const otherIcon = other.querySelector('.accordion-icon');
+          otherBody.style.display = 'none';
+          otherIcon.classList.remove('rotate-180');
+        });
+
+        // if it was closed, open this one
+        if (!isOpen) {
+          body.style.display = 'block';
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupAccordion('challenges-acc');
+    setupAccordion('solutions-acc');
+  });
 </script>
 
 
