@@ -212,15 +212,16 @@
 @media (min-width: 300px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap-y: 1rem; /* Reduced vertical for clean stack */
-    gap-x: 1rem; /* Reduced horizontal: side-by-side, no overlap */
+    gap-y: 3rem;
+    gap-x: 2rem;
     justify-items: center;
   }
   .cap-circle-mobile {
-    width: 9rem; /* 144px: Clean iPhone 14 fit, no squeeze */
-    height: 9rem;
+    width: 8.5rem;
+    height: 8.5rem;
   }
 }
+
 /* Under 300px: Row layout for each group (circle left, tooltip right) - Unchanged */
 @media (max-width: 299px) {
   .grid-layout .group {
@@ -3591,10 +3592,18 @@
 
     <div class="grid-layout md:hidden">
         <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Standout Capabilities</h2>
-         <div class="grid grid-cols-2 tiny:grid-cols-2 gap-y-10 gap-x-6 justify-items-center">
+         <div class="grid grid-cols-2 tiny:grid-cols-2 gap-y-10 gap-x-4 sm:gap-y-12 sm:gap-x-8 justify-items-center">
+    <style>
+        .circle-responsive {
+            width: clamp(6rem, 40vw, 9rem);
+            height: clamp(6rem, 40vw, 9rem);
+            flex-shrink: 0;
+        }
+    </style>
+
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
 
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Intent</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Detection</span>
@@ -3607,7 +3616,7 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
 
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Dynamic</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Routing</span>
@@ -3620,7 +3629,7 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
 
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Response</span>
                 <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Generation</span>
@@ -3633,7 +3642,7 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
 
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Integration</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Depth</span>
@@ -3646,7 +3655,7 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
 
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Feedback</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Processing</span>
@@ -3659,7 +3668,7 @@
             </div>
 
             <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+                <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
 
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Compliance</span>
                     <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layer</span>
