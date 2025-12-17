@@ -129,6 +129,134 @@
     cursor: default !important;
 }
 </style>
+
+ <style>
+/* ---------- RADIAL CONTAINER (Unchanged) ---------- */
+.radial-container {
+  --radius: 300px;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 3rem auto 0;
+}
+.radial-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: translate(-50%, -50%);
+}
+/* ---------- CIRCULAR POSITIONS (Unchanged) ---------- */
+.item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
+.item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
+.item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
+.item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
+.item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
+.item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
+/* ---------- CENTER CONTENT (Unchanged) ---------- */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  z-index: 5;
+}
+/* ---------- DESKTOP TOOLTIP (Unchanged) ---------- */
+.tooltip-box {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(1rem, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+/* ---------- MOBILE TOOLTIP CARD (Unchanged) ---------- */
+.mobile-cap-tooltip {
+  position: absolute;
+  width: 180px;
+  min-height: 120px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-cap-tooltip p {
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+/* ---------- RESPONSIVE RULES (Unchanged) ---------- */
+@media (max-width: 767px) {
+  .radial-container { display: none; }
+}
+@media (min-width: 768px) {
+  .grid-layout { display: none; }
+}
+/* Default: 1 column under 300px, circles 8rem (stacked, no overlap) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap-y: 2rem;
+  justify-items: center;
+  width: 100%;
+}
+.cap-circle-mobile {
+  width: 8rem;
+  height: 8rem;
+}
+@media (min-width: 300px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap-y: 1rem; /* Reduced vertical for clean stack */
+    gap-x: 1rem; /* Reduced horizontal: side-by-side, no overlap */
+    justify-items: center;
+  }
+  .cap-circle-mobile {
+    width: 9rem; /* 144px: Clean iPhone 14 fit, no squeeze */
+    height: 9rem;
+  }
+}
+/* Under 300px: Row layout for each group (circle left, tooltip right) - Unchanged */
+@media (max-width: 299px) {
+  .grid-layout .group {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .grid-layout .group .absolute.top-full {
+    position: absolute !important;
+    left: calc(100% + 1rem);
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 150px;
+    min-height: auto;
+    padding: 0.75rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-top: 0 !important;
+  }
+  .grid-layout .group.active .absolute.top-full {
+    opacity: 1;
+    visibility: visible;
+  }
+  .mobile-cap-tooltip {
+    display: none !important;
+  }
+}
+
+</style>
+
 </head>
 <body>
 
@@ -3133,8 +3261,8 @@
 
            `,
             // --- Customer Workflows Page (Simplified content for brevity, maintaining style) ---
-            customerworkflows: () => `
-<section class="bg-black text-white">
+             customerworkflows: () => `
+                <section class="bg-black text-white">
   <div class="max-w-6xl mx-auto px-6">
     <section class="pt-16 sm:pt-20 pb-12 sm:pb-20 md:pt-20 md:pb-24 rounded-b-xl shadow-2xl relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
@@ -3159,7 +3287,7 @@
 
             <div class="lg:flex lg:items-center">
                 <div class="lg:w-3/5">
-                    <h1 class="text-center font-aeonik px-2 text-2xl sm:text-4xl lg:text-5xl w-full text-wrap-balance font-extrabold mb-4 leading-tight">Customer Workflows</h1>
+                    <h1 class="text-center font-aeonik px-2 text-2xl sm:text-4xl lg:text-5xl w-full text-wrap-balance font-extrabold mb-4 leading-tight">Customer Worklfows</h1>
 
                     <p class="text-center text-base sm:text-lg text-slate-300 mb-6 sm:mb-6 max-w-3xl"> Customer workflows encompass the use of AI agents to orchestrate interactions between businesses and clients, ensuring consistent, timely, and effective engagement. Tailored for Indian SMBs and enterprises in retail, professional services, manufacturing, hospitality, healthcare administration, and digital sectors, this service focuses on automating responses, routing inquiries, and maintaining continuity across touchpoints. Agents serve as an invisible layer, connecting customer data with operational systems to deliver personalized experiences without disrupting your existing setup. Boost response times by 80%. Increase satisfaction scores by 50%.
                     </p>
@@ -3187,98 +3315,69 @@
         </div>
     </section>
 
-    <!-- PRACTICAL USES -->
-<div class="py-16 sm:py-20 text-left">
-  <h2 class="text-2xl sm:text-4xl font-extrabold text-center mb-6 text-white">
-    Practical Uses Across Business Functions
-  </h2>
+    <div class=" py-16 sm:py-20 max-w-6xl mx-auto space-y-20 text-left">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-white">Practical Uses Across Business Functions</h2>
+    
+    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-white">Inquiry Response</h3>
+            <p class="text-[17px] text-slate-300">AI agents consolidate product inquiries from web forms, WhatsApp, email, and social media into a unified queue. The system retrieves real-time inventory status, customer purchase history, and preference profiles to generate context-rich replies—highlighting availability, size/color options, or bundle suggestions. Agents apply urgency rules (e.g., low-stock alerts) and escalate complex queries to store staff with full conversation context, ensuring response times under 60 seconds while maintaining brand tone across channels.</p>
+        </div>
+        <div class="mt-8 md:mt-0">
+            <img src="health.jpg" alt="Technology illustration for Workflow Routing" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+        </div>
+    </div>
 
-  <!-- 1. Inquiry Response (mobile: image first; desktop: text LEFT, image RIGHT) -->
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-8 md:mt-10">
-    <div class="md:order-2 mt-8 md:mt-0">
-      <img src="health.jpg" alt="Inquiry Response"
-           class="w-full h-auto rounded-xl object-cover shadow-2xl">
+    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div class="md:order-2 space-y-4">
+            <h3 class="text-2xl font-bold text-white">Ticket Resolution</h3>
+            <p class="text-[17px] text-slate-300">Agents ingest support tickets from client portals, email threads, or helpdesk software, then classify them by issue type, SLA tier, and required expertise. The system auto-assigns to the optimal resolver—junior analyst for standard cases, senior specialist for compliance-sensitive matters—and tracks progress through predefined stages: acknowledgment, investigation, resolution, verification. Automated status updates are sent to clients at each milestone, with escalation triggers for stalled tickets, reducing average closure time and ensuring audit-ready documentation.</p>
+        </div>
+        <div class="md:order-1 mt-8 md:mt-0">
+            <img src="health.jpg" alt="Technology illustration for Process Oversight" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+        </div>
     </div>
-    <div class="md:order-1 space-y-4">
-      <h3 class="text-2xl font-bold text-white mb-2">Inquiry Response</h3>
-      <p class="text-[17px] text-slate-300">
-        AI agents consolidate product inquiries from web forms, WhatsApp, email, and social media into a unified queue. The system retrieves real-time inventory status, customer purchase history, and preference profiles to generate context-rich replies—highlighting availability, size/color options, or bundle suggestions. Agents apply urgency rules (e.g., low-stock alerts) and escalate complex queries to store staff with full conversation context, ensuring response times under 60 seconds while maintaining brand tone across channels.
-      </p>
-    </div>
-  </div>
 
-  <!-- 2. Ticket Resolution (mobile: image first; desktop: image LEFT, text RIGHT) -->
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
-    <div class="md:order-1 mt-8 md:mt-0">
-      <img src="health.jpg" alt="Ticket Resolution"
-           class="w-full h-auto rounded-xl object-cover shadow-2xl">
+    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-white">Lead Nurturing</h3>
+            <p class="text-[17px] text-slate-300">Upon lead capture via landing pages or ads, agents initiate segmented nurture sequences based on source, behavior, and firmographic data. The system schedules personalized content—case studies, webinars, or ROI calculators—delivered via email, SMS, or retargeting ads. Engagement signals (opens, clicks, downloads) dynamically adjust follow-up cadence and content, moving high-intent leads to sales handoff with full interaction history. For enterprise pipelines, agents align sequences with account-based marketing frameworks and CRM opportunity stages.</p>
+        </div>
+        <div class="mt-8 md:mt-0">
+            <img src="health.jpg" alt="Technology illustration for Administrative Handling" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+        </div>
     </div>
-    <div class="md:order-2 space-y-4 mt-4 md:mt-0">
-      <h3 class="text-2xl font-bold text-white mb-2">Ticket Resolution</h3>
-      <p class="text-[17px] text-slate-300">
-        Agents ingest support tickets from client portals, email threads, or helpdesk software, then classify them by issue type, SLA tier, and required expertise. The system auto-assigns to the optimal resolver—junior analyst for standard cases, senior specialist for compliance-sensitive matters—and tracks progress through predefined stages: acknowledgment, investigation, resolution, verification. Automated status updates are sent to clients at each milestone, with escalation triggers for stalled tickets, reducing average closure time and ensuring audit-ready documentation.
-      </p>
-    </div>
-  </div>
 
-  <!-- 3. Lead Nurturing (mobile: image first; desktop: text LEFT, image RIGHT) -->
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
-    <div class="md:order-2 mt-8 md:mt-0">
-      <img src="health.jpg" alt="Lead Nurturing"
-           class="w-full h-auto rounded-xl object-cover shadow-2xl">
+    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div class="md:order-2 space-y-4">
+            <h3 class="text-2xl font-bold text-white">Feedback Integration</h3>
+            <p class="text-[17px] text-slate-300">Post-stay or post-event, agents distribute micro-surveys via SMS, email, or in-app prompts, then aggregate responses into a centralized sentiment dashboard. The system applies NLP to extract themes—cleanliness, staff courtesy, F&B quality—and routes actionable insights to department heads with priority scoring. Negative feedback triggers immediate recovery workflows (e.g., apology + voucher), while positive reviews are auto-posted to review platforms with guest consent, closing the loop from experience to improvement.</p>
+        </div>
+        <div class="md:order-1 mt-8 md:mt-0">
+            <img src="health.jpg" alt="Technology illustration for Resource Allocation" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+        </div>
     </div>
-    <div class="md:order-1 space-y-4">
-      <h3 class="text-2xl font-bold text-white mb-2">Lead Nurturing</h3>
-      <p class="text-[17px] text-slate-300">
-        Upon lead capture via landing pages or ads, agents initiate segmented nurture sequences based on source, behavior, and firmographic data. The system schedules personalized content—case studies, webinars, or ROI calculators—delivered via email, SMS, or retargeting ads. Engagement signals (opens, clicks, downloads) dynamically adjust follow-up cadence and content, moving high-intent leads to sales handoff with full interaction history. For enterprise pipelines, agents align sequences with account-based marketing frameworks and CRM opportunity stages.
-      </p>
-    </div>
-  </div>
 
-  <!-- 4. Feedback Integration (mobile: image first; desktop: image LEFT, text RIGHT) -->
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
-    <div class="md:order-1 mt-8 md:mt-0">
-      <img src="health.jpg" alt="Feedback Integration"
-           class="w-full h-auto rounded-xl object-cover shadow-2xl">
+    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-white">Compliance Verification</h3>
+            <p class="text-[17px] text-slate-300">Agents monitor all outbound patient communications—appointment reminders, test results, prescription renewals—against regulatory templates (e.g., HIPAA-equivalent Indian guidelines). The system validates consent status, redacts PHI in non-secure channels, and enforces dual-authentication for sensitive disclosures. Automated audit logs timestamp every message, recipient confirmation, and read receipt, enabling instant retrieval for inspections. Integration with EHR ensures clinical data accuracy before transmission.</p>
+        </div>
+        <div class="mt-8 md:mt-0">
+            <img src="health.jpg" alt="Technology illustration for Compliance Tracking" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+        </div>
     </div>
-    <div class="md:order-2 space-y-4 mt-4 md:mt-0">
-      <h3 class="text-2xl font-bold text-white mb-2">Feedback Integration</h3>
-      <p class="text-[17px] text-slate-300">
-        Post-stay or post-event, agents distribute micro-surveys via SMS, email, or in-app prompts, then aggregate responses into a centralized sentiment dashboard. The system applies NLP to extract themes—cleanliness, staff courtesy, F&B quality—and routes actionable insights to department heads with priority scoring. Negative feedback triggers immediate recovery workflows (e.g., apology + voucher), while positive reviews are auto-posted to review platforms with guest consent, closing the loop from experience to improvement.
-      </p>
-    </div>
-  </div>
 
-  <!-- 5. Compliance Verification (mobile: image first; desktop: text LEFT, image RIGHT) -->
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
-    <div class="md:order-2 mt-8 md:mt-0">
-      <img src="health.jpg" alt="Compliance Verification"
-           class="w-full h-auto rounded-xl object-cover shadow-2xl">
+    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div class="md:order-2 space-y-4">
+            <h3 class="text-2xl font-bold text-white">Cross-Channel Coordination</h3>
+            <p class="text-[17px] text-slate-300">Agents synchronize order updates across buyer portals, email threads, ERP systems, and logistics platforms. Upon production milestone completion—material receipt, quality clearance, packing—the system broadcasts standardized status notifications to all stakeholders with embedded tracking links. Discrepancy detection (e.g., promised vs. actual dates) triggers exception workflows with root-cause templates. For government or enterprise buyers, agents generate compliance-ready shipment manifests and e-way bills in required formats, ensuring end-to-end visibility and regulatory adherence.</p>
+        </div>
+        <div class="md:order-1 mt-8 md:mt-0">
+            <img src="health.jpg" alt="Technology illustration for Internal Communication" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+        </div>
     </div>
-    <div class="md:order-1 space-y-4">
-      <h3 class="text-2xl font-bold text-white mb-2">Compliance Verification</h3>
-      <p class="text-[17px] text-slate-300">
-        Agents monitor all outbound patient communications—appointment reminders, test results, prescription renewals—against regulatory templates (e.g., HIPAA-equivalent Indian guidelines). The system validates consent status, redacts PHI in non-secure channels, and enforces dual-authentication for sensitive disclosures. Automated audit logs timestamp every message, recipient confirmation, and read receipt, enabling instant retrieval for inspections. Integration with EHR ensures clinical data accuracy before transmission.
-      </p>
-    </div>
-  </div>
-
-  <!-- 6. Cross-Channel Coordination (mobile: image first; desktop: image LEFT, text RIGHT) -->
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
-    <div class="md:order-1 mt-8 md:mt-0">
-      <img src="health.jpg" alt="Cross-Channel Coordination"
-           class="w-full h-auto rounded-xl object-cover shadow-2xl">
-    </div>
-    <div class="md:order-2 space-y-4 mt-4 md:mt-0">
-      <h3 class="text-2xl font-bold text-white mb-2">Cross-Channel Coordination</h3>
-      <p class="text-[17px] text-slate-300">
-        Agents synchronize order updates across buyer portals, email threads, ERP systems, and logistics platforms. Upon production milestone completion—material receipt, quality clearance, packing—the system broadcasts standardized status notifications to all stakeholders with embedded tracking links. Discrepancy detection (e.g., promised vs. actual dates) triggers exception workflows with root-cause templates. For government or enterprise buyers, agents generate compliance-ready shipment manifests and e-way bills in required formats, ensuring end-to-end visibility and regulatory adherence.
-      </p>
-    </div>
-  </div>
 </div>
-
-
     
 
    <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center">
@@ -3312,7 +3411,7 @@
             <p class="text-[15px] text-slate-300">Once resolved, the agent documents the outcome and solicits feedback if appropriate. It then reviews the exchange to refine future handling, adjusting for recurring themes or user preferences.</p>
         </div>
     </div>
-
+</div>
 
     <div class="py-16 sm:py-20 max-w-7xl mx-auto">
     <!-- WRAPPER: Stacks vertically on mobile, side-by-side on desktop -->
@@ -3330,30 +3429,30 @@
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Interactions span WhatsApp, email, and social media, resulting in disjointed records and delayed responses.</p>
                 </details>
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Volume Variability</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Volume Variability</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Sudden spikes, like promotional campaigns in retail, overwhelm support capacities.</p>
                 </details>
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Personalization Gaps</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Personalization Gaps</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Generic replies fail to address individual needs, eroding trust in diverse markets.</p>
                 </details>
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Follow-Up Lapses</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Follow-Up Lapses</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Manual tracking leads to missed opportunities for retention or upselling.</p>
                 </details>
                 
                 <details class="group cursor-pointer py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Scalability Barriers</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Scalability Barriers</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Growing customer bases strain resources without proportional gains in service quality.</p>
@@ -3366,37 +3465,37 @@
             
             <div class="space-y-5">
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Channel Unification</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Channel Unification</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Agents aggregate data from all sources into a central view, eliminating silos and enabling consistent handling.</p>
                 </details>
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Capacity Scaling</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Capacity Scaling</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Built-in queuing and prioritization manage peaks, distributing loads across agents to avoid bottlenecks.</p>
                 </details>
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Contextual Customization</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Contextual Customization</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Responses pull from customer-specific details, ensuring relevance and building rapport.</p>
                 </details>
                 <details class="group cursor-pointer border-b border-slate-700 py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Automated Continuity</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Automated Continuity</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Follow-ups are programmed based on interaction timelines, maintaining momentum without manual reminders.</p>
                 </details>
                 
                 <details class="group cursor-pointer py-4">
-                    <summary class="flex justify-between items-center text-white font-bold text-xl leading-relaxed">
-                        <h3>Resource Alignment</h3>
+                    <summary class="flex items-center justify-between text-white font-bold text-xl leading-snug">
+  <span class="text-left">Resource Alignment</span>
                         <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">The system scales with demand, supporting increased volumes through efficient, configurable paths.</p>
@@ -3404,140 +3503,10 @@
             </div>
         </div>
     </div>
-</div>
-
-
 
 
 <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-    
-   <style>
-/* ---------- RADIAL CONTAINER (Unchanged) ---------- */
-.radial-container {
-  --radius: 300px;
-  position: relative;
-  width: 600px;
-  height: 600px;
-  margin: 3rem auto 0;
-}
-.radial-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: 0 0;
-  transform: translate(-50%, -50%);
-}
-/* ---------- CIRCULAR POSITIONS (Unchanged) ---------- */
-.item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
-.item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
-.item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
-.item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
-.item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
-.item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
-/* ---------- CENTER CONTENT (Unchanged) ---------- */
-.center-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 250px;
-  z-index: 5;
-}
-/* ---------- DESKTOP TOOLTIP (Unchanged) ---------- */
-.tooltip-box {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(1rem, -50%);
-  z-index: 10;
-  pointer-events: none;
-}
-/* ---------- MOBILE TOOLTIP CARD (Unchanged) ---------- */
-.mobile-cap-tooltip {
-  position: absolute;
-  width: 180px;
-  min-height: 120px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: #020617;
-  border: 1px solid #1f2937;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mobile-cap-tooltip p {
-  font-size: 12px;
-  line-height: 1.4;
-  text-align: center;
-}
-/* ---------- RESPONSIVE RULES (Unchanged) ---------- */
-@media (max-width: 767px) {
-  .radial-container { display: none; }
-}
-@media (min-width: 768px) {
-  .grid-layout { display: none; }
-}
-/* Default: 1 column under 300px, circles 8rem (stacked, no overlap) */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap-y: 2rem;
-  justify-items: center;
-  width: 100%;
-}
-.cap-circle-mobile {
-  width: 8rem;
-  height: 8rem;
-}
-@media (min-width: 300px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap-y: 1rem; /* Reduced vertical for clean stack */
-    gap-x: 1rem; /* Reduced horizontal: side-by-side, no overlap */
-    justify-items: center;
-  }
-  .cap-circle-mobile {
-    width: 9rem; /* 144px: Clean iPhone 14 fit, no squeeze */
-    height: 9rem;
-  }
-}
-/* Under 300px: Row layout for each group (circle left, tooltip right) - Unchanged */
-@media (max-width: 299px) {
-  .grid-layout .group {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  .grid-layout .group .absolute.top-full {
-    position: absolute !important;
-    left: calc(100% + 1rem);
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    max-width: 150px;
-    min-height: auto;
-    padding: 0.75rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    margin-top: 0 !important;
-  }
-  .grid-layout .group.active .absolute.top-full {
-    opacity: 1;
-    visibility: visible;
-  }
-  .mobile-cap-tooltip {
-    display: none !important;
-  }
-}
-</style>
-
-    <div class="hidden md:block"> 
+        <div class="hidden md:block"> 
         <div class="radial-container">
 
             <div class="center-content">
@@ -3701,9 +3670,11 @@
                     <p class="text-[15px] text-slate-300">Automatic checks for legal and ethical standards in communications.</p>
                 </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+  </div>
 </div>
+
 
                         <section class="py-12 sm:py-16 bg-black text-slate-300">
     <div class="max-w-4xl mx-auto">
@@ -3720,10 +3691,9 @@
             </a>
         </div>
     </div>
-    </section>
-  </div>
 </section>
-
+    </div>
+</section>
 
 
             `,
@@ -4959,50 +4929,48 @@ document.addEventListener('click', (event) => {
     <main id="pageContent" class="page-content">
         </main>
 <footer class="bg-black text-white py-8 sm:py-10 border-t border-black">
-    <div class="container mx-auto px-3 sm:px-4 max-w-7xl">
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
-            
-            <div>
-    <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Solutions</h5>
-    <nav class="space-y-4 sm:space-y-4 text-[12px] sm:text-[14px]">
+    <div class="w-full mx-auto px-4 sm:px-6 max-w-7xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 justify-items-center md:justify-items-start">
+            <div class="w-full">
+                <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Solutions</h5>
+                <nav class="space-y-2 sm:space-y-3 text-[12px] sm:text-[14px]">
         <a href="#" onclick="navigateTo('operationsautomation')" class="block text-slate-300 hover:text-white transition duration-150">Operations Automation</a>
         <a href="#" onclick="navigateTo('customerworkflows')" class="block text-slate-300 hover:text-white transition duration-150">customer Workflows</a>
         <a href="#" onclick="navigateTo('dataworkflows')" class="block text-slate-300 hover:text-white transition duration-150">Data Workflows</a>
         <a href="#" onclick="navigateTo('customintegrations')" class="block text-slate-300 hover:text-white transition duration-150">Custom Integrations</a>
         <a href="#" onclick="navigateTo('sopstraining')" class="block text-slate-300 hover:text-white transition duration-150">SOPs & Training</a>
         <a href="#" onclick="navigateTo('optimizationsupport')" class="block text-slate-300 hover:text-white transition duration-150">Optimization & Support</a>
-    </nav>
-</div>
+                </nav>
+            </div>
 
-<div>
-    <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Company</h5>
-    <nav class="space-y-4 sm:space-y-4 text-[12px] sm:text-[14px]">
-        <a href="#" onclick="navigateTo('aboutaxiosky')" class="block text-slate-300 hover:text-white transition duration-150">About Axiosky</a>
-        <a href="#" onclick="navigateTo('careers')" class="block text-slate-300 hover:text-white transition duration-150">Careers</a>
-        <a href="#" onclick="navigateTo('trustsecurity')" class="block text-slate-300 hover:text-white transition duration-150">Trust & Security</a>
-    </nav>
-</div>
-
-<div class="col-span-1">
-    <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Resources</h5>
-    <nav class="space-y-4 sm:space-y-4 text-[12px] sm:text-[14px]">
-        <a href="#" onclick="navigateTo('supporthelp')" class="block text-slate-300 hover:text-white transition duration-150">Support & Help</a>
+            <div class="w-full">
+                <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Company</h5>
+                <nav class="space-y-2 sm:space-y-3 text-[12px] sm:text-[14px]">
+                    <a href="#" onclick="navigateTo('aboutaxiosky')" class="block text-slate-300 hover:text-white transition duration-150">About Axiosky</a>
+                    <a href="#" onclick="navigateTo('careers')" class="block text-slate-300 hover:text-white transition duration-150">Careers</a>
+                    <a href="#" onclick="navigateTo('trustsecurity')" class="block text-slate-300 hover:text-white transition duration-150">Trust & Security</a>
+                </nav>
+            </div>
+            <div class="w-full">
+                <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Resources</h5>
+                <nav class="space-y-2 sm:space-y-3 text-[12px] sm:text-[14px]">
+                    <a href="#" onclick="navigateTo('supporthelp')" class="block text-slate-300 hover:text-white transition duration-150">Support & Help</a>
         <a href="#" onclick="navigateTo('news')" class="block text-slate-300 hover:text-white transition duration-150">News</a>
         <a href="#" onclick="navigateTo('events')" class="block text-slate-300 hover:text-white transition duration-150">Events</a>
         <a href="#" onclick="navigateTo('downloads')" class="block text-slate-300 hover:text-white transition duration-150">Downloads</a>
-    </nav>
-</div>
-
-<div class="col-span-1">
-    <h4 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Contact Us</h4>
-    <nav class="space-y-4 sm:space-y-4 text-[12px] sm:text-[14px]">
-        <a href="mailto:axioskyofficial@gmail.com" class="block text-slate-300 hover:text-white transition mt-3 sm:mt-4">axioskyofficial@gmail.com</a>
+                </nav>
+            </div>
+            <div class="w-full">
+                <h5 class="text-sm sm:text-base font-semibold text-slate-300 mb-2 sm:mb-3">Contact Us</h5>
+                <nav class="space-y-2 sm:space-y-3 text-[12px] sm:text-[14px]">
+                    <a href="mailto:axioskyofficial@gmail.com" class="block text-slate-300 hover:text-white transition mt-3 sm:mt-4">axioskyofficial@gmail.com</a>
         <a href="#" onclick="navigateTo('contact')" class="block text-slate-300 hover:text-white transition duration-150">Book a Demo</a>
-    </nav>
-</div>
-</div>
+                </nav>
+            </div>
+        </div>
 
-        <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+
+        <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3 sm:gap-4">
             <p class="text-[12px] text-slate-400 text-center sm:text-[14px] sm:text-left order-last sm:order-first">&copy; 2025 Axiosky. All rights reserved.</p>
             <a href="#" onclick="navigateTo('terms')" class="text-[12px] text-slate-400 hover:text-white transition text-center sm:text-[14px] sm:text-left order-last sm:order-first">Terms of Use & Privacy policy</a>
 
