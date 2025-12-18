@@ -113,6 +113,7 @@
             border: 2px solid ##2d3748; /* Border to match background */
         }
 
+
     </style>
 
      <style>
@@ -128,6 +129,20 @@
     pointer-events: none !important;
     cursor: default !important;
 }
+
+  /* FIXED: Lower left/right buttons on mobile slider in data workflows (below paras, still in image) */
+  @media (max-width: 767px) {
+    #practice-prev, #practice-next {
+      bottom: 10px; /* Adjust this value (e.g., 10px from bottom) to place below paras */
+      top: auto; /* Remove top positioning */
+    }
+    #practice-prev {
+      left: 10%; /* Position left button slightly in from edge */
+    }
+    #practice-next {
+      right: 10%; /* Position right button slightly in from edge */
+    }
+  }
 </style>
 
 <style>
@@ -3223,98 +3238,144 @@
 </div>
 
  <div class="py-16 sm:py-20 max-w-7xl mx-auto">
-    <div class="md:grid md:grid-cols-2 md:gap-16 text-center mb-16 px-4 sm:px-0">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 md:mb-0">Challenges</h2>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Solutions</h2>
-    </div>
-
-    <div class="md:grid md:grid-cols-2 md:gap-16 space-y-5 md:space-y-0 px-4 sm:px-0">
-        
-        <div>
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Fragmented Inputs</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Data arrives from multiple, incompatible sources, complicating unification.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Inconsistency Issues</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Variations in format or quality lead to unreliable outputs.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Delayed Processing</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Manual steps slow the transformation of raw data into usable information.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Access Limitations</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Teams struggle with viewing or interacting with data across devices.</p>
-            </details>
-            
-            <details class="group cursor-pointer py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Overload Management</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Increasing volumes strain capacity without proportional gains.</p>
-            </details>
+  <div class="flex flex-col md:grid md:grid-cols-2 md:gap-16 px-4 sm:px-0">
+    <!-- LEFT: Challenges -->
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">
+        Challenges
+      </h2>
+      <div class="space-y-5 accordion" id="challenges-acc">
+        <!-- Item 1 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Fragmented Inputs</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Data arrives from multiple, incompatible sources, complicating unification.
+          </div>
         </div>
-
-
-        <div>
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Unified Collection</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Unified collection from all channels to create a single data stream.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Automated Standardization</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Automated standardization to enforce uniformity across inputs.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Streamlined Processing</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Streamlined processing for prompt availability of refined data.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Flexible Viewing Options</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Flexible viewing options compatible with various platforms.</p>
-            </details>
-            
-            <details class="group cursor-pointer py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Efficient Scale Handling</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Efficient handling of scale through distributed agent allocation.</p>
-            </details>
+        <!-- Item 2 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Inconsistency Issues</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Variations in format or quality lead to unreliable outputs.
+          </div>
         </div>
+        <!-- Item 3 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Delayed Processing</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Manual steps slow the transformation of raw data into usable information.
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Access Limitations</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Teams struggle with viewing or interacting with data across devices.
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="accordion-item py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Overload Management</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Increasing volumes strain capacity without proportional gains.
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- RIGHT: The Solutions -->
+    <div class="mt-12 md:mt-0">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">
+        The Solutions
+      </h2>
+      <div class="space-y-5 accordion" id="solutions-acc">
+        <!-- Item 1 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Unified Collection</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Unified collection from all channels to create a single data stream.
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Automated Standardization</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Automated standardization to enforce uniformity across inputs.
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Streamlined Processing</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Streamlined processing for prompt availability of refined data.
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Flexible Viewing Options</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Flexible viewing options compatible with various platforms.
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="accordion-item py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Efficient Scale Handling</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Efficient handling of scale through distributed agent allocation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
                         <section class="py-12 sm:py-16 bg-black text-slate-300">
@@ -4697,8 +4758,8 @@
         // Clean up resize listener on other pages
         window.onresize = null;
     }
-    // --- NEW: Setup accordions after rendering (for dynamic pages like customerworkflows) ---
-    if (state.currentPage === 'customerworkflows') {
+        // --- NEW: Setup accordions after rendering for customer and data workflows ---
+    if (state.currentPage === 'customerworkflows' || state.currentPage === 'dataworkflows') {
         // Small delay to ensure DOM is updated
         setTimeout(() => {
             setupAccordion('challenges-acc');
