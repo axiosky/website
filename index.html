@@ -426,6 +426,158 @@
   }
 </style>
 
+<style>
+  .mobile-cap-tooltip-ci {
+    position: absolute;
+    width: 180px;
+    min-height: 120px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #020617;
+    border: 1px solid #1f2937;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-cap-tooltip-ci p {
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    color: #f8fafc; /* Fixes invisible text – white on dark bg */
+  }
+</style>
+
+<style>
+  /* Define the center point for rotation and the radius */
+  .radial-container-ci {
+    --radius: 300px;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+  .radial-item-ci {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Circular positions for 6 items */
+  .item-1-ci { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
+  .item-2-ci { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
+  .item-3-ci { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
+  .item-4-ci { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
+  .item-5-ci { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
+  .item-6-ci { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
+  
+  /* Center content */
+  .center-content-ci {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    z-index: 5;
+  }
+  
+  /* Tooltip positioning */
+  .tooltip-box-ci {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(1rem, -50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* Mobile fallback */
+  .mobile-cap-tooltip-ci {
+    position: absolute;
+    width: 180px;
+    min-height: 120px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #020617;
+    border: 1px solid #1f2937;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-cap-tooltip-ci p {
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 767px) {
+    .radial-container-ci { display: none; }
+  }
+  @media (min-width: 768px) {
+    .grid-layout-ci { display: none; }
+  }
+  
+  /* Mobile grid */
+  .grid-ci {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap-y: 2rem;
+    justify-items: center;
+    width: 100%;
+  }
+  .cap-circle-mobile-ci {
+    width: 8rem;
+    height: 8rem;
+  }
+  @media (min-width: 300px) {
+    .grid-ci {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap-y: 3rem;
+      gap-x: 2rem;
+      justify-items: center;
+    }
+    .cap-circle-mobile-ci {
+      width: 8.5rem;
+      height: 8.5rem;
+    }
+  }
+  
+  /* Under 300px layout */
+  @media (max-width: 299px) {
+    .grid-layout-ci .group-ci {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .grid-layout-ci .group-ci .absolute {
+      position: absolute !important;
+      left: calc(100% + 1rem);
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: 150px;
+      min-height: auto;
+      padding: 0.75rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      margin-top: 0 !important;
+    }
+    .grid-layout-ci .group-ci.active .absolute {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+</style>
 
 </head>
 <body>
@@ -2000,7 +2152,7 @@
     </section>
 
     <!-- SECTION 1: WHAT ARE SOPs -->
-    <section id="what-are-sops" class="bg-black py-16 sm:py-24 border-b border-slate-800">
+    <section id="what-are-sops" class="bg-slate-800 py-16 sm:py-24 border-b border-slate-800">
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="text-3xl sm:text-4xl text-center font-bold text-white mb-2">What Are SOPs & Why They Matter</h2>
 
@@ -2009,7 +2161,7 @@
                     Standard Operating Procedures (SOPs) are step-by-step instructions that document how critical business processes should be executed. For AI automation, SOPs serve two critical functions: they ensure consistency across your team, and they create a knowledge base so your business doesn't depend on one person.
                 </p>
 
-                <div class="bg-black border border-slate-700 rounded-lg p-6 sm:p-8 my-8">
+                <div class="bg-slate-800 border border-slate-700 rounded-lg p-6 sm:p-8 my-8">
                     <h3 class="text-xl font-semibold text-center text-white mb-6">Why SOPs Matter</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="flex gap-4">
@@ -2068,7 +2220,7 @@
 
 
     <section class="bg-black text-white py-16 sm:py-20">
-        <div class="bg-black">
+        <div class="bg-black border-t border-b border-gray-800">
     <div class="container mx-auto px-4 max-w-5xl">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4 text-white">
             Our Core Principles
@@ -2387,12 +2539,12 @@
 
 
 
-
-
            `,
             // --- Custom Integrations Page (Simplified content for brevity, maintaining style) ---
             customintegrations: () => `
-                <section class="bg-black"> <section class="bg-black text-white pt-16 sm:pt-20 pb-12 sm:pb-20 md:pt-20 md:pb-24 rounded-b-xl shadow-2xl relative overflow-hidden">
+                <section class="bg-black">
+                <div class="px-6"> 
+                <section class="bg-black text-white pt-16 sm:pt-20 pb-12 sm:pb-20 md:pt-20 md:pb-24 rounded-b-xl shadow-2xl relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -2480,395 +2632,357 @@
     </div>
 </section>
 
-<div class=" py-16 sm:py-20 max-w-6xl mx-auto space-y-20 text-left">
-    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-white">Uses of Custom Integrations</h2>
+<!-- PRACTICAL USES -->
+<div class="py-16 sm:py-20 text-left">
+  <h2 class="text-2xl sm:text-4xl font-extrabold text-center mb-6 text-white">
+    Uses of Custom Integrations
+  </h2>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="md:order-2 space-y-4">
-            <h3 class="text-2xl font-bold text-white">Customer Data Synchronization</h3>
-            <p class="text-[17px] text-slate-300">Custom integrations enable AI agents to maintain a single, real-time customer profile by linking CRM platforms with communication channels such as email, WhatsApp Business, and SMS gateways. Agents access purchase history, support tickets, and interaction notes instantly, ensuring every response or action is fully contextualized without manual lookup or copy-paste between systems.</p>
-        </div>
-        <div class="md:order-1 mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Process Oversight" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 1: Image Left on Desktop, Image Top on Mobile -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-8 md:mt-10">
+    <div class="order-2 md:order-1 mt-4 md:mt-0">
+      <img src="health.jpg" alt="Customer Data Synchronization"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="order-1 md:order-2 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Customer Data Synchronization</h3>
+      <p class="text-[17px] text-slate-300">
+        Custom integrations enable AI agents to maintain a single, real-time customer profile by linking CRM platforms with communication channels such as email, WhatsApp Business, and SMS gateways. Agents access purchase history, support tickets, and interaction notes instantly, ensuring every response or action is fully contextualized without manual lookup or copy-paste between systems.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Inventory and Procurement Bridging</h3>
-            <p class="text-[17px] text-slate-300">Agents connect inventory management tools to procurement and accounting systems, creating automatic two-way updates. Stock level changes trigger reorder alerts, purchase orders generate instant ledger entries, and supplier invoice data flows directly into financial records, eliminating reconciliation delays and stock discrepancies.</p>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Administrative Handling" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 2: Image Right on Desktop, Image Top on Mobile -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="order-2 md:order-2 mt-4 md:mt-0">
+      <img src="health.jpg" alt="Inventory and Procurement Bridging"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="order-1 md:order-1 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Inventory and Procurement Bridging</h3>
+      <p class="text-[17px] text-slate-300">
+        Agents connect inventory management tools to procurement and accounting systems, creating automatic two-way updates. Stock level changes trigger reorder alerts, purchase orders generate instant ledger entries, and supplier invoice data flows directly into financial records, eliminating reconciliation delays and stock discrepancies.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="md:order-2 space-y-4">
-            <h3 class="text-2xl font-bold text-white">Project and Workflow Orchestration</h3>
-            <p class="text-[17px] text-slate-300">Integrations between project management tools and collaboration platforms allow agents to synchronize tasks, deadlines, and deliverables across systems. Status updates in one tool automatically reflect in another, while agents surface blockers, assign ownership, and maintain a unified timeline visible to all stakeholders.</p>
-        </div>
-        <div class="md:order-1 mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Resource Allocation" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 3: Image Left on Desktop, Image Top on Mobile -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="order-2 md:order-1 mt-4 md:mt-0">
+      <img src="health.jpg" alt="Project and Workflow Orchestration"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="order-1 md:order-2 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Project and Workflow Orchestration</h3>
+      <p class="text-[17px] text-slate-300">
+        Integrations between project management tools and collaboration platforms allow agents to synchronize tasks, deadlines, and deliverables across systems. Status updates in one tool automatically reflect in another, while agents surface blockers, assign ownership, and maintain a unified timeline visible to all stakeholders.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Reservation and Transaction Alignment</h3>
-            <p class="text-[17px] text-slate-300">Agents link booking engines or property management systems with payment gateways and accounting software, enabling end-to-end transaction flows. A confirmed reservation instantly generates an invoice, updates revenue ledgers, triggers deposit refunds if cancelled, and syncs occupancy status across front-desk and finance modules without duplicate entry.</p>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Compliance Tracking" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 4: Image Right on Desktop, Image Top on Mobile -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="order-2 md:order-2 mt-4 md:mt-0">
+      <img src="health.jpg" alt="Reservation and Transaction Alignment"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="order-1 md:order-1 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Reservation and Transaction Alignment</h3>
+      <p class="text-[17px] text-slate-300">
+        Agents link booking engines or property management systems with payment gateways and accounting software, enabling end-to-end transaction flows. A confirmed reservation instantly generates an invoice, updates revenue ledgers, triggers deposit refunds if cancelled, and syncs occupancy status across front-desk and finance modules without duplicate entry.
+      </p>
+    </div>
+  </div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="md:order-2 space-y-4">
-            <h3 class="text-2xl font-bold text-white">Patient Journey Coordination</h3>
-            <p class="text-[17px] text-slate-300">Integrations merge appointment scheduling systems with electronic health records and communication tools, creating a continuous patient thread. Booking confirmations, pre-visit instructions, lab results, and follow-up reminders flow automatically while maintaining strict access controls and audit trails required for compliance.</p>
-        </div>
-        <div class="md:order-1 mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Internal Communication" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
+  <!-- 5: Image Left on Desktop, Image Top on Mobile -->
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-center mt-10 md:mt-12">
+    <div class="order-2 md:order-1 mt-4 md:mt-0">
+      <img src="health.jpg" alt="Patient Journey Coordination"
+           class="w-full h-auto rounded-xl object-cover shadow-2xl">
     </div>
+    <div class="order-1 md:order-2 space-y-4">
+      <h3 class="text-2xl font-bold text-white mb-2">Patient Journey Coordination</h3>
+      <p class="text-[17px] text-slate-300">
+        Integrations merge appointment scheduling systems with electronic health records and communication tools, creating a continuous patient thread. Booking confirmations, pre-visit instructions, lab results, and follow-up reminders flow automatically while maintaining strict access controls and audit trails required for compliance.
+      </p>
+    </div>
+  </div>
 </div>
 
-<div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Marketing and Performance Feedback Loop</h3>
-            <p class="text-[17px] text-slate-300">Agents combine campaign management platforms (Meta Ads, Google Ads, Mailchimp, etc) with analytics and CRM systems to close the loop between spend and outcome. Impression, click, and conversion data feed directly into lead scoring models, enabling real-time budget reallocation and automated performance reporting across channels.</p>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <img src="health.jpg" alt="Technology illustration for Workflow Routing" class="w-full h-auto rounded-xl object-cover shadow-2xl">
-        </div>
-    </div>
+
 
 
 <div class="py-16 sm:py-20 max-w-7xl mx-auto">
-    <div class="md:grid md:grid-cols-2 md:gap-16 text-center mb-16 px-4 sm:px-0">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 md:mb-0">Real-World Challenges</h2>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">The Solutions</h2>
-    </div>
-
-    <div class="md:grid md:grid-cols-2 md:gap-16 space-y-5 md:space-y-0 px-4 sm:px-0">
-        
-        <div>
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Tool Incompatibility</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Different systems use proprietary APIs, legacy file formats, or no public endpoints at all, resulting in complete isolation of data and processes. This forces manual exports/imports, creates persistent silos, and prevents any real-time or automated interaction between tools.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Data Inconsistency</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Fields with the same meaning carry different names, formats, or units across tools (e.g., “Cust_ID” vs “contact_id”, DD/MM/YYYY vs MM/DD/YYYY, INR vs ₹), leading to broken links, duplicate records, and downstream calculation errors that undermine trust in outputs.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Performance Lag</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">High transaction volumes or poorly optimized endpoints cause processing queues to back up, introducing multi-second or multi-minute delays that cascade through dependent workflows and violate service-level expectations.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Security Gaps</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Unencrypted transfers, reused credentials, or overly permissive scopes expose sensitive customer, financial, or compliance data to interception, breaches, or unauthorized access, inviting regulatory penalties and reputational damage.</p>
-            </details>
-            
-            <details class="group cursor-pointer py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Maintenance Overhead</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Platform updates, endpoint changes, or new field introductions routinely break existing connections, requiring emergency patches, downtime, and repeated developer intervention that disrupt business continuity.</p>
-            </details>
+  <div class="flex flex-col md:grid md:grid-cols-2 md:gap-16 px-4 sm:px-0">
+    <!-- LEFT: Real-World Challenges -->
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">
+        Real-World Challenges
+      </h2>
+      <div class="space-y-5 accordion" id="challenges-acc">
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Tool Incompatibility</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Different systems use proprietary APIs, legacy file formats, or no public endpoints at all, resulting in complete isolation of data and processes. This forces manual exports/imports, creates persistent silos, and prevents any real-time or automated interaction between tools.
+          </div>
         </div>
-
-
-        <div>
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Standardized Connectors</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Standardized connectors adapt to varied APIs and formats, ensuring seamless data exchange regardless of underlying system architecture. They support REST, SOAP, webhooks, flat files, and secure screen-based access, normalizing every source into a unified internal schema.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Validation Layers</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Validation layers harmonize entries during transfer, enforcing consistent field mapping, format conversion, and referential integrity across sources. They apply rule-based transformations, de-duplication logic, and fallback reconciliation to deliver clean, reliable datasets.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Optimized Pathways</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Optimized pathways prioritize critical exchanges, implement batching, caching, and parallel processing to maintain sub-second latency under load. Traffic shaping and circuit-breaker patterns prevent cascading failures during peak periods.</p>
-            </details>
-
-            <details class="group cursor-pointer border-b border-slate-700 py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Encryption and Access Controls</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">End-to-end encryption and granular access controls safeguard data in transit and at rest, with token-based authentication, role-based scoping, and full audit logging to meet Indian data protection requirements and enterprise governance standards.</p>
-            </details>
-            
-            <details class="group cursor-pointer py-4">
-                <summary class="flex justify-between items-left text-white font-bold text-xl leading-relaxed">
-                    <h3>Modular Design</h3>
-                    <svg class="w-5 h-5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <p class="text-slate-300 text-left pt-3 text-[15px] pb-2">Modular design allows isolated revisions and hot-swaps of individual connectors without affecting active integrations or requiring downtime. Version-controlled configurations and automated regression testing ensure updates deploy safely and instantaneously.</p>
-            </details>
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Data Inconsistency</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Fields with the same meaning carry different names, formats, or units across tools (e.g., “Cust_ID” vs “contact_id”, DD/MM/YYYY vs MM/DD/YYYY, INR vs ₹), leading to broken links, duplicate records, and downstream calculation errors that undermine trust in outputs.
+          </div>
         </div>
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Performance Lag</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            High transaction volumes or poorly optimized endpoints cause processing queues to back up, introducing multi-second or multi-minute delays that cascade through dependent workflows and violate service-level expectations.
+          </div>
+        </div>
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Security Gaps</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Unencrypted transfers, reused credentials, or overly permissive scopes expose sensitive customer, financial, or compliance data to interception, breaches, or unauthorized access, inviting regulatory penalties and reputational damage.
+          </div>
+        </div>
+        <div class="accordion-item py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Maintenance Overhead</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Platform updates, endpoint changes, or new field introductions routinely break existing connections, requiring emergency patches, downtime, and repeated developer intervention that disrupt business continuity.
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- RIGHT: The Solutions -->
+    <div class="mt-12 md:mt-0">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center md:text-left text-white mb-6">
+        The Solutions
+      </h2>
+      <div class="space-y-5 accordion" id="solutions-acc">
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Standardized Connectors</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Standardized connectors adapt to varied APIs and formats, ensuring seamless data exchange regardless of underlying system architecture. They support REST, SOAP, webhooks, flat files, and secure screen-based access, normalizing every source into a unified internal schema.
+          </div>
+        </div>
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Validation Layers</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Validation layers harmonize entries during transfer, enforcing consistent field mapping, format conversion, and referential integrity across sources. They apply rule-based transformations, de-duplication logic, and fallback reconciliation to deliver clean, reliable datasets.
+          </div>
+        </div>
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Optimized Pathways</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Optimized pathways prioritize critical exchanges, implement batching, caching, and parallel processing to maintain sub-second latency under load. Traffic shaping and circuit-breaker patterns prevent cascading failures during peak periods.
+          </div>
+        </div>
+        <div class="accordion-item border-b border-slate-700 py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Encryption and Access Controls</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            End-to-end encryption and granular access controls safeguard data in transit and at rest, with token-based authentication, role-based scoping, and full audit logging to meet Indian data protection requirements and enterprise governance standards.
+          </div>
+        </div>
+        <div class="accordion-item py-4">
+          <button class="accordion-header flex items-center justify-between text-white font-bold text-xl leading-snug w-full text-left">
+            <span>Modular Design</span>
+            <svg class="w-5 h-5 accordion-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-body hidden pt-3 text-[15px] pb-2 text-slate-300 text-left">
+            Modular design allows isolated revisions and hot-swaps of individual connectors without affecting active integrations or requiring downtime. Version-controlled configurations and automated regression testing ensure updates deploy safely and instantaneously.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-
 <div class="py-16 sm:py-20 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-    
-    <style>
-        /* Define the center point for rotation and the radius */
-        .radial-container {
-            /* Increased radius and size (600px across) to accommodate the central heading */
-            --radius: 300px;
-            position: relative;
-            width: 600px; 
-            height: 600px; 
-            margin: 0 auto;
-            margin-top: 3rem; 
-        }
 
-        .radial-item {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: 0 0;
-            transform: translate(-50%, -50%); /* Center the item */
-        }
-        
-        /* The CSS to position the 6 items in a circle. Each item is rotated by 60 degrees (360/6). */
-        .item-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--radius) * -1)) rotate(0deg); }
-        .item-2 { transform: translate(-50%, -50%) rotate(60deg) translateY(calc(var(--radius) * -1)) rotate(-60deg); }
-        .item-3 { transform: translate(-50%, -50%) rotate(120deg) translateY(calc(var(--radius) * -1)) rotate(-120deg); }
-        .item-4 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(var(--radius) * -1)) rotate(-180deg); }
-        .item-5 { transform: translate(-50%, -50%) rotate(240deg) translateY(calc(var(--radius) * -1)) rotate(-240deg); }
-        .item-6 { transform: translate(-50%, -50%) rotate(300deg) translateY(calc(var(--radius) * -1)) rotate(-300deg); }
-        
-        /* Mobile Fallback: Hide the radial layout on small screens */
-        @media (max-width: 767px) {
-            .radial-container { display: none; }
-        }
-        /* Desktop: Hide the simple grid and show the radial layout */
-        @media (min-width: 768px) {
-            .grid-layout { display: none; }
-        }
+  <!-- Desktop Radial Layout -->
+  <div class="hidden md:block">
+    <div class="radial-container-ci">
+      <div class="center-content-ci">
+        <h2 class="text-4xl font-extrabold text-white">Capabilities</h2>
+      </div>
 
-        /* Tooltip positioning */
-        .tooltip-box {
-            position: absolute;
-            /* Key change: Position at 50% from top (vertical center) and 100% from left (right edge of parent) */
-            top: 50%;
-            left: 100%; 
-            /* Key change: Translate 1rem (spacing) horizontally and -50% vertically (to center the box) */
-            transform: translate(1rem, -50%); 
-            z-index: 10;
-        }
-
-        /* Center Content Styling */
-        .center-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centered both vertically and horizontally */
-            width: 250px; /* Max width for the title */
-            z-index: 5;
-        }
-    </style>
-    
-    ---
-
-    ## 1. Radial Layout (Desktop/Tablet)
-    <div class="hidden md:block"> 
-        <div class="radial-container">
-
-            <div class="center-content">
-                 <h2 class="text-4xl font-extrabold text-white">Capabilities</h2>
-            </div>
-            
-            <div class="group radial-item item-1">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">API</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bridging</span>
-                </div>
-                <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Direct links between platforms for instantaneous data movement.</p>
-                </div>
-            </div>
-
-            <div class="group radial-item item-2">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Event-Driven</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Triggers</span>
-                </div>
-                <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Actions initiate based on system events, like new entries prompting updates.</p>
-                </div>
-            </div>
-
-            <div class="group radial-item item-3">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bidirectional</span>
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Synchronization</span>
-                </div>
-                <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Changes in one tool reflect across connected systems.</p>
-                </div>
-            </div>
-
-            <div class="group radial-item item-4">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Error Handling</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Protocols</span>
-                </div>
-                <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Automatic detection and correction of transfer issues.</p>
-                </div>
-            </div>
-
-            <div class="group radial-item item-5">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Scalability</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layers</span>
-                </div>
-                <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Expansion options for growing data or user loads.</p>
-                </div>
-            </div>
-
-            <div class="group radial-item item-6">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Configuration</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Flexibility</span>
-                </div>
-                <div class="tooltip-box p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">User-defined rules for tailored behaviors.
-</p>
-                </div>
-            </div>
-
+      <div class="group radial-item-ci item-1-ci">
+        <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">API</span>
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bridging</span>
         </div>
-    </div>
-
-    ---
-    
-    ## 2. Grid Layout (Mobile Fallback)
-    <div class="grid-layout md:hidden">
-        <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Capabilities</h2>
-        <div class="grid grid-cols-2 gap-y-12 gap-x-6 justify-items-center">
-
-            <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">API</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bridging</span>
-                </div>
-                <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Direct links between platforms for instantaneous data movement.</p>
-                </div>
-            </div>
-
-            <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Event-Driven</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Triggers</span>
-                </div>
-                <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Actions initiate based on system events, like new entries prompting updates.</p>
-                </div>
-            </div>
-
-            <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bidirectional</span>
-                <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Synchronization</span>
-                </div>
-                <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Changes in one tool reflect across connected systems.</p>
-                </div>
-            </div>
-
-            <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Error Handling</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Protocols</span>
-                </div>
-                <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Automatic detection and correction of transfer issues.</p>
-                </div>
-            </div>
-
-            <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Scalability</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layers</span>
-                </div>
-                <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">Expansion options for growing data or user loads.</p>
-                </div>
-            </div>
-
-            <div class="group relative flex flex-col items-center justify-center">
-                <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Configuration</span>
-                    <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Flexibility</span>
-                </div>
-                <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 
-                            opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible 
-                            w-max max-w-xs text-left">
-                    <p class="text-[15px] text-slate-300">User-defined rules for tailored behaviors.</p>
-                </div>
-            </div>
+        <div class="tooltip-box-ci p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Direct links between platforms for instantaneous data movement.</p>
         </div>
+      </div>
+
+      <div class="group radial-item-ci item-2-ci">
+        <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Event-Driven</span>
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Triggers</span>
+        </div>
+        <div class="tooltip-box-ci p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Actions initiate based on system events, like new entries prompting updates.</p>
+        </div>
+      </div>
+
+      <div class="group radial-item-ci item-3-ci">
+        <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Bidirectional</span>
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Synchronization</span>
+        </div>
+        <div class="tooltip-box-ci p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Changes in one tool reflect across connected systems</p>
+        </div>
+      </div>
+
+      <div class="group radial-item-ci item-4-ci">
+        <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Error Handling</span>
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">protocols</span>
+        </div>
+        <div class="tooltip-box-ci p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Automatic detection and correction of transfer issues.</p>
+        </div>
+      </div>
+
+      <div class="group radial-item-ci item-5-ci">
+        <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Scalability</span>
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Layers</span>
+        </div>
+        <div class="tooltip-box-ci p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Expansion options for growing data or user loads.</p>
+        </div>
+      </div>
+
+      <div class="group radial-item-ci item-6-ci">
+        <div class="w-40 h-40 rounded-full bg-slate-700 group-hover:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700">
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Configuration</span>
+          <span class="text-white group-hover:text-black text-xl font-bold whitespace-nowrap">Flexibility</span>
+        </div>
+        <div class="tooltip-box-ci p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">User-defined rules for tailored behaviors.</p>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Mobile Grid Layout -->
+  <div class="grid-layout-ci md:hidden">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-white">Capabilities</h2>
+    <div class="grid grid-cols-2 tiny:grid-cols-2 gap-y-10 gap-x-4 sm:gap-y-12 sm:gap-x-8 justify-items-center">
+
+      <div class="group group-ci relative flex flex-col items-center justify-center">
+        <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white group-active:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700 group-active:border-slate-700">
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">API</span>
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Bridging</span>
+        </div>
+        <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Direct links between platforms for instantaneous data movement.</p>
+        </div>
+      </div>
+
+      <div class="group group-ci relative flex flex-col items-center justify-center">
+        <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white group-active:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700 group-active:border-slate-700">
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Event-Driven</span>
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Triggers</span>
+        </div>
+        <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Actions initiate based on system events, like new entries prompting updates.</p>
+        </div>
+      </div>
+
+      <div class="group group-ci relative flex flex-col items-center justify-center">
+        <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white group-active:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700 group-active:border-slate-700">
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Bidirectional</span>
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Synchronization</span>
+        </div>
+        <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Changes in one tool reflect across connected systems.</p>
+        </div>
+      </div>
+
+      <div class="group group-ci relative flex flex-col items-center justify-center">
+        <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white group-active:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700 group-active:border-slate-700">
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Error Handling</span>
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Protocols</span>
+        </div>
+        <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Automatic detection and correction of transfer issues.</p>
+        </div>
+      </div>
+
+      <div class="group group-ci relative flex flex-col items-center justify-center">
+        <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white group-active:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700 group-active:border-slate-700">
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Scalability</span>
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Layers</span>
+        </div>
+        <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">Expansion options for growing data or user loads.</p>
+        </div>
+      </div>
+
+      <div class="group group-ci relative flex flex-col items-center justify-center">
+        <div class="circle-responsive cap-circle-mobile rounded-full bg-slate-700 group-hover:bg-white group-active:bg-white transition duration-300 flex flex-col items-center justify-center text-center cursor-default shadow-xl border-4 border-slate-400 group-hover:border-slate-700 group-active:border-slate-700">
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Configuration</span>
+          <span class="text-white group-hover:text-black group-active:text-black text-[17.5px] font-bold whitespace-nowrap">Flexibility</span>
+        </div>
+        <div class="absolute top-full mt-4 z-10 p-5 rounded-xl bg-black shadow-2xl border border-slate-700 opacity-0 invisible transition duration-300 group-hover:opacity-100 group-hover:visible w-max max-w-xs text-left">
+          <p class="text-[15px] text-slate-300">User-defined rules for tailored behaviors.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 
@@ -2889,8 +3003,8 @@
     </div>
 </section>
     </section>
+    </div>
 </section>
-
 
 
 
@@ -4747,20 +4861,11 @@
     history.pushState(state, '', `#${state.currentPage}`);
     window.scrollTo(0, 0);
     closeAllDesktopDropdowns();
-    // --- TRIGGER ANIMATIONS BASED ON PAGE ---
-    if (state.currentPage === 'customintegrations') {
-        // Wait 50ms for the DOM to be ready, then attach listeners
-        setTimeout(initRadialMenu, 50);
-      
-        // Also re-init on resize to handle mobile/desktop switching
-        window.onresize = initRadialMenu;
-    } else {
-        // Clean up resize listener on other pages
-        window.onresize = null;
-    }
-        // --- NEW: Setup accordions after rendering for customer and data workflows ---
-    if (state.currentPage === 'customerworkflows' || state.currentPage === 'dataworkflows') {
-        // Small delay to ensure DOM is updated
+        // --- NO RADIAL MENU ON CUSTOMINTEGRATIONS (function not defined) ---
+    // Removed broken initRadialMenu calls to prevent ReferenceError
+    // If you add radial menu later, re-enable this block
+    // window.onresize = null;  // Optional: clean up any old resize listeners
+              if (state.currentPage === 'customerworkflows' || state.currentPage === 'dataworkflows' || state.currentPage === 'customintegrations') {
         setTimeout(() => {
             setupAccordion('challenges-acc');
             setupAccordion('solutions-acc');
@@ -5720,6 +5825,135 @@ document.addEventListener('DOMContentLoaded', setupMobileTooltipsDW);
 window.addEventListener('resize', setupMobileTooltipsDW);
 </script>
 
+<script>
+// Global function for advanced features tooltips (customintegrations page)
+function setupMobileTooltipsci() {
+  function isNarrowMobile() {
+    return window.innerWidth < 300;
+  }
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
+  let hideTimer = null;
+  let tooltipBox = null;
+
+  if (!isMobile()) return;
+
+  const gridLayout = document.querySelector('.grid-layout-ci');
+  if (!gridLayout) return;
+
+  const cards = Array.from(gridLayout.querySelectorAll('.group-ci'));
+  if (cards.length === 0) return;
+
+  const descriptions = [
+    'Direct links between platforms for instantaneous data movement.',
+    'Actions initiate based on system events, like new entries prompting updates.',
+    'Changes in one tool reflect across connected systems.',
+    'Automatic detection and correction of transfer issues.',
+    'Expansion options for growing data or user loads.',
+    'User-defined rules for tailored behaviors.'
+  ];
+
+  // Always remove hover tooltips, set relative positioning (matches capabilities exactly)
+  cards.forEach(card => {
+    const hoverTip = card.querySelector('.absolute.top-full');
+    if (hoverTip && hoverTip.style.display !== 'none') {
+      // Update tooltip text if needed (but JS will handle show)
+      hoverTip.innerHTML = `<p class="text-[15px] text-slate-300">${descriptions[cards.indexOf(card)]}</p>`;
+    }
+    card.style.position = 'relative';
+    card.classList.remove('active'); // Reset
+  });
+
+  if (isNarrowMobile()) {
+    // Under 300px: Use individual row tooltips on click (exact like capabilities)
+    cards.forEach((card, index) => {
+      const tip = card.querySelector('.absolute.top-full');
+      if (tip) tip.style.display = 'block'; // Show for layout calc
+
+      card.addEventListener('click', () => {
+        // Close others
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        scheduleHide();
+      });
+    });
+    // Hide shared box
+    if (tooltipBox) tooltipBox.style.display = 'none';
+  } else {
+    // 300px+: Shared center tooltip (exact like capabilities)
+cards.forEach(card => {
+  const tip = card.querySelector('.absolute.top-full');
+  if (tip) tip.style.display = 'none'; // FIXED: Hide individual desktop tooltips on mobile
+});
+
+    if (!tooltipBox) {
+      tooltipBox = document.createElement('div');
+      tooltipBox.className = 'mobile-cap-tooltip-ci';
+      tooltipBox.style.display = 'none';
+      tooltipBox.innerHTML = '<p></p>';
+      gridLayout.style.position = 'relative';  // Note: Changed from 'grid' to 'gridLayout' to match your selector
+      gridLayout.appendChild(tooltipBox);
+    }
+
+    function showTop(text) {
+      tooltipBox.style.display = 'flex';
+      tooltipBox.querySelector('p').textContent = text;
+      tooltipBox.style.top = '44%';
+      tooltipBox.style.left = '50%';
+      tooltipBox.style.transform = 'translate(-50%, -50%)';
+    }
+    function showBottom(text) {
+      tooltipBox.style.display = 'flex';
+      tooltipBox.querySelector('p').textContent = text;
+      tooltipBox.style.top = '73.5%';
+      tooltipBox.style.left = '50%';
+      tooltipBox.style.transform = 'translate(-50%, -50%)';
+    }
+
+    cards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const text = descriptions[index];
+        if (index <= 3) {
+          showTop(text);
+        } else {
+          showBottom(text);
+        }
+        scheduleHide();
+      });
+    });
+  }
+
+  // Close tooltip when clicking outside any card (exact like capabilities)
+  document.addEventListener('click', (e) => {
+    const clickedInsideCard = cards.some(card => card.contains(e.target));
+
+    if (!clickedInsideCard) {
+      if (isNarrowMobile()) {
+        cards.forEach(card => card.classList.remove('active'));
+      } else if (tooltipBox) {
+        tooltipBox.style.display = 'none';
+      }
+    }
+  }, true);
+
+  function scheduleHide() {
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      if (isNarrowMobile()) {
+        cards.forEach(card => card.classList.remove('active'));
+      } else if (tooltipBox) {
+        tooltipBox.style.display = 'none';
+      }
+      hideTimer = null;
+    }, 5500);
+  }
+}
+
+// Initial load and resize listeners
+document.addEventListener('DOMContentLoaded', setupMobileTooltipsci);
+window.addEventListener('resize', setupMobileTooltipsci);
+</script>
 
 </body>
 </html>
