@@ -2098,7 +2098,7 @@
             // --- SOPs & Training Page (Simplified content for brevity, maintaining style) ---
             sopstraining: () => `
                 <section class="bg-black text-white">
-    
+    <div class="px-6"> 
     <!-- HERO SECTION -->
     <section class="bg-black text-white pt-16 sm:pt-20 pb-12 sm:pb-20 md:pt-20 md:pb-24 rounded-b-xl shadow-2xl relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
@@ -2152,7 +2152,7 @@
     </section>
 
     <!-- SECTION 1: WHAT ARE SOPs -->
-    <section id="what-are-sops" class="bg-slate-800 py-16 sm:py-24 border-b border-slate-800">
+    <section id="what-are-sops" class="bg-black py-16 sm:py-24">
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="text-3xl sm:text-4xl text-center font-bold text-white mb-2">What Are SOPs & Why They Matter</h2>
 
@@ -2161,8 +2161,9 @@
                     Standard Operating Procedures (SOPs) are step-by-step instructions that document how critical business processes should be executed. For AI automation, SOPs serve two critical functions: they ensure consistency across your team, and they create a knowledge base so your business doesn't depend on one person.
                 </p>
 
-                <div class="bg-slate-800 border border-slate-700 rounded-lg p-6 sm:p-8 my-8">
+                <div class="bg-black p-6 sm:p-8 my-8">
                     <h3 class="text-xl font-semibold text-center text-white mb-6">Why SOPs Matter</h3>
+                    <div class="px-12">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="flex gap-4">
                             <div class="flex-shrink-0">
@@ -2210,6 +2211,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
                 <p class="text-base sm:text-lg leading-relaxed">
                     Traditional SOPs often fail because they're generic templates, quickly outdated, and disconnected from actual workflow. At Axiosky, we build SOPs that are custom to your business, integrated with your AI workflows, and treated as living documents that evolve with your operations.
@@ -2348,7 +2350,7 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-2">Key SOP Frameworks</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <!-- SOP 1 -->
-                <div class="bg-black rounded-lg p-6 border border-slate-700 hover:border-indigo-500 transition">
+                <div class="bg-black rounded-lg p-6 sm hover:border-indigo-500 transition">
                     <h3 class="text-xl font-bold text-white mb-3">Workflow Onboarding & Setup</h3>
                     <p class="text-slate-300 text-sm mb-4">
                         Step-by-step instructions for how your team sets up new AI workflows. Includes pre-launch checklist, system configuration, data mapping, testing protocols, and sign-off procedures.
@@ -2362,7 +2364,7 @@
                 </div>
 
                 <!-- SOP 2 -->
-               <div class="bg-black rounded-lg p-6 border border-slate-700 hover:border-indigo-500 transition flex flex-col">
+               <div class="bg-black rounded-lg p-6 sm:hover:border-indigo-500 transition flex flex-col">
 
                     <h3 class="text-xl font-bold text-white mb-3">Daily Operations & Monitoring</h3>
                     <p class="text-slate-300 text-sm mb-4">
@@ -2380,7 +2382,7 @@
                 </div>
 
                 <!-- SOP 3 -->
-                <div class="bg-black rounded-lg p-6 border border-slate-700 hover:border-indigo-500 transition">
+                <div class="bg-black rounded-lg p-6 sm:hover:border-indigo-500 transition">
                     <h3 class="text-xl font-bold text-white mb-3">Exception Handling & Escalation</h3>
                     <p class="text-slate-300 text-sm mb-4">
                         What to do when a workflow encounters an exception or edge case that requires human intervention. Includes decision trees, escalation paths, and resolution procedures.
@@ -2395,7 +2397,7 @@
                 </div>
 
                 <!-- SOP 4 -->
-                <div class="bg-black rounded-lg p-6 border border-slate-700 hover:border-indigo-500 transition">
+                <div class="bg-black rounded-lg p-6 sm:hover:border-indigo-500 transition">
                     <h3 class="text-xl font-bold text-white mb-3">Data Integration & Validation</h3>
                     <p class="text-slate-300 text-sm mb-4">
                         How to integrate new data sources (CRM, ERP, WhatsApp, email) into your workflows. Includes pre-integration checks, data mapping, and quality validation.
@@ -2410,7 +2412,7 @@
                 </div>
 
                 <!-- SOP 5 -->
-                <div class="bg-black rounded-lg p-6 border border-slate-700 hover:border-indigo-500 transition">
+                <div class="bg-black rounded-lg p-6 sm:hover:border-indigo-500 transition">
                     <h3 class="text-xl font-bold text-white mb-3">Performance Optimization</h3>
                     <p class="text-slate-300 text-sm mb-4">
                         How to review workflow performance metrics, identify optimization opportunities, and implement improvements. Monthly cadence for measuring accuracy, speed, and ROI.
@@ -2425,7 +2427,7 @@
                 </div>
 
                 <!-- SOP 6 -->
-                <div class="bg-black rounded-lg p-6 border border-slate-700 hover:border-indigo-500 transition">
+                <div class="bg-black rounded-lg p-6 sm:hover:border-indigo-500 transition">
                     <h3 class="text-xl font-bold text-white mb-3">Security & Compliance</h3>
                     <p class="text-slate-300 text-sm mb-4">
                         How your team handles sensitive data, maintains audit trails, and ensures compliance with Indian data protection regulations. Includes access control and incident response.
@@ -2449,7 +2451,7 @@
 
             <div class="space-y-4">
                 <!-- FAQ 1 -->
-                <details class="bg-black rounded-lg border border-slate-700 p-6 group cursor-pointer">
+                <details class="bg-black p-6 group cursor-pointer">
                     <summary class="flex items-center justify-between font-semibold text-white">
                         <span>How long does the full training process take?</span>
                         <svg class="w-5 h-5 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -2460,7 +2462,7 @@
                 </details>
 
                 <!-- FAQ 2 -->
-                <details class="bg-black rounded-lg border border-slate-700 p-6 group cursor-pointer">
+                <details class="bg-black p-6 group cursor-pointer">
                     <summary class="flex items-center justify-between font-semibold text-white">
                         <span>What if my team has limited technical background?</span>
                         <svg class="w-5 h-5 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -2471,7 +2473,7 @@
                 </details>
 
                 <!-- FAQ 3 -->
-                <details class="bg-black rounded-lg border border-slate-700 p-6 group cursor-pointer">
+                <details class="bg-black p-6 group cursor-pointer">
                     <summary class="flex items-center justify-between font-semibold text-white">
                         <span>Do you provide the SOPs as downloadable documents?</span>
                         <svg class="w-5 h-5 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -2482,7 +2484,7 @@
                 </details>
 
                 <!-- FAQ 4 -->
-                <details class="bg-black rounded-lg border border-slate-700 p-6 group cursor-pointer">
+                <details class="bg-black p-6 group cursor-pointer">
                     <summary class="flex items-center justify-between font-semibold text-white">
                         <span>What happens if someone joins my team after implementation?</span>
                         <svg class="w-5 h-5 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -2493,7 +2495,7 @@
                 </details>
 
                 <!-- FAQ 5 -->
-                <details class="bg-black rounded-lg border border-slate-700 p-6 group cursor-pointer">
+                <details class="bg-black p-6 group cursor-pointer">
                     <summary class="flex items-center justify-between font-semibold text-white">
                         <span>How often do SOPs need to be updated?</span>
                         <svg class="w-5 h-5 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -2504,7 +2506,7 @@
                 </details>
 
                 <!-- FAQ 6 -->
-                <details class="bg-black rounded-lg border border-slate-700 p-6 group cursor-pointer">
+                <details class="bg-black p-6 group cursor-pointer">
                     <summary class="flex items-center justify-between font-semibold text-white">
                         <span>Is training available for my entire company, or just the implementation team?</span>
                         <svg class="w-5 h-5 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
