@@ -88,60 +88,12 @@
                 <a href="#" class="btn btn-secondary">Download Reference Architecture</a>
             </div>
         </div>
-
-        <!-- Hero Diagram Placeholder -->
-        <div class="hero-diagram">
-            <div class="diagram-box">
-                <p class="diagram-label">Agents</p>
-            </div>
-            <div class="diagram-arrow">→</div>
-            <div class="diagram-box diagram-box-primary">
-                <p class="diagram-label">Axiosky Governor</p>
-                <p class="diagram-sublabel">(Interception)</p>
-            </div>
-            <div class="diagram-arrow">→</div>
-            <div class="diagram-box">
-                <p class="diagram-label">Enterprise Systems</p>
-                <p class="diagram-sublabel">+ Audit Ledger</p>
-            </div>
-        </div>
-        <p class="diagram-caption">Every agent action passes through deterministic policy enforcement before execution.</p>
     </section>
 
     <!-- Enforcement Flow -->
     <section class="enforcement-flow">
         <h2 class="section-title">Enforcement Flow</h2>
-        <div class="flow-container">
-            <div class="flow-step">
-                <div class="flow-number">1</div>
-                <p class="flow-text">Agent proposes action</p>
-            </div>
-            <div class="flow-connector">↓</div>
-            <div class="flow-step">
-                <div class="flow-number">2</div>
-                <p class="flow-text">Governor intercepts</p>
-            </div>
-            <div class="flow-connector">↓</div>
-            <div class="flow-step">
-                <div class="flow-number">3</div>
-                <p class="flow-text">Policy Engine evaluates ruleset</p>
-            </div>
-            <div class="flow-connector">↓</div>
-            <div class="flow-step">
-                <div class="flow-number">4</div>
-                <p class="flow-text">Decision: allow / block / escalate</p>
-            </div>
-            <div class="flow-connector">↓</div>
-            <div class="flow-step">
-                <div class="flow-number">5</div>
-                <p class="flow-text">Immutable audit record written</p>
-            </div>
-            <div class="flow-connector">↓</div>
-            <div class="flow-step">
-                <div class="flow-number">6</div>
-                <p class="flow-text">Action executes (or stops)</p>
-            </div>
-        </div>
+        
     </section>
 
     <!-- THE PROBLEM Section -->
@@ -162,10 +114,6 @@
                     <h3 class="problem-title">Operational fragility</h3>
                     <p class="problem-description">Uncoordinated agents cascade failures. Small mistakes become system-wide incidents and force expensive manual rollbacks.</p>
                 </div>
-            </div>
-            
-            <div class="section-cta">
-                <a href="#approach" class="link-action">See how it works →</a>
             </div>
         </div>
     </section>
@@ -189,10 +137,6 @@
                     <h3 class="approach-title">Immutable Audit</h3>
                     <p class="approach-description">Every decision (approve / deny / escalate) is logged with lineage: agent, policy version, rule, and data — queryable and exportable for review.</p>
                 </div>
-            </div>
-            
-            <div class="section-cta">
-                <a href="pages/platform/governor.html" class="link-action">Explore the platform →</a>
             </div>
         </div>
     </section>
@@ -219,13 +163,12 @@
                     <a href="pages/platform/orchestrator.html" class="feature-link">Learn more →</a>
                 </div>
                 <div class="feature-card">
-                    <h3 class="feature-title">Workforce Modules</h3>
-                    <p class="feature-description">Domain bundles (agents + policies + orchestration) for outcomes like procurement, reconciliation, and compliance, packaged for piloting.</p>
-                    <a href="#" class="feature-link">Learn more →</a>
+                    <h3 class="feature-title">Security</h3>
+                    <p class="feature-description">Every decision is auditable.</p>
+                    <a href="pages/platform/security.html" class="feature-link">Learn more →</a>
                 </div>
             </div>
             
-            <p class="feature-note">Everything routes through the Governor — no direct agent → world paths.</p>
         </div>
     </section>
 
