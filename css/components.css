@@ -61,7 +61,7 @@
   color: #343a40 !important; /* black text */
   padding: 5px 10px;
   font-weight: bold;
-  font-size: 14px; /* smaller text */
+  font-size: 16px; /* mdaller text */
   line-height: 1.2; /* vertically center */
   text-transform: none; /* not uppercase */
   cursor: pointer;
@@ -93,7 +93,7 @@
   content: "→";
   position: absolute;
   opacity: 0;
-  font-size: 16px; /* smaller, shorter arrow */
+  font-size: 16px; /* mdaller, shorter arrow */
   font-weight: 600; /* bolder stroke */
   color: #343a40 !important;
   line-height: 40px;
@@ -132,7 +132,7 @@
   padding: 10px 22px;
   border-radius: 8px;
   font-family: var(--font-subheading);
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   font-weight: var(--weight-semibold);
   border: none;
   cursor: pointer;
@@ -165,16 +165,16 @@
   border-color: rgba(148, 163, 184, 0.7);
 }
 
-.btn-secondary-small {
+.btn-secondary-mdall {
   padding: 8px 16px;
   border-radius: 999px;
-  font-size: var(--size-xs);
+  font-size: var(--size-md);
   background: rgba(15, 23, 42, 0.8);
   color: var(--text-primary);
   border: 1px solid rgba(148, 163, 184, 0.5);
 }
 
-.btn-secondary-small:hover {
+.btn-secondary-mdall:hover {
   background: rgba(15, 23, 42, 1);
 }
 
@@ -262,7 +262,7 @@
   border-radius: var(--radius-md);
   background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
   border: 1px solid rgba(148, 163, 184, 0.28);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 /* Who Section: Split-Panel Layout */
@@ -316,10 +316,21 @@
   padding: 1.5rem;
   border: 1px solid rgba(148, 163, 184, 0.1);
   border-radius: 0.5rem;
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   color: var(--text-secondary);
 }
 
+.who-link {
+  display: inline-flex;
+  margin-top: var(--space-12);
+  font-size: var(--size-md);
+  color: var(--accent-cobalt);
+  text-decoration: none;
+}
+
+.who-link:hover {
+  color: var(--accent-blue-light);
+}
 /* Features Grid: 2x2 Plus Layout */
 .features-grid {
   display: grid;
@@ -331,7 +342,6 @@
 
 .feature-card {
   padding: 2.5rem;           /* p-10 for more space in the quadrant */
-  background-color: #0f172a; /* Solid Slate 900 */
   border: none;              /* Reset default borders */
   display: flex;
   flex-direction: column;
@@ -425,14 +435,14 @@
 .feature-description,
 .who-description,
 .difference-point-text {
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   color: var(--text-secondary);
 }
 
 .feature-link {
   display: inline-flex;
   margin-top: var(--space-12);
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   color: var(--accent-cobalt);
   text-decoration: none;
 }
@@ -445,7 +455,7 @@
 
 .who-tagline {
   margin-top: var(--space-20);
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   color: var(--text-secondary);
 }
 
@@ -463,8 +473,8 @@
 }
 
 .proof-microcopy {
+  text-align: center;
    margin-top: var(--space-20);
-  font-size: var(--size-sm);
   color: var(--text-secondary);
 }
 
@@ -553,7 +563,7 @@
 
 
 .footer-title {
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-secondary);
@@ -568,7 +578,7 @@
 }
 
 .footer-links a {
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   color: var(--text-secondary);
   text-decoration: none;
 }
@@ -578,7 +588,7 @@
 }
 
 .footer-text {
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   color: var(--text-secondary);
 }
 
@@ -590,7 +600,7 @@
 
 
 .footer-bottom p {
-  font-size: var(--size-xs);
+  font-size: var(--size-md);
   color: var(--text-secondary);
 }
 
@@ -641,7 +651,7 @@
   padding: var(--space-12) var(--space-20);
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: var(--size-sm);
+  font-size: var(--size-md);
   font-weight: var(--weight-medium);
   border-bottom: 1px solid rgba(148, 163, 184, 0.08);
   transition: all var(--duration-fast) var(--ease-out);
@@ -667,7 +677,7 @@
 }
 
 .governor-hero .eyebrow {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #21898d;
     text-transform: uppercase;

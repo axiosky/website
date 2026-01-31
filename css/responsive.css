@@ -50,7 +50,7 @@
 
   .btn {
     padding: 8px 16px;
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 
   /* Section spacing */
@@ -112,7 +112,7 @@
 @media (max-width: 480px) {
   /* Base font adjustments */
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   body {
@@ -125,7 +125,7 @@
   }
 
   .logo-img {
-    height: 24px;
+    height: 56px;
   }
 
   .nav-menu {
@@ -134,7 +134,7 @@
   }
 
   .nav-link {
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 
   /* Hero */
@@ -148,11 +148,11 @@
   }
 
   .hero-subheadline {
-    font-size: var(--size-sm);
+    font-size: var(--size-md);
   }
 
   .hero-paragraph {
-    font-size: var(--size-sm);
+    font-size: var(--size-md);
   }
 
   .hero-ctas {
@@ -162,7 +162,7 @@
 
   .btn {
     padding: 10px 16px;
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
     width: 100%;
   }
 
@@ -181,7 +181,7 @@
   }
 
   .section-subtitle {
-    font-size: var(--size-sm);
+    font-size: var(--size-md);
     margin-bottom: var(--space-20);
   }
 
@@ -256,15 +256,15 @@
   }
 
   .footer-title {
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 
   .footer-links a {
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 
   .diagram-caption {
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 
   /* Conversion */
@@ -278,19 +278,16 @@
 
   /* Feature note */
   .feature-note {
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 
   /* Who tagline */
   .who-tagline {
-    font-size: var(--size-xs);
+    font-size: var(--size-md);
   }
 }
 
-   .proof-microcopy {
-    font-size: var(--size-xs);
-   }
-   
+
 /* ===== LANDSCAPE ADJUSTMENTS ===== */
 
 @media (max-height: 600px) and (orientation: landscape) {
