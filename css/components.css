@@ -463,12 +463,8 @@
 }
 
 .proof-microcopy {
-  text-align: center;
-  margin-top: 1rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  border-radius: 0.5rem;
-  font-size: var(--size-xs);
+   margin-top: var(--space-20);
+  font-size: var(--size-sm);
   color: var(--text-secondary);
 }
 
