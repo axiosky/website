@@ -91,19 +91,6 @@
   }
 }
 
-  /* Engagement flow */
-  .engagement-flow {
-    grid-template-columns: 1fr;
-    gap: var(--space-12);
-  }
-
-  .engagement-connector {
-    display: block;
-    text-align: center;
-    padding: var(--space-4) 0;
-    color: var(--accent-cobalt);
-    font-size: var(--size-lg);
-  }
 
   /* Footer */
   .footer-container {
@@ -257,23 +244,6 @@
     flex-shrink: 0;
   }
 
-  /* Engagement flow */
-  .engagement-flow {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
-  .engagement-step {
-    padding: var(--space-16);
-  }
-
-  .engagement-title {
-    font-size: var(--size-sm);
-  }
-
-  .engagement-text {
-    font-size: var(--size-xs);
-  }
 
   /* Footer */
   .footer-container {
@@ -306,10 +276,6 @@
     width: 100%;
   }
 
-  .trust-note {
-    font-size: var(--size-xs);
-  }
-
   /* Feature note */
   .feature-note {
     font-size: var(--size-xs);
@@ -321,6 +287,10 @@
   }
 }
 
+   .proof-microcopy {
+    font-size: var(--size-xs);
+   }
+   
 /* ===== LANDSCAPE ADJUSTMENTS ===== */
 
 @media (max-height: 600px) and (orientation: landscape) {

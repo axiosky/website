@@ -464,50 +464,14 @@
 
 .proof-microcopy {
   text-align: center;
-}
-/* ===== ENGAGEMENT FLOW ===== */
-
-.engagement-flow {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-16);
-  align-items: stretch;
-  margin-top: var(--space-32);
-}
-
-.engagement-step {
-  padding: var(--space-20);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 1));
-}
-
-.engagement-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  font-size: var(--size-xs);
-  color: var(--text-secondary);
-  margin-bottom: var(--space-8);
-}
-
-.engagement-title {
-  font-size: var(--size-base);
-  margin-bottom: var(--space-4);
-}
-
-.engagement-text {
+  margin-top: 4rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.5rem;
   font-size: var(--size-sm);
   color: var(--text-secondary);
 }
 
-.engagement-connector {
-  display: none; /* handled visually by grid; connectors not needed on desktop */
-}
 
 /* ===== CONVERSION SECTION ===== */
 
@@ -519,12 +483,6 @@
   margin-top: var(--space-24);
 }
 
-.trust-note {
-  margin-top: var(--space-16);
-  font-size: var(--size-sm);
-  color: var(--text-secondary);
-  text-align: center;
-}
 
 /* ===== FOOTER ===== */
 
