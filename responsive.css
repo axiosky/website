@@ -287,6 +287,10 @@
   }
 }
 
+   .proof-microcopy {
+    font-size: var(--size-xs);
+   }
+   
 /* ===== LANDSCAPE ADJUSTMENTS ===== */
 
 @media (max-height: 600px) and (orientation: landscape) {
