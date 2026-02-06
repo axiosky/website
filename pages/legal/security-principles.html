@@ -9,12 +9,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Stylesheets -->
+<!-- Stylesheets -->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/components.css">
-    <link rel="stylesheet" href="../../css/pages.css">
     <link rel="stylesheet" href="../../css/responsive.css">
-    <link rel="stylesheet" href="../../css/security-principles.css">
+    <link rel="stylesheet" href="../../css/legal.css">
 
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 </head>
@@ -68,13 +67,9 @@
     <div class="legal-container">
         <!-- SIDEBAR NAVIGATION -->
         <aside class="legal-sidebar">
-            <div class="sidebar-header">
-                <h3>Legal</h3>
-                <p class="sidebar-subtext">Axiosky governance, terms, and policies.</p>
-            </div>
             <nav>
                 <ul class="sidebar-nav">
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="tos.html">Terms of Service</a></li>
                     <li><a href="aup.html">Acceptable Use Policy</a></li>
                     <li><a href="dpa.html">Data Processing Agreement</a></li>
@@ -83,592 +78,87 @@
             </nav>
         </aside>
 
-        <!-- MAIN CONTENT -->
-        <main class="legal-main">
-            <div class="legal-header">
-                <h1>Security Principles</h1>
-                <div class="legal-meta">
-                    <div class="legal-meta-item">
-                        <span>Last Updated:</span>
-                        <strong>January 18, 2026</strong>
-                    </div>
-                    <div class="legal-meta-item">
-                        <span>Effective Date:</span>
-                        <strong>January 18, 2026</strong>
-                    </div>
-                </div>
+<main class="legal-main">
+    <div class="legal-header">
+        <h1>Security Principles</h1>
+        <div class="legal-meta">
+            <div class="legal-meta-item">
+                <span>Last Updated:</span>
+                <strong>05 February 2026</strong>
             </div>
-
-            <!-- TABLE OF CONTENTS -->
-            <div class="table-of-contents">
-                <h3>Contents</h3>
-                <ul>
-                    <li><a href="#introduction">1. Introduction and Commitment</a></li>
-                    <li><a href="#governance">2. Security Governance Framework</a></li>
-                    <li><a href="#data-protection">3. Data Protection</a></li>
-                    <li><a href="#access-controls">4. Access Controls</a></li>
-                    <li><a href="#infrastructure">5. Network and Infrastructure Security</a></li>
-                    <li><a href="#incident-response">6. Incident Response</a></li>
-                    <li><a href="#vulnerability">7. Vulnerability Management</a></li>
-                    <li><a href="#personnel">8. Personnel and Partner Security</a></li>
-                    <li><a href="#third-party">9. Third-Party Risk Management</a></li>
-                    <li><a href="#compliance">10. Compliance and Certifications</a></li>
-                    <li><a href="#continuous-improvement">11. Continuous Improvement</a></li>
-                    <li><a href="#contact">12. Security Contact and Reporting</a></li>
-                </ul>
-            </div>
-
-            <div class="legal-content">
-                <!-- INTRODUCTION -->
-                <div id="introduction" class="section">
-                    <h2>1. Introduction and Commitment</h2>
-
-                    <h3>1.1 Security Philosophy</h3>
-                    <p>Axiosky is committed to maintaining the highest standards of information security and data protection. Security is a foundational principle embedded throughout our organization, infrastructure, and operational processes. We believe that robust security builds customer trust and enables organizations to deploy governance and autonomous agents with confidence.</p>
-
-                    <h3>1.2 Scope</h3>
-                    <p>These Security Principles apply to:</p>
-                    <ul>
-                        <li>The Axiosky governance control plane platform (Governor, Policy Engine, Orchestrator)</li>
-                        <li>All deployment models (cloud, on-premises, air-gapped, hybrid)</li>
-                        <li>Customer data handling and protection</li>
-                        <li>Axiosky employees, contractors, and service providers</li>
-                        <li>All systems and infrastructure supporting customer services</li>
-                    </ul>
-
-                    <h3>1.3 Commitment to Continuous Security</h3>
-                    <p>Security is not static. Axiosky commits to:</p>
-                    <ul>
-                        <li>Monitoring emerging threats and attack vectors</li>
-                        <li>Regularly updating security controls and practices</li>
-                        <li>Investing in security research and innovation</li>
-                        <li>Maintaining transparency with customers about security practices</li>
-                        <li>Responding promptly to security incidents and vulnerabilities</li>
-                    </ul>
-                </div>
-
-                <!-- GOVERNANCE FRAMEWORK -->
-                <div id="governance" class="section">
-                    <h2>2. Security Governance Framework</h2>
-
-                    <h3>2.1 Risk Management</h3>
-                    <p>Axiosky maintains a comprehensive risk management program that includes:</p>
-                    <ul>
-                        <li><strong>Risk Assessment:</strong> Regular identification and evaluation of security, operational, and compliance risks</li>
-                        <li><strong>Risk Mitigation:</strong> Implementation of controls to reduce risk to acceptable levels</li>
-                        <li><strong>Risk Monitoring:</strong> Continuous monitoring of risk exposure and control effectiveness</li>
-                        <li><strong>Risk Reporting:</strong> Regular reporting to leadership and customers on risk status</li>
-                    </ul>
-
-                    <h3>2.2 Compliance Framework</h3>
-                    <p>Axiosky maintains compliance with multiple security and data protection standards:</p>
-                    <div class="cert-badge">SOC 2 Type II</div>
-                    <div class="cert-badge">GDPR Compliant</div>
-                    <div class="cert-badge">ISO 27001 (Pursuing)</div>
-                    <div class="cert-badge">HIPAA Ready</div>
-                    <div class="cert-badge">FedRAMP In-Process</div>
-
-                    <h3>2.3 Security Organization</h3>
-                    <p>Security leadership and accountability:</p>
-                    <ul>
-                        <li><strong>Chief Information Security Officer (CISO):</strong> Responsible for security strategy and oversight</li>
-                        <li><strong>Security Team:</strong> Dedicated personnel managing ongoing security operations</li>
-                        <li><strong>Incident Response Team:</strong> On-call 24/7 for security incident detection and response</li>
-                        <li><strong>Board Oversight:</strong> Regular security reporting to executive leadership</li>
-                    </ul>
-
-                    <h3>2.4 Third-Party Audits and Assessments</h3>
-                    <p>Axiosky undergoes regular independent security assessments:</p>
-                    <ul>
-                        <li><strong>Annual SOC 2 Type II Audits:</strong> Third-party verification of security, availability, and confidentiality controls</li>
-                        <li><strong>Penetration Testing:</strong> Annual testing by external security firms</li>
-                        <li><strong>Vulnerability Assessments:</strong> Regular scanning and assessment by independent evaluators</li>
-                        <li><strong>Security Reviews:</strong> Periodic customer audits and compliance assessments</li>
-                    </ul>
-                </div>
-
-                <!-- DATA PROTECTION -->
-                <div id="data-protection" class="section">
-                    <h2>3. Data Protection</h2>
-
-                    <h3>3.1 Encryption in Transit</h3>
-                    <p>All data in transit is protected using industry-leading encryption:</p>
-                    <ul>
-                        <li><strong>TLS 1.3+:</strong> All connections between clients and Axiosky services use TLS 1.3 or higher</li>
-                        <li><strong>Certificate Management:</strong> Valid SSL/TLS certificates with annual renewal and monitoring</li>
-                        <li><strong>Perfect Forward Secrecy (PFS):</strong> Ephemeral key exchange to prevent compromise of past sessions</li>
-                        <li><strong>Minimum Key Strength:</strong> 256-bit encryption for all sensitive data transfers</li>
-                    </ul>
-
-                    <h3>3.2 Encryption at Rest</h3>
-                    <p>Customer data stored on Axiosky systems is protected with encryption:</p>
-                    <ul>
-                        <li><strong>AES-256 Encryption:</strong> Industry-standard symmetric encryption for data at rest</li>
-                        <li><strong>Key Management:</strong> Encryption keys managed securely with role-based access controls</li>
-                        <li><strong>Multi-Region Encryption:</strong> Encryption applied consistently across all storage regions</li>
-                        <li><strong>Database Encryption:</strong> Transparent data encryption (TDE) for all databases</li>
-                    </ul>
-
-                    <h3>3.3 Encryption Key Management</h3>
-                    <p>Axiosky implements secure key management practices:</p>
-                    <ul>
-                        <li><strong>Separate Key Storage:</strong> Encryption keys stored separately from encrypted data</li>
-                        <li><strong>Hardware Security Modules (HSMs):</strong> Customer-controlled keys available in cloud deployments</li>
-                        <li><strong>Key Rotation:</strong> Regular rotation of encryption keys per industry standards</li>
-                        <li><strong>Access Logging:</strong> All key access logged and monitored for unauthorized use</li>
-                    </ul>
-
-                    <h3>3.4 Data Pseudonymization and Anonymization</h3>
-                    <p>Where appropriate, Axiosky implements data protection techniques:</p>
-                    <ul>
-                        <li><strong>Pseudonymization:</strong> Personal identifiers replaced with pseudonyms for analytics and testing</li>
-                        <li><strong>Anonymization:</strong> Permanent removal of identifiers from aggregated data</li>
-                        <li><strong>Tokenization:</strong> Sensitive data replaced with non-sensitive tokens in testing environments</li>
-                    </ul>
-
-                    <h3>3.5 Data Retention and Secure Deletion</h3>
-                    <p>Data is retained only for necessary periods and securely deleted:</p>
-                    <ul>
-                        <li><strong>Retention Policies:</strong> Data deleted after configured retention periods or customer request</li>
-                        <li><strong>Secure Wipe:</strong> Cryptographic erasure or multiple-pass overwrite to prevent recovery</li>
-                        <li><strong>Backup Deletion:</strong> Data removed from all backups and archives per retention schedules</li>
-                        <li><strong>Destruction Certificate:</strong> Available upon request, certifying secure deletion</li>
-                    </ul>
-                </div>
-
-                <!-- ACCESS CONTROLS -->
-                <div id="access-controls" class="section">
-                    <h2>4. Access Controls</h2>
-
-                    <h3>4.1 Role-Based Access Control (RBAC)</h3>
-                    <p>Axiosky implements granular access control based on roles and responsibilities:</p>
-                    <ul>
-                        <li><strong>Defined Roles:</strong> Specific job functions with corresponding permissions</li>
-                        <li><strong>Least Privilege:</strong> Users granted minimum permissions necessary for their role</li>
-                        <li><strong>Separation of Duties:</strong> Critical functions split among multiple individuals</li>
-                        <li><strong>Regular Reviews:</strong> Quarterly audits of access permissions for appropriateness</li>
-                    </ul>
-
-                    <h3>4.2 Multi-Factor Authentication (MFA)</h3>
-                    <p>Strong authentication protects against unauthorized access:</p>
-                    <ul>
-                        <li><strong>Mandatory for Admin Access:</strong> MFA required for all administrative and privileged access</li>
-                        <li><strong>Customer Portal MFA:</strong> Available for customer account protection</li>
-                        <li><strong>Multiple Methods:</strong> Support for TOTP, hardware keys, and authenticator apps</li>
-                        <li><strong>Backup Codes:</strong> Secure backup authentication methods</li>
-                    </ul>
-
-                    <h3>4.3 Single Sign-On (SSO) and Identity Federation</h3>
-                    <p>Enterprise identity management capabilities:</p>
-                    <ul>
-                        <li><strong>SAML 2.0 Support:</strong> Integration with enterprise identity providers (Okta, Azure AD, etc.)</li>
-                        <li><strong>OAuth 2.0/OpenID Connect:</strong> Modern identity protocols for API authentication</li>
-                        <li><strong>Centralized Authentication:</strong> Reduces password management and enables consistent security policies</li>
-                    </ul>
-
-                    <h3>4.4 API Key and Token Management</h3>
-                    <p>Secure handling of API credentials:</p>
-                    <ul>
-                        <li><strong>Secure Generation:</strong> Cryptographically secure random generation of all tokens</li>
-                        <li><strong>Token Rotation:</strong> Support for automatic token rotation and expiration</li>
-                        <li><strong>Scope Limitations:</strong> Tokens scoped to specific resources and operations</li>
-                        <li><strong>Revocation:</strong> Immediate revocation of compromised or unused tokens</li>
-                    </ul>
-
-                    <h3>4.5 Session Management</h3>
-                    <p>Secure handling of user sessions:</p>
-                    <ul>
-                        <li><strong>Session Timeouts:</strong> Automatic session termination after inactivity</li>
-                        <li><strong>Secure Cookies:</strong> HttpOnly and Secure flags prevent unauthorized access</li>
-                        <li><strong>CSRF Protection:</strong> Cross-site request forgery tokens prevent unauthorized actions</li>
-                        <li><strong>Session Invalidation:</strong> Logout invalidates all session tokens immediately</li>
-                    </ul>
-                </div>
-
-                <!-- INFRASTRUCTURE -->
-                <div id="infrastructure" class="section">
-                    <h2>5. Network and Infrastructure Security</h2>
-
-                    <h3>5.1 Network Perimeter Security</h3>
-                    <p>Multiple layers of network protection:</p>
-                    <ul>
-                        <li><strong>Firewalls:</strong> Stateful firewalls restrict inbound and outbound traffic to authorized ports and protocols</li>
-                        <li><strong>DDoS Protection:</strong> Multi-layered DDoS mitigation to prevent service disruption</li>
-                        <li><strong>Web Application Firewall (WAF):</strong> Application-level threat detection and blocking</li>
-                        <li><strong>Rate Limiting:</strong> API rate limiting prevents brute force and resource exhaustion attacks</li>
-                    </ul>
-
-                    <h3>5.2 Intrusion Detection and Prevention</h3>
-                    <p>Active monitoring and response to threats:</p>
-                    <ul>
-                        <li><strong>Network Monitoring:</strong> Continuous monitoring of network traffic for anomalies</li>
-                        <li><strong>Intrusion Detection Systems (IDS):</strong> Signature and anomaly-based threat detection</li>
-                        <li><strong>Automated Response:</strong> Automatic blocking of suspicious traffic patterns</li>
-                        <li><strong>Alert Escalation:</strong> Critical alerts immediately escalated to security team</li>
-                    </ul>
-
-                    <h3>5.3 Cloud Infrastructure Security</h3>
-                    <p>Security in cloud deployment models:</p>
-                    <ul>
-                        <li><strong>Cloud Provider Trust:</strong> Partnerships with AWS, Google Cloud, Azure with verified security practices</li>
-                        <li><strong>VPC/Network Isolation:</strong> Dedicated virtual networks with no cross-customer traffic</li>
-                        <li><strong>Security Groups/NACLs:</strong> Network access control lists restrict traffic to authorized sources</li>
-                        <li><strong>Compliance Audits:</strong> Regular audits of cloud provider compliance and controls</li>
-                    </ul>
-
-                    <h3>5.4 On-Premises and Air-Gapped Deployments</h3>
-                    <p>Security for self-hosted and isolated environments:</p>
-                    <ul>
-                        <li><strong>Deployment Guidance:</strong> Security hardening guidelines for on-premises installations</li>
-                        <li><strong>Network Segmentation:</strong> Recommendations for network isolation and firewall configuration</li>
-                        <li><strong>Air-Gap Capability:</strong> Full functionality available without internet connectivity</li>
-                        <li><strong>License Management:</strong> Offline license validation without external connectivity</li>
-                    </ul>
-
-                    <h3>5.5 Data Center Security</h3>
-                    <p>Physical security of infrastructure:</p>
-                    <ul>
-                        <li><strong>SOC 2 Compliance:</strong> Cloud providers meet SOC 2 Type II physical security requirements</li>
-                        <li><strong>Access Controls:</strong> Biometric and badge-based access to secure facilities</li>
-                        <li><strong>Video Surveillance:</strong> Continuous monitoring of critical areas</li>
-                        <li><strong>Environmental Controls:</strong> Fire suppression, temperature, and humidity monitoring</li>
-                    </ul>
-                </div>
-
-                <!-- INCIDENT RESPONSE -->
-                <div id="incident-response" class="section">
-                    <h2>6. Incident Response</h2>
-
-                    <h3>6.1 Incident Detection</h3>
-                    <p>24/7 monitoring and rapid threat detection:</p>
-                    <ul>
-                        <li><strong>Security Operations Center (SOC):</strong> Staffed 24/7/365 for threat monitoring</li>
-                        <li><strong>SIEM Integration:</strong> Centralized logging and correlation for threat detection</li>
-                        <li><strong>Automated Alerting:</strong> Real-time alerts for suspicious activities and anomalies</li>
-                        <li><strong>Endpoint Detection and Response (EDR):</strong> Advanced threat detection on all systems</li>
-                    </ul>
-
-                    <h3>6.2 Incident Response Plan</h3>
-                    <p>Structured response to security incidents:</p>
-                    <ul>
-                        <li><strong>Detection:</strong> Identification of potential security incidents through monitoring</li>
-                        <li><strong>Analysis:</strong> Investigation and determination of incident scope and impact</li>
-                        <li><strong>Containment:</strong> Rapid isolation of affected systems to prevent spread</li>
-                        <li><strong>Eradication:</strong> Removal of attacker access and remediation of vulnerabilities</li>
-                        <li><strong>Recovery:</strong> Restoration of systems to normal operations</li>
-                        <li><strong>Lessons Learned:</strong> Post-incident review and process improvement</li>
-                    </ul>
-
-                    <h3>6.3 Breach Notification</h3>
-                    <p>Rapid and transparent notification upon security incidents:</p>
-                    <ul>
-                        <li><strong>Notification Timeline:</strong> Customers notified within 24-72 hours of confirmed breach</li>
-                        <li><strong>Information Provided:</strong> Details of affected data, timeline, and recommended actions</li>
-                        <li><strong>Regulatory Notifications:</strong> Axiosky assists with required regulatory notifications</li>
-                        <li><strong>Transparency:</strong> Complete openness about incident details and remediation</li>
-                    </ul>
-
-                    <h3>6.4 Communication Channels</h3>
-                    <p>For security incidents:</p>
-                    <ul>
-                        <li><strong>Dedicated Email:</strong> <a href="mailto:security-incident@axiosky.com">security-incident@axiosky.com</a></li>
-                        <li><strong>Emergency Escalation:</strong> Phone hotline for critical incidents (provided in contracts)</li>
-                        <li><strong>Status Page:</strong> Updates to <a href="https://status.axiosky.com" target="_blank">https://status.axiosky.com</a></li>
-                    </ul>
-                </div>
-
-                <!-- VULNERABILITY MANAGEMENT -->
-                <div id="vulnerability" class="section">
-                    <h2>7. Vulnerability Management</h2>
-
-                    <h3>7.1 Vulnerability Scanning and Assessment</h3>
-                    <p>Proactive identification of security weaknesses:</p>
-                    <ul>
-                        <li><strong>Automated Scanning:</strong> Continuous vulnerability scanning of all systems and applications</li>
-                        <li><strong>Network Scanning:</strong> Regular scans for exposed ports, services, and misconfigurations</li>
-                        <li><strong>Application Scanning:</strong> Static and dynamic code analysis for vulnerabilities</li>
-                        <li><strong>Dependency Scanning:</strong> Monitoring of third-party libraries for known vulnerabilities</li>
-                    </ul>
-
-                    <h3>7.2 Penetration Testing</h3>
-                    <p>External validation of security controls:</p>
-                    <ul>
-                        <li><strong>Annual Testing:</strong> Third-party penetration testing at least annually</li>
-                        <li><strong>Scope:</strong> Comprehensive testing of infrastructure, applications, and personnel</li>
-                        <li><strong>Results:</strong> Identified vulnerabilities tracked and remediated with timelines</li>
-                        <li><strong>Red Team Exercises:</strong> Simulated attack scenarios to test detection and response</li>
-                    </ul>
-
-                    <h3>7.3 Patch Management</h3>
-                    <p>Timely remediation of known vulnerabilities:</p>
-                    <ul>
-                        <li><strong>Patch Deployment:</strong> Critical patches deployed within 48 hours of release</li>
-                        <li><strong>Emergency Patches:</strong> Zero-day vulnerabilities patched within 24 hours</li>
-                        <li><strong>Vendor Monitoring:</strong> Continuous monitoring of vendors for security updates</li>
-                        <li><strong>Maintenance Windows:</strong> Scheduled updates with minimal customer impact</li>
-                    </ul>
-
-                    <h3>7.4 Vulnerability Disclosure and Bug Bounty</h3>
-                    <p>Responsible vulnerability management:</p>
-                    <ul>
-                        <li><strong>Disclosure Policy:</strong> Responsible disclosure encouraged for security researchers</li>
-                        <li><strong>Bug Bounty Program:</strong> Rewards for responsibly reported vulnerabilities</li>
-                        <li><strong>Coordinated Disclosure:</strong> 90-day window for patches before public disclosure</li>
-                        <li><strong>Recognition:</strong> Public acknowledgment of responsible researchers (with permission)</li>
-                    </ul>
-                </div>
-
-                <!-- PERSONNEL AND PARTNER SECURITY -->
-                <div id="personnel" class="section">
-                    <h2>8. Personnel and Partner Security</h2>
-
-                    <h3>8.1 Employee Security Training</h3>
-                    <p>Security awareness and education:</p>
-                    <ul>
-                        <li><strong>Mandatory Training:</strong> All employees complete security training before accessing systems</li>
-                        <li><strong>Annual Refresher:</strong> Ongoing security awareness and compliance training</li>
-                        <li><strong>Role-Specific Training:</strong> Specialized training for security, development, and operations teams</li>
-                        <li><strong>Phishing Simulations:</strong> Regular testing to improve security awareness</li>
-                    </ul>
-
-                    <h3>8.2 Background Checks and Screening</h3>
-                    <p>Verification of trustworthiness:</p>
-                    <ul>
-                        <li><strong>Pre-Employment Screening:</strong> Background checks for all employees with system access</li>
-                        <li><strong>Verification:</strong> Employment, education, and reference verification</li>
-                        <li><strong>Ongoing Monitoring:</strong> Periodic updates for personnel with sensitive access</li>
-                        <li><strong>International Compliance:</strong> Adherence to local background check requirements</li>
-                    </ul>
-
-                    <h3>8.3 Access Provisioning and Deprovisioning</h3>
-                    <p>Secure onboarding and offboarding:</p>
-                    <ul>
-                        <li><strong>Formal Approval:</strong> Manager and security approval required for system access</li>
-                        <li><strong>Rapid Onboarding:</strong> Access provisioned within 24 hours for approved users</li>
-                        <li><strong>Immediate Offboarding:</strong> Access revoked within 1 hour of employment termination</li>
-                        <li><strong>Credential Recovery:</strong> All credentials, keys, and devices collected upon exit</li>
-                    </ul>
-
-                    <h3>8.4 Confidentiality and Non-Disclosure Agreements</h3>
-                    <p>Legal protection of sensitive information:</p>
-                    <ul>
-                        <li><strong>Mandatory NDAs:</strong> All employees sign confidentiality agreements</li>
-                        <li><strong>Duration:</strong> Confidentiality obligations extend beyond employment</li>
-                        <li><strong>Contractor Agreements:</strong> All contractors and service providers bound by equivalent terms</li>
-                        <li><strong>Customer Data Protection:</strong> Specific obligations regarding customer confidential data</li>
-                    </ul>
-                </div>
-
-                <!-- THIRD-PARTY RISK -->
-                <div id="third-party" class="section">
-                    <h2>9. Third-Party Risk Management</h2>
-
-                    <h3>9.1 Vendor Assessment</h3>
-                    <p>Evaluation of third-party security practices:</p>
-                    <ul>
-                        <li><strong>Security Questionnaires:</strong> Detailed assessment of vendor security controls</li>
-                        <li><strong>Compliance Verification:</strong> Confirmation of SOC 2, ISO 27001, or equivalent certifications</li>
-                        <li><strong>Reference Checks:</strong> Contact with existing vendor customers regarding security practices</li>
-                        <li><strong>Site Assessments:</strong> On-site security evaluations for critical vendors</li>
-                    </ul>
-
-                    <h3>9.2 Vendor Agreements</h3>
-                    <p>Contractual security requirements:</p>
-                    <ul>
-                        <li><strong>Data Processing Agreements:</strong> All vendors handling customer data sign DPA</li>
-                        <li><strong>Security Requirements:</strong> Minimum security standards and controls required</li>
-                        <li><strong>Audit Rights:</strong> Customer right to audit vendor compliance</li>
-                        <li><strong>Liability:</strong> Vendor liability for security breaches and non-compliance</li>
-                    </ul>
-
-                    <h3>9.3 Authorized Sub-Processors</h3>
-                    <p>Vetted and monitored third parties processing customer data:</p>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Examples</th>
-                                    <th>Security Standards</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Cloud Infrastructure</td>
-                                    <td>AWS, Google Cloud, Azure</td>
-                                    <td>SOC 2 Type II, ISO 27001, FedRAMP</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics & Monitoring</td>
-                                    <td>Datadog, New Relic, Splunk</td>
-                                    <td>SOC 2 Type II, Data encryption</td>
-                                </tr>
-                                <tr>
-                                    <td>Identity Management</td>
-                                    <td>Okta, Auth0, Azure AD</td>
-                                    <td>SOC 2 Type II, ISO 27001</td>
-                                </tr>
-                                <tr>
-                                    <td>Communication</td>
-                                    <td>SendGrid, Twilio, Intercom</td>
-                                    <td>SOC 2 Type II, Data encryption</td>
-                                </tr>
-                                <tr>
-                                    <td>Payment Processing</td>
-                                    <td>Stripe, PayPal</td>
-                                    <td>PCI DSS Level 1, SOC 2 Type II</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>9.4 Continuous Monitoring</h3>
-                    <p>Ongoing oversight of vendor security:</p>
-                    <ul>
-                        <li><strong>Annual Reviews:</strong> Vendor security posture reviewed annually</li>
-                        <li><strong>Breach Notification:</strong> Vendors required to notify Axiosky immediately of incidents</li>
-                        <li><strong>Security Updates:</strong> Monitoring of vendor security announcements</li>
-                        <li><strong>Performance Metrics:</strong> Security incidents tracked in vendor scorecards</li>
-                    </ul>
-                </div>
-
-                <!-- COMPLIANCE AND CERTIFICATIONS -->
-                <div id="compliance" class="section">
-                    <h2>10. Compliance and Certifications</h2>
-
-                    <h3>10.1 Regulatory Compliance</h3>
-                    <p>Adherence to applicable laws and regulations:</p>
-                    <ul>
-                        <li><strong>GDPR (EU):</strong> Full compliance with General Data Protection Regulation</li>
-                        <li><strong>UK GDPR:</strong> Compliance with UK data protection requirements</li>
-                        <li><strong>CCPA/CPRA (California):</strong> Compliance with California consumer privacy laws</li>
-                        <li><strong>HIPAA (Healthcare):</strong> Available for healthcare deployments with Business Associate Agreement</li>
-                        <li><strong>Export Controls:</strong> Compliance with EAR, ITAR, and sanctions programs</li>
-                    </ul>
-
-                    <h3>10.2 Security Certifications</h3>
-                    <p>Third-party verification of security controls:</p>
-
-                    <h4>SOC 2 Type II</h4>
-                    <p>Annual third-party audit covering security, availability, processing integrity, confidentiality, and privacy controls. Report available to customers under NDA.</p>
-
-                    <h4>GDPR Compliance</h4>
-                    <p>Full compliance with data protection requirements including data subject rights, lawful basis, data transfers, and controller/processor obligations.</p>
-
-                    <h4>ISO 27001 (Pursuing)</h4>
-                    <p>International standard for information security management. Certification pursuit scheduled for 2026.</p>
-
-                    <h4>HIPAA Ready</h4>
-                    <p>Available for healthcare deployments. Requires Business Associate Agreement (BAA) execution.</p>
-
-                    <h4>FedRAMP Authorization (In-Process)</h4>
-                    <p>Federal Risk and Authorization Management Program authorization for government deployments. Target authorization 2026-2027.</p>
-
-                    <h3>10.3 Compliance Monitoring</h3>
-                    <p>Continuous oversight of regulatory compliance:</p>
-                    <ul>
-                        <li><strong>Compliance Calendar:</strong> Tracking of regulatory requirements and deadlines</li>
-                        <li><strong>Legal Monitoring:</strong> Surveillance of regulatory changes affecting security practices</li>
-                        <li><strong>Policy Updates:</strong> Regular updates to policies reflecting regulatory changes</li>
-                        <li><strong>Compliance Audits:</strong> Regular internal audits of compliance implementation</li>
-                    </ul>
-                </div>
-
-                <!-- CONTINUOUS IMPROVEMENT -->
-                <div id="continuous-improvement" class="section">
-                    <h2>11. Continuous Improvement</h2>
-
-                    <h3>11.1 Security Monitoring and Metrics</h3>
-                    <p>Ongoing measurement and optimization:</p>
-                    <ul>
-                        <li><strong>Key Metrics:</strong> Mean time to detect (MTTD), mean time to respond (MTTR), patch compliance</li>
-                        <li><strong>Dashboards:</strong> Real-time visibility into security metrics and trends</li>
-                        <li><strong>Reporting:</strong> Regular reports to leadership on security performance</li>
-                        <li><strong>Benchmarking:</strong> Comparison with industry standards and best practices</li>
-                    </ul>
-
-                    <h3>11.2 Security Training and Awareness</h3>
-                    <p>Ongoing education and capability development:</p>
-                    <ul>
-                        <li><strong>Threat Intelligence:</strong> Access to latest threat information and advisories</li>
-                        <li><strong>Security Certifications:</strong> Support for employee security certifications (CISSP, CEH, etc.)</li>
-                        <li><strong>Industry Participation:</strong> Engagement with security industry groups and conferences</li>
-                        <li><strong>Knowledge Sharing:</strong> Regular security briefings for technical and non-technical staff</li>
-                    </ul>
-
-                    <h3>11.3 Technology Updates</h3>
-                    <p>Investment in modern security tools and practices:</p>
-                    <ul>
-                        <li><strong>Tool Evaluation:</strong> Regular assessment of new security technologies</li>
-                        <li><strong>Platform Modernization:</strong> Migration to cloud-native security architectures</li>
-                        <li><strong>AI/ML Integration:</strong> Adoption of machine learning for advanced threat detection</li>
-                        <li><strong>Automation:</strong> Increased automation of security operations and response</li>
-                    </ul>
-
-                    <h3>11.4 Lessons Learned Process</h3>
-                    <p>Learning from incidents and near-misses:</p>
-                    <ul>
-                        <li><strong>Post-Incident Reviews:</strong> Structured analysis of security incidents</li>
-                        <li><strong>Root Cause Analysis:</strong> Identification of underlying causes</li>
-                        <li><strong>Remediation Tracking:</strong> Implementation and verification of corrective actions</li>
-                        <li><strong>Knowledge Base:</strong> Documented lessons for future reference and training</li>
-                    </ul>
-                </div>
-
-                <!-- CONTACT AND REPORTING -->
-                <div id="contact" class="section">
-                    <h2>12. Security Contact and Reporting</h2>
-
-                    <h3>12.1 Security Reporting Channels</h3>
-                    <div class="highlight">
-                        <p><strong>Security Vulnerabilities:</strong> <a href="mailto:security@axiosky.com">security@axiosky.com</a><br>
-                        <strong>Security Incidents:</strong> <a href="mailto:security-incident@axiosky.com">security-incident@axiosky.com</a><br>
-                        <strong>Data Protection Officer:</strong> <a href="mailto:dpo@axiosky.com">dpo@axiosky.com</a><br>
-                        <strong>Legal Inquiries:</strong> <a href="mailto:legal@axiosky.com">legal@axiosky.com</a></p>
-                    </div>
-
-                    <h3>12.2 Responsible Disclosure</h3>
-                    <p>We welcome responsible security research. If you discover a vulnerability:</p>
-                    <ul>
-                        <li>Report directly to <a href="mailto:security@axiosky.com">security@axiosky.com</a></li>
-                        <li>Include detailed technical information</li>
-                        <li>Allow 90 days for patch development before disclosure</li>
-                        <li>Do not test vulnerabilities on production systems without authorization</li>
-                    </ul>
-
-                    <h3>12.3 Security Updates and Announcements</h3>
-                    <p>Stay informed about security practices and updates:</p>
-                    <ul>
-                        <li><strong>Status Page:</strong> <a href="https://status.axiosky.com" target="_blank">https://status.axiosky.com</a></li>
-                        <li><strong>Security Blog:</strong> Regular security updates and best practices</li>
-                        <li><strong>Email Notifications:</strong> Subscribe to security announcements</li>
-                        <li><strong>Customer Portal:</strong> Security advisories and recommendations</li>
-                    </ul>
-
-                    <h3>12.4 Policy Updates</h3>
-                    <p>This Security Principles document is reviewed and updated regularly to reflect:</p>
-                    <ul>
-                        <li>Changes in security practices and technologies</li>
-                        <li>New compliance requirements and regulations</li>
-                        <li>Lessons learned from security incidents</li>
-                        <li>Industry best practice evolution</li>
-                    </ul>
-                    <p>Material updates will be communicated to customers. Last updated January 18, 2026.</p>
-                </div>
-
-                <!-- FINAL ACKNOWLEDGMENT -->
-                <div class="section">
-                    <div class="highlight">
-                        <p>Security is a shared responsibility. By using Axiosky's Services, you acknowledge our security commitments and your role in protecting your data and systems. We encourage customers to review these principles and provide feedback to help us continuously improve our security practices.</p>
-                    </div>
-                </div>
-
-                <!-- FOOTER -->
-                <div class="legal-footer">
-                    <p><strong>© 2026 Axiosky, Inc.</strong> All rights reserved. Governance for accountable autonomy.</p>
-                    <p><strong>Last Updated:</strong> January 18, 2026 | <strong>Version:</strong> 1.0</p>
-                </div>
-
+        </div>
+    </div>
+
+    <div class="legal-content">
+        <div id="commitment" class="section">
+            <h2>1. Our Security Commitment</h2>
+            <p>At Axiosky, security is foundational. We build and operate our governance platform (Governor, Policy Engine, Orchestrator) with the highest standards of information security, privacy, and reliability.</p>
+            <p>We are committed to protecting your data and earning your trust every day.</p>
+        </div>
+
+        <div id="principles" class="section">
+            <h2>2. Key Security Principles</h2>
+            <p>We follow these core principles:</p>
+            <ul>
+                <li><strong>Security by Design</strong> — Security is built into every feature from the start, not added later.</li>
+                <li><strong>Least Privilege</strong> — Access is granted only to what is strictly needed.</li>
+                <li><strong>Defense in Depth</strong> — Multiple layers of protection across people, processes, and technology.</li>
+                <li><strong>Transparency</strong> — We are open about our practices and responsive to your questions.</li>
+                <li><strong>Continuous Improvement</strong> — We regularly review and strengthen our controls.</li>
+            </ul>
+        </div>
+
+        <div id="data-protection" class="section">
+            <h2>3. Data Protection</h2>
+            <ul>
+                <li><strong>Encryption</strong> — All data in transit uses TLS 1.3+. Data at rest is encrypted with AES-256.</li>
+                <li><strong>Access Controls</strong> — Role-based access, multi-factor authentication, and regular reviews.</li>
+                <li><strong>Isolation</strong> — Your data is logically separated from others.</li>
+                <li><strong>No AI Training on Your Data</strong> — We do not use your data to train models.</li>
+            </ul>
+        </div>
+
+        <div id="operations" class="section">
+            <h2>4. Secure Operations</h2>
+            <ul>
+                <li><strong>Regular Audits & Testing</strong> — Annual penetration testing and vulnerability scans by independent experts.</li>
+                <li><strong>Incident Response</strong> — 24/7 monitoring with a documented response plan.</li>
+                <li><strong>Secure Development</strong> — Code reviews, dependency scanning, and secure coding practices.</li>
+                <li><strong>Vendor Management</strong> — We only work with trusted partners who meet our security standards.</li>
+            </ul>
+        </div>
+
+        <div id="compliance" class="section">
+            <h2>5. Compliance</h2>
+            <p>We design our platform to support compliance with major frameworks including:</p>
+            <ul>
+                <li>Digital Personal Data Protection Act, 2023 (India)</li>
+                <li>Information Technology Rules, 2011 (India)</li>
+                <li>GDPR-ready controls</li>
+                <li>SOC 2 Type II (in process)</li>
+            </ul>
+            <p>We offer deployment options (cloud, on-premises, air-gapped) to meet your regulatory and data residency needs.</p>
+        </div>
+
+        <div id="your-role" class="section">
+            <h2>6. Your Role</h2>
+            <p>Security is a shared responsibility. We encourage you to:</p>
+            <ul>
+                <li>Use strong passwords and enable MFA</li>
+                <li>Keep your access credentials secure</li>
+                <li>Report any suspected security issues immediately to <a href="mailto:security@axiosky.com">security@axiosky.com</a></li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>7. Contact Us</h2>
+            <p>For security questions or to report a vulnerability:</p>
+            <p><strong>Email:</strong> <a href="mailto:security@axiosky.com">security@axiosky.com</a></p>
+        </div>
+    </div>
+</main>
+
+</div>
                 <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -727,6 +217,3 @@
     <script src="../js/security-principles.js.js"></script>
 </body>
 </html>
-            </div>
-        </main>
-    </div>
