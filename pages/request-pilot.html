@@ -14,7 +14,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/pages.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/request-pilot.css">
 
@@ -67,41 +66,20 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="eyebrow">Pilot Engagement</div>
-            <h1>Request a Controlled Pilot</h1>
-            <p class="subheadline">Evaluate Axiosky governance on a single high-risk workflow in your environment. 8–12 week bounded engagement with your compliance and technical teams.</p>
-            <p class="supporting-text">We collaborate to map your regulations or SOPs into enforceable code, deploy the Governor in a constrained test, and produce auditable outcomes. No sales pressure. NDA from day one. Priority given to government and regulated enterprises.</p>
-            
-            <div class="hero-diagram">
-                <div class="diagram-flow">
-                    <span>Your Workflow</span>
-                    <span class="diagram-arrow">→</span>
-                    <span>Policy Codification</span>
-                    <span class="diagram-arrow">→</span>
-                    <span>Governor Enforcement</span>
-                    <span class="diagram-arrow">→</span>
-                    <span>Audit Trail</span>
-                </div>
-                <div class="diagram-caption">Every decision evaluated before execution.</div>
-            </div>
 
-            <div class="hero-cta">
-                <button class="btn btn--primary" onclick="document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'});">Apply for Pilot</button>
-                <p class="cta-microcopy">Pilot slots limited. We reply to qualified requests within 5 business days.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- FORM SECTION -->
     <section class="form-section">
         <div class="form-container">
+            <h1 class="form-title">Request a Controlled Pilot</h1>  
             <h2>Share Your Details</h2>
             <p class="form-subtitle">All fields required unless marked optional. Your information is handled under NDA.</p>
             
-            <form id="pilotForm">
+            <!-- ✅ UPDATED: Added name, method, and data-netlify attributes -->
+            <form id="pilotForm" name="pilot-request" method="POST" data-netlify="true">
+                <!-- ✅ ADDED: Hidden field for Netlify -->
+                <input type="hidden" name="form-name" value="pilot-request" />
+                
                 <!-- Name Row -->
                 <div class="form-row">
                     <div class="form-group">
@@ -140,14 +118,14 @@
                         <label for="country">Country *</label>
                         <select id="country" name="country" required>
                             <option value="">Select Country</option>
+                            <option value="IND">India</option>
+                            <option value="UAE">United Arab Emirates</option>
+                            <option value="QAT">Qatar</option>
+                            <option value="SA">Saudi Arabia</option>
                             <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="AU">Australia</option>
-                            <option value="DE">Germany</option>
-                            <option value="FR">France</option>
-                            <option value="SG">Singapore</option>
                             <option value="JP">Japan</option>
+                            <option value="SG">Singapore</option>
+                            <option value="CA">Canada</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -188,21 +166,22 @@
                     <div class="form-group">
                         <label>What Can We Help With? *</label>
                         <div class="checkbox-group">
+                            <!-- ✅ UPDATED: Removed [] from name -->
                             <div class="checkbox-item">
-                                <input type="checkbox" id="help1" name="help" value="policy-codification" required>
+                                <input type="checkbox" id="help1" name="help" value="policy-codification">
                                 <label for="help1">Policy Codification & Governance Design</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="help2" name="help" value="compliance-automation">
-                                <label for="help2">Compliance Automation & Audit Trails</label>
+                                <input type="checkbox" id="help2" name="help" value="runtime-enforcement">
+                                <label for="help2">Runtime Enforcement & Agent Risk Control</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="help3" name="help" value="agent-deployment">
-                                <label for="help3">Agent Deployment & Risk Control</label>
+                                <input type="checkbox" id="help3" name="help" value="compliance-automation">
+                                <label for="help3">Compliance Automation & Audit Trails</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="help4" name="help" value="regulatory-assessment">
-                                <label for="help4">Regulatory Assessment & Certification</label>
+                                <input type="checkbox" id="help4" name="help" value="regulatory-mapping">
+                                <label for="help4">Regulatory Mapping & Audit Readiness</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="help5" name="help" value="other-help">
@@ -254,50 +233,16 @@
                 <!-- Privacy Agreement -->
                 <div class="form-notice">
                     <input type="checkbox" id="privacy" name="privacy" required>
-                    <label for="privacy">I agree to the <a href="/legal/privacy">Privacy Policy</a> and confirm this is a business inquiry.</label>
+                    <label for="privacy">I agree to the <a href="../pages/legal/privacy.html">Privacy Policy</a> and confirm this is a business inquiry.</label>
                 </div>
 
                 <!-- Submit -->
                 <button type="submit" class="btn btn--primary submit-button">Submit Request</button>
             </form>
-
-            <!-- Trust Signals -->
-            <div class="trust-signals">
-                <div class="trust-signal">Sovereign deployments available</div>
-                <div class="trust-signal">SOC 2 Type II compliant</div>
-                <div class="trust-signal">All pilots under NDA</div>
-            </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <div class="contact-container">
-            <h2>Other Inquiries</h2>
-            <p class="contact-intro">For security questionnaires, vulnerability reports, partnerships, or press:</p>
-            
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <h3>Security & Compliance</h3>
-                    <p><a href="mailto:security@axiosky.com">security@axiosky.com</a></p>
-                    <p class="contact-sla">Response within 4 business hours</p>
-                </div>
-                <div class="contact-card">
-                    <h3>General & Partnerships</h3>
-                    <p><a href="mailto:hello@axiosky.com">hello@axiosky.com</a></p>
-                    <p class="contact-sla">Response within 2 business days</p>
-                </div>
-                <div class="contact-card">
-                    <h3>Sales (Enterprise/Government)</h3>
-                    <p><a href="mailto:sales@axiosky.com">sales@axiosky.com</a></p>
-                    <p class="contact-sla">Response within 1 business day</p>
-                </div>
-            </div>
-
-            <p class="contact-note">We do not respond to unsolicited sales or recruitment emails.</p>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -342,7 +287,7 @@
         </div>
         
         <div class="footer-legal">
-            <a href="legal/privacy-policy.html">Privacy & Legal</a>
+            <a href="legal/privacy.html">Privacy & Legal</a>
         </div>
         
         <div class="footer-bottom">
@@ -353,6 +298,7 @@
     <!-- Scripts -->
     <script src="../js/main.js"></script>
     <script src="../js/navigation.js"></script>
-    <script src="../js/request-pilot.js"></script>
+    <!-- ✅ UPDATED: Commented out to let Netlify handle form submission -->
+    <!-- <script src="../js/request-pilot.js"></script> -->
 </body>
 </html>
