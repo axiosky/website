@@ -493,8 +493,8 @@
 /* ===== FOOTER ===== */
 
 .footer {
-  border-top: 1px solid rgba(15, 23, 42, 0.9);
-  background: radial-gradient(circle at top, #050509, #020308);
+  border-top: 1px solid rgb(113 113 113 / 90%);
+  background: #0a0a0a;
   padding: var(--space-40) var(--space-32) var(--space-24);
 }
 
@@ -524,7 +524,6 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  background: rgba(15, 23, 42, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -544,7 +543,7 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin: var(--space-24) 0;
+  margin-top: 24px;
   font-size: var(--size-base);
 }
 
@@ -594,13 +593,11 @@
 
 .footer-bottom {
   text-align: center;
-  padding-top: var(--space-16);
-  border-top: 1px solid rgba(15, 23, 42, 0.5);
 }
 
 
 .footer-bottom p {
-  font-size: var(--size-md);
+  font-size: var(--size-sm);
   color: var(--text-secondary);
 }
 
@@ -671,9 +668,10 @@
 /* Add this to components.css */
 
 .governor-hero {
-    background: linear-gradient(135deg, #f8fafc 0%, rgba(33, 128, 141, 0.05) 100%);
-    padding: 80px 20px;
-    text-align: center;
+  margin: 0 auto;
+  padding: var(--space-64) var(--space-32);
+  align-items: center;
+}
 }
 
 .governor-hero .eyebrow {

@@ -166,7 +166,9 @@ p {
 }
 
 p:last-child {
-  margin-bottom: 0;
+  margin-top: 15px;
+    text-align: center;
+    color: var(--color-text-secondary);
 }
 
 a {
