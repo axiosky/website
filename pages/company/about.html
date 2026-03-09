@@ -3,15 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Axiosky — Founded by governance and infrastructure engineers. Building deterministic policy enforcement for autonomous systems in regulated environments.">
-    <meta property="og:title" content="About Axiosky — Governance for Autonomous Systems">
-    <meta property="og:description" content="Engineers building infrastructure for governance. Mission: make autonomous systems trustworthy in regulated environments.">
-    <meta property="og:type" content="website">
-    <title>About Us - Axiosky</title>
+
+    <!-- PRIMARY SEO -->
+    <title>About Axiosky</title>
+    <meta name="description" content="Axiosky builds governance infrastructure for autonomous AI systems — a control plane of Governor, Policy Engine, and Orchestrator enabling accountable, auditable AI deployment in government, financial services, healthcare, and critical infrastructure.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://axiosky.com/pages/company/about.html">
+
+    <!-- OPEN GRAPH (LinkedIn, Facebook, WhatsApp) -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://axiosky.com/pages/company/about.html">
+    <meta property="og:site_name"   content="Axiosky">
+    <meta property="og:locale"      content="en_US">
+    <meta property="og:title"       content="About Axiosky — Building AI Governance Infrastructure for Government &amp; Enterprise">
+    <meta property="og:description" content="Axiosky builds the control plane — Governor, Policy Engine, and Orchestrator — enabling organisations to deploy AI agents with provable governance in government agencies, financial services, healthcare, and critical infrastructure.">
+    <meta property="og:image"       content="https://axiosky.com/images/og-axiosky-default.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"   content="About Axiosky — AI Governance Infrastructure">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@axiosky">
+    <meta name="twitter:title"       content="About Axiosky — AI Governance Infrastructure for Government &amp; Enterprise">
+    <meta name="twitter:description" content="We build the governance control plane that makes autonomous AI deployable in regulated environments — mandatory policy enforcement, immutable audit trails, human-in-loop oversight.">
+    <meta name="twitter:image"       content="https://axiosky.com/images/og-axiosky-default.png">
+
+    <!-- TECHNICAL -->
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author"      content="Axiosky">
+
+    <!-- JSON-LD SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axiosky.com/#organization",
+          "name": "Axiosky",
+          "url": "https://axiosky.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://axiosky.com/assets/images/logo.svg"
+          },
+          "description": "Axiosky builds governance infrastructure for autonomous AI systems — a control plane enabling accountable, auditable AI deployment in government, financial services, healthcare, and critical infrastructure.",
+          "contactPoint": [
+            { "@type": "ContactPoint", "email": "hello@axiosky.com",    "contactType": "customer support" },
+            { "@type": "ContactPoint", "email": "security@axiosky.com", "contactType": "technical support" }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/company/axiosky",
+            "https://x.com/axiosky",
+            "https://www.instagram.com/axiosky.ai/",
+            "https://www.facebook.com/axiosky"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://axiosky.com/pages/company/about.html#webpage",
+          "url": "https://axiosky.com/pages/company/about.html",
+          "name": "About Axiosky — Building AI Governance Infrastructure for Government &amp; Enterprise",
+          "description": "Axiosky builds governance infrastructure for autonomous AI systems — a control plane of Governor, Policy Engine, and Orchestrator enabling accountable, auditable AI deployment in government, financial services, healthcare, and critical infrastructure.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://axiosky.com/#organization" }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Inter:wght@300;400;500&family=Public+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/components.css">
@@ -30,17 +95,15 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <!-- Platform dropdown -->
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle">Platform</a>
-        <ul class="dropdown-menu">
-            <li><a href="../../pages/platform/governor.html" class="dropdown-link">Governance</a></li>
-            <li><a href="../../pages/platform/orchestrator.html" class="dropdown-link">Orchestration</a></li>
-            <li><a href="../../pages/platform/policy-engine.html" class="dropdown-link">Policy Engine</a></li>
-            <li><a href="../../pages/platform/security.html" class="dropdown-link">Security</a></li>
-        </ul>
-    </li>
-                
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Platform</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../pages/platform/governor.html" class="dropdown-link">Governance</a></li>
+                        <li><a href="../../pages/platform/orchestrator.html" class="dropdown-link">Orchestration</a></li>
+                        <li><a href="../../pages/platform/policy-engine.html" class="dropdown-link">Policy Engine</a></li>
+                        <li><a href="../../pages/platform/security.html" class="dropdown-link">Security</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">Solutions</a>
                     <ul class="dropdown-menu">
@@ -48,248 +111,297 @@
                         <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
                     </ul>
                 </li>
-                
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">Company</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../../pages/company/about.html" class="dropdown-link">About</a></li>
+                        <li><a href="../../pages/company/about.html" class="dropdown-link">About Us</a></li>
                         <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
                     </ul>
                 </li>
             </ul>
             <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
-
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
-<!-- HERO SECTION -->
-    <section class="about-hero">
-        <div class="section-container">
-            <div class="eyebrow">About Axiosky</div>
-            <h1 class="hero-headline">Built by Operators Who Understand the Governance Gap</h1>
-            <p class="hero-subheadline">Autonomous systems act faster than humans can review. Yet organizations remain accountable for every decision. Traditional approaches fail under regulatory scrutiny.</p>
-            <p class="hero-paragraph">We built Axiosky to solve this: a control plane that intercepts every agent action, evaluates it against codified policy, enforces the decision before execution, and creates immutable audit trails. This turns autonomous speed into controlled, certifiable automation.</p>
-        </div>
-    </section>
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="snav-mobile" id="snavMobile">
+        <ul class="snav-mobile-list">
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Platform
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/platform/governor.html" class="snav-mobile-link">Governance</a>
+                    <a href="../../pages/platform/orchestrator.html" class="snav-mobile-link">Orchestration</a>
+                    <a href="../../pages/platform/policy-engine.html" class="snav-mobile-link">Policy Engine</a>
+                    <a href="../../pages/platform/security.html" class="snav-mobile-link">Security</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/solutions/government.html" class="snav-mobile-link">Government</a>
+                    <a href="../../pages/solutions/critical-infrastructure.html" class="snav-mobile-link">Compliance-Critical</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Company
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/company/about.html" class="snav-mobile-link">About Us</a>
+                    <a href="../../pages/company/team.html" class="snav-mobile-link">Team</a>
+                </div>
+            </li>
+            <div class="snav-mobile-header">
+                <a href="../../pages/request-pilot.html" class="btn btn-request-pilot">Request Pilot</a>
+            </div>
+        </ul>
+    </div>
 
-    <!-- WHO WE ARE SECTION -->
-    <section class="section-mission">
-        <div class="section-container">
-            <h2 class="section-title">Who We Are</h2>
-            <div class="mission-container">
-                <div class="mission-box">
-                    <p class="mission-statement">Governance infrastructure for autonomous agent systems.</p>
-                    <p class="mission-desc">We provide the control plane—Governor, Policy Engine, and Orchestrator—that makes AI agents deployable in regulated environments where accountability, auditability, and deterministic enforcement are non-negotiable.</p>
-                    <p class="mission-desc" style="margin-top: var(--space-16);">We exist because agents are technically capable but organizationally undeployable. Monitoring tools detect violations after damage occurs. Guardrails are probabilistic and fail under regulatory scrutiny. Manual review doesn't scale. Our solution is architectural: enforce policy before execution.</p>
+    <section class="homepagecontent">
+    <main class="axiosky-theme">
+
+        <!-- HERO SECTION -->
+        <section class="blk-section blk-hero fade-in">
+            <div class="blk-container">
+                <span class="blk-hero-label">About Us</span>
+                <h1>Axiosky builds governance infrastructure for autonomous AI systems.</h1>
+                <div class="blk-hero-lead">
+                    <p>We provide the control plane — Governor, Policy Engine, and Orchestrator — that enables organisations to deploy AI agents in regulated environments where accountability and auditability are requirements, not options.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- VALUES SECTION (renamed from "What We Believe") -->
-    <section class="section-values">
-        <div class="section-container">
-            <h2 class="section-title">What We Believe</h2>
-            <p class="section-subtitle">Five core beliefs that drive everything we build.</p>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">🏗️</div>
-                    <h3 class="value-title">Governance is Infrastructure</h3>
-                    <p class="value-desc">You can't add governance to autonomous systems the way you add logging to applications. Enforcement must be architectural—impossible to bypass, deterministic in execution, built into the control plane from day one.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">💻</div>
-                    <h3 class="value-title">Policy Should Be Code</h3>
-                    <p class="value-desc">Regulations and internal controls are deterministic logic. We compile them into executable policy—versioned, testable, enforced at machine speed. This makes compliance provable, not aspirational.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">👥</div>
-                    <h3 class="value-title">Autonomy Requires Accountability</h3>
-                    <p class="value-desc">Agents propose actions and generate options. Humans remain accountable for high-stakes decisions. Our architecture enforces human-in-the-loop at policy-defined decision points with full context.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">📋</div>
-                    <h3 class="value-title">Audit Trails Are Forensic-Grade</h3>
-                    <p class="value-desc">Every decision should be replayable years later with identical outcomes. We build immutable audit logs with complete lineage: which agent, which policy version, which rules triggered, which human approved.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🔒</div>
-                    <h3 class="value-title">Sovereignty Is Non-Negotiable</h3>
-                    <p class="value-desc">Regulated organizations cannot outsource governance to cloud vendors or accept black-box enforcement. We support on-premises, air-gapped, and sovereign cloud deployments where you control infrastructure.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY WE STARTED SECTION -->
-    <section class="section-story">
-        <div class="section-container">
-            <h2 class="section-title">Why We Started Axiosky</h2>
-            <div class="story-container">
-                <div class="story-text">
-                    <p><strong>The AI deployment gap is widening.</strong> Agents are technically capable but organizationally undeployable. Compliance teams block pilots because they can't certify the systems. Legal teams refuse sign-off because they can't prove governance. Auditors fail deployments because audit trails are incomplete.</p>
-                    <p>This isn't an agent problem—it's a governance problem. Organizations need infrastructure that makes autonomous systems auditable, certifiable, and legally defensible. That infrastructure doesn't exist in AI frameworks, agent orchestration tools, or monitoring platforms.</p>
-                    <p>We built Axiosky to solve this: a control plane specifically designed for governed autonomy. Not general-purpose middleware, not an agent framework, not a monitoring tool—infrastructure that turns "we can't deploy this because we can't prove compliance" into "we can deploy this because governance is architectural."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHO WE SERVE SECTION -->
-    <section class="section-values" style="background: var(--color-background);">
-        <div class="section-container">
-            <h2 class="section-title">Who We Serve</h2>
-            <p class="section-subtitle">Organizations where mistakes have consequences.</p>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">🏛️</div>
-                    <h3 class="value-title">Government Agencies</h3>
-                    <p class="value-desc">Decisions must survive FOIA requests, political review, and public accountability. Every automated action must be defensible under scrutiny.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🏦</div>
-                    <h3 class="value-title">Regulated Enterprises</h3>
-                    <p class="value-desc">Financial services, healthcare, defense, critical infrastructure. Violations create legal liability, regulatory penalties, and systemic risk.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">📊</div>
-                    <h3 class="value-title">Scale Operations</h3>
-                    <p class="value-desc">Thousands of agent decisions per day require deterministic enforcement, not probabilistic guardrails or manual review.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR APPROACH SECTION -->
-    <section class="section-values" style="background: rgba(var(--color-teal-500-rgb), 0.02);">
-        <div class="section-container">
-            <h2 class="section-title">Our Approach</h2>
-            <p class="section-subtitle">How we solve the governance problem.</p>
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3 class="value-title">Solve Deployment Blockers</h3>
-                    <p class="value-desc">The bottleneck isn't agent performance; it's organizational confidence. Compliance won't certify. Legal won't sign off. Auditors won't approve. We remove these blockers with architecture that makes governance provable.</p>
-                </div>
-                <div class="value-card">
-                    <h3 class="value-title">Infrastructure, Not Platform</h3>
-                    <p class="value-desc">We don't compete with LangChain or agent frameworks. We provide the governance layer those frameworks lack. You build agents with your preferred tools; we make them governable.</p>
-                </div>
-                <div class="value-card">
-                    <h3 class="value-title">Long-Term Partnerships</h3>
-                    <p class="value-desc">Governance isn't a one-time implementation. Regulations change, processes evolve, risk thresholds adjust. We provide continuous policy updates and architecture evolution.</p>
-                </div>
-                <div class="value-card">
-                    <h3 class="value-title">Correctness Over Features</h3>
-                    <p class="value-desc">Policy codification is precise work. We prioritize correctness over velocity. We'd rather deploy certified solutions slowly than uncertified solutions quickly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW WE OPERATE SECTION -->
-    <section class="section-values" style="background: var(--color-background);">
-        <div class="section-container">
-            <h2 class="section-title">How We Operate</h2>
-            <p class="section-subtitle">Principles that guide everything we do.</p>
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3 class="value-title">Security First</h3>
-                    <p class="value-desc">We design for sovereign deployment, on-premises control, and air-gapped environments. We don't require cloud connectivity, phone-home telemetry, or external dependencies.</p>
-                </div>
-                <div class="value-card">
-                    <h3 class="value-title">Policy as Your IP</h3>
-                    <p class="value-desc">When we codify your regulations and controls, that intellectual property belongs to you. It's in your Git repository, readable by your team, exportable if you leave. No lock-in.</p>
-                </div>
-                <div class="value-card">
-                    <h3 class="value-title">Certification Support</h3>
-                    <p class="value-desc">We help you prepare for audits: compliance reports, regulation mapping, test evidence, auditor training. Our goal is making your audits faster and findings fewer.</p>
-                </div>
-                <div class="value-card">
-                    <h3 class="value-title">Transparent Pricing</h3>
-                    <p class="value-desc">No per-API-call billing that penalizes usage. No hidden costs. Fixed annual licensing with clear scope. You know exactly what you're paying for.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHERE WE'RE HEADED SECTION -->
-    <section class="section-story">
-        <div class="section-container">
-            <h2 class="section-title">Where We're Headed</h2>
-            <div class="story-container">
-                <div class="story-text">
-                    <p><strong>Near-term (2025-2026):</strong> Establish Axiosky as the governance standard in three verticals: government procurement, financial services back-office, and healthcare workflow automation. Achieve referenceable deployments with quantified compliance outcomes.</p>
-                    <p><strong>Medium-term (2026-2027):</strong> Expand Workforce Modules library to cover 15+ regulated use cases. Build ecosystem of policy templates for major regulatory frameworks. Achieve third-party security certifications that accelerate enterprise procurement.</p>
-                    <p><strong>Long-term vision:</strong> Make governed autonomy the default for regulated industries. When organizations deploy AI agents, governance infrastructure should be as standard as authentication, logging, or encryption. Axiosky becomes that standard.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORKING WITH US SECTION -->
-    <section class="section-values" style="background: rgba(var(--color-teal-500-rgb), 0.02);">
-        <div class="section-container">
-            <h2 class="section-title">Working With Us</h2>
-            <p class="section-subtitle">We engage through controlled pilots and technical evaluations—not traditional sales cycles.</p>
-            <div class="story-container">
-                <div class="story-text">
-                    <p>You meet with engineers who built the system, not sales representatives reading slide decks. We solve problems together before discussing contracts.</p>
-                    <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-top: var(--space-24); margin-bottom: var(--space-12); color: var(--color-text);">Typical Engagement:</h4>
-                    <ol style="margin: 0; padding-left: var(--space-20);">
-                        <li style="margin-bottom: var(--space-8); color: var(--color-text-secondary);">Secure technical briefing (90 minutes with founding team)</li>
-                        <li style="margin-bottom: var(--space-8); color: var(--color-text-secondary);">Architecture review (map your environment and requirements)</li>
-                        <li style="margin-bottom: var(--space-8); color: var(--color-text-secondary);">Policy assessment (codify one regulation as proof-of-concept)</li>
-                        <li style="margin-bottom: var(--space-8); color: var(--color-text-secondary);">Pilot deployment (8-16 weeks in staging, then controlled production)</li>
-                        <li style="color: var(--color-text-secondary);">Production scale (expand to full deployment)</li>
-                    </ol>
-                    <p style="margin-top: var(--space-20);">We work under NDA from first conversation. We don't share customer names, deployment details, or policy approaches without explicit permission.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="section-join">
-        <div class="section-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's discuss how to make your autonomous systems governable.</p>
-            <div class="join-container">
-                <div class="join-ctas" style="flex-direction: column; gap: var(--space-24);">
-                    <div style="text-align: left;">
-                        <p style="font-weight: var(--font-weight-semibold); color: var(--color-text); margin-bottom: var(--space-8);">General inquiries:</p>
-                        <p style="color: var(--color-primary); margin: 0;"><a href="mailto:hello@axiosky.com">hello@axiosky.com</a></p>
+        <!-- WHO WE ARE -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-sidebar">
+                    <div>
+                        <h2 class="blk-section-title">Who We Are</h2>
                     </div>
-                    <div style="text-align: left;">
-                        <p style="font-weight: var(--font-weight-semibold); color: var(--color-text); margin-bottom: var(--space-8);">Security & Technical:</p>
-                        <p style="color: var(--color-primary); margin: 0;"><a href="mailto:security@axiosky.com">security@axiosky.com</a></p>
-                    </div>
-                    <div style="text-align: left;">
-                        <p style="font-weight: var(--font-weight-semibold); color: var(--color-text); margin-bottom: var(--space-8);">Enterprise & Government:</p>
-                        <p style="color: var(--color-primary); margin: 0;"><a href="mailto:enterprise@axiosky.com">enterprise@axiosky.com</a></p>
+                    <div>
+                        <p class="blk-text">We exist because autonomous systems create a fundamental challenge: agents act faster than humans can review, yet organisations remain accountable for every decision. Traditional monitoring detects violations after they occur. Guardrails are probabilistic. Manual review doesn't scale.</p>
+                        <p class="blk-text">Our approach is architectural: intercept agent actions, evaluate them against codified policy, enforce decisions before execution, and create immutable audit trails. This transforms autonomous capability into controlled, auditable automation.</p>
                     </div>
                 </div>
-                <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-32);">All communications protected under NDA upon request.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section class="section-final-cta">
-        <div class="section-container">
-            <h2 class="section-title">Ready to Govern Your Autonomous Systems?</h2>
-            <p class="section-subtitle">Request a technical briefing with our founding team. We'll map your governance challenges and show you what's possible.</p>
-            <div class="final-ctas">
-                <button class="btn btn--primary btn--lg">Request Technical Briefing</button>
-                <button class="btn btn--secondary btn--lg">Learn About the Platform</button>
+        <!-- WHAT WE BELIEVE -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <h2 class="blk-section-title" style="margin-bottom: 40px; border-top: none; display: block;">What We Believe</h2>
+                <div class="blk-grid blk-grid-3">
+                    <div class="blk-card">
+                        <h3>Governance is infrastructure.</h3>
+                        <p>Enforcement must be architectural — built into the control plane, not added as an afterthought. Systems designed for governance from the start make compliance achievable rather than aspirational.</p>
+                    </div>
+                    <div class="blk-card">
+                        <h3>Policy should be executable.</h3>
+                        <p>Regulations are deterministic logic expressed in natural language. We help organisations compile them into versioned, testable policy code that runs at machine speed and can be demonstrated to auditors.</p>
+                    </div>
+                    <div class="blk-card">
+                        <h3>Autonomy requires human accountability.</h3>
+                        <p>Agents propose actions; humans remain accountable for high-stakes decisions. Our architecture enforces human oversight at policy-defined decision points, providing full context for informed judgement.</p>
+                    </div>
+                    <div class="blk-card">
+                        <h3>Audit trails must be complete.</h3>
+                        <p>Every decision should be replayable with full context: which agent, which policy version, which rules triggered, which human approved. This meets the standard required for regulatory investigation.</p>
+                    </div>
+                    <div class="blk-card">
+                        <h3>Sovereignty matters.</h3>
+                        <p>Organisations in regulated industries need control over their governance infrastructure. We support on-premises, air-gapped, and sovereign cloud deployments where data never leaves your jurisdiction.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    
+        </section>
+
+        <!-- THE NEED -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-sidebar">
+                    <div>
+                        <h2 class="blk-section-title">The Need</h2>
+                    </div>
+                    <div>
+                        <p class="blk-text">AI agents are technically capable but organisationally difficult to deploy. Compliance teams can't certify systems with incomplete audit trails. Legal teams won't sign off without provable governance. Auditors require deterministic enforcement, not best-effort monitoring.</p>
+                        <p class="blk-text">This isn't an agent capability problem — it's a governance infrastructure problem. Organisations need systems that make autonomous AI auditable, defensible, and ready for third-party review.</p>
+                        <p class="blk-highlight-box">We built Axiosky as that infrastructure: a control plane designed specifically for governed autonomy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE SERVE -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-2">
+                    <div>
+                        <h2 class="blk-section-title">Who We Serve</h2>
+                        <p class="blk-text">We work with organisations where mistakes have real consequences.</p>
+                    </div>
+                    <div>
+                        <ul class="blk-styled-list">
+                            <li><strong>Government agencies</strong> where decisions must survive public accountability, right-to-information requests, and policy review.</li>
+                            <li><strong>Regulated enterprises</strong> in financial services, healthcare, defence, and critical infrastructure where violations create legal liability.</li>
+                            <li><strong>Organisations deploying at scale</strong> where thousands of daily agent decisions require deterministic enforcement.</li>
+                        </ul>
+                        <p class="blk-text" style="margin-top: 24px;">These organisations need provable governance, complete audit trails, and architectures that survive third-party audits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR APPROACH -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <h2 class="blk-section-title" style="margin-bottom: 40px; border-top: none;">Our Approach</h2>
+                <div class="blk-grid blk-grid-2">
+                    <div>
+                        <span class="blk-metric-text">01. Solve Deployment Blockers</span>
+                        <p>The bottleneck isn't agent performance — it's organisational confidence. We remove blockers by making governance architectural rather than procedural.</p>
+                    </div>
+                    <div>
+                        <span class="blk-metric-text">02. Infrastructure, Not Platform</span>
+                        <p>Axiosky doesn't replace your agent frameworks. We provide the governance layer. Build with whatever tools you prefer; we make them governable.</p>
+                    </div>
+                    <div>
+                        <span class="blk-metric-text">03. Prioritise Correctness</span>
+                        <p>Policy codification requires precision. We'd rather deliver well-engineered, certifiable solutions thoroughly than rushed solutions quickly.</p>
+                    </div>
+                    <div>
+                        <span class="blk-metric-text">04. Partner for the Long Term</span>
+                        <p>Governance isn't one-time implementation. As regulations evolve, we provide ongoing policy updates and architecture support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW WE OPERATE -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-sidebar">
+                    <div>
+                        <h2 class="blk-section-title">Operations</h2>
+                    </div>
+                    <div class="blk-grid blk-grid-2">
+                        <div>
+                            <h4 class="blk-sub-title">Security by Design</h4>
+                            <p>Sovereign deployment, on-premises control, and air-gapped environments. No cloud connectivity required.</p>
+                        </div>
+                        <div>
+                            <h4 class="blk-sub-title">Your Policy, Your IP</h4>
+                            <p>Codified regulations and controls belong to you. Readable, exportable, and stored in your repository.</p>
+                        </div>
+                        <div>
+                            <h4 class="blk-sub-title">Audit Support</h4>
+                            <p>Pre-structured compliance documentation and regulation mapping to support third-party audits and regulatory reviews.</p>
+                        </div>
+                        <div>
+                            <h4 class="blk-sub-title">Transparent Pricing</h4>
+                            <p>Transparent annual licensing aligned to deployment scope. Clear terms with no hidden usage penalties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROADMAP -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-sidebar">
+                    <div>
+                        <h2 class="blk-section-title">Roadmap</h2>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 30px;">
+                            <strong class="blk-strong-header">Current Focus</strong>
+                            <p>Establishing deployments in government, financial services, and healthcare where we can work toward measurable, demonstrable compliance outcomes.</p>
+                        </div>
+                        <div style="margin-bottom: 30px;">
+                            <strong class="blk-strong-header">Expanding Reach</strong>
+                            <p>Growing our Workforce Modules library and building policy templates for major regulatory frameworks.</p>
+                        </div>
+                        <div>
+                            <strong class="blk-strong-header">Long-term Vision</strong>
+                            <p>Making governance infrastructure as standard for AI deployments as authentication or encryption — expected, not exceptional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKING WITH US -->
+        <section class="blk-section fade-in" style="background-color: #0a0a0a;">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-2">
+                    <div>
+                        <h2 class="blk-section-title">Working With Us</h2>
+                        <p class="blk-text">We engage through technical evaluations, not traditional sales cycles. You work with engineers who built the system.</p>
+                        <p class="blk-text"><strong>Typical Engagement:</strong></p>
+                        <ul class="blk-styled-list">
+                            <li>Secure technical briefing with founding team</li>
+                            <li>Architecture review mapping your environment</li>
+                            <li>Policy assessment (PoC)</li>
+                            <li>Pilot deployment in staging</li>
+                            <li>Production scale</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; border-left: 1px solid #333; padding-left: 40px;">
+                        <p class="blk-text">We work under NDA from the first conversation. Customer names, deployment details, and policy approaches remain confidential without explicit permission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="blk-section fade-in">
+            <div class="blk-container">
+                <div class="blk-grid blk-grid-2">
+                    <div>
+                        <h2 class="blk-section-title">Contact</h2>
+                        <p class="blk-text">All communications protected under NDA upon request.</p>
+                    </div>
+                    <div class="blk-grid blk-grid-2">
+                        <div class="blk-contact-item">
+                            <h4>General Inquiries</h4>
+                            <a href="mailto:hello@axiosky.com" class="blk-contact-email">hello@axiosky.com</a>
+                        </div>
+                        <div class="blk-contact-item">
+                            <h4>Security &amp; Technical</h4>
+                            <a href="mailto:security@axiosky.com" class="blk-contact-email">security@axiosky.com</a>
+                        </div>
+                        <div class="blk-contact-item">
+                            <h4>Support</h4>
+                            <a href="mailto:support@axiosky.com" class="blk-contact-email">support@axiosky.com</a>
+                        </div>
+                        <div class="blk-contact-item">
+                            <h4>Careers</h4>
+                            <a href="mailto:careers@axiosky.com" class="blk-contact-email">careers@axiosky.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global CTA -->
+        <section class="bl-cta">
+            <div class="bl-cta-inner">
+                <p class="bl-cta-label">Axiosky</p>
+                <h2 class="bl-cta-heading">The Standard for<br>AI Governance.</h2>
+                <div class="bl-cta-actions">
+                    <a href="../../pages/request-pilot.html" class="btn btn-primary">Request a Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -317,7 +429,6 @@
                 </ul>
             </div>
         </div>
-        
         <div class="footer-social">
             <a href="https://www.linkedin.com/company/axiosky" class="social-link" title="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -332,11 +443,9 @@
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
         </div>
-        
         <div class="footer-legal">
-            <a href="../../pages/legal/privacy.html">Privacy & Legal</a>
+            <a href="../../pages/legal/privacy.html">Privacy &amp; Legal</a>
         </div>
-        
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; 2026 Axiosky</p>
         </div>
@@ -345,6 +454,25 @@
     <!-- Scripts -->
     <script src="../../js/main.js"></script>
     <script src="../../js/navigation.js"></script>
+    <script>
+        // ── Fade-in scroll observer ────────────────────────────────
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { root: null, rootMargin: "0px", threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+});
+
+    </script>
+    <script src="../../js/cookie-banner.js"></script>
 </body>
 </html>
-

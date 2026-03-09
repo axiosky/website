@@ -3,12 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Governor - Runtime AI governance platform that enforces policy before autonomous agents act. Deterministic decisions, millisecond latency, auditable controls.">
-    <meta name="og:title" content="Governor | Runtime AI Governance for Autonomous Agents">
-    <meta name="og:description" content="Real-time policy enforcement before agent actions reach production systems.">
-    <meta name="og:type" content="website">
-    
-    <title>Governor | Runtime AI Governance Platform | Axiosky</title>
+
+    <!-- ═══════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════ -->
+    <title>Governance | Axiosky</title>
+    <meta name="description" content="Axiosky Governor intercepts every agent action before execution. Enforce deterministic policy-as-code, block violations instantly, and generate immutable audit trails.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://axiosky.com/pages/platform/governor.html">
+
+    <!-- ═══════════════════════════════════════
+         OPEN GRAPH (LinkedIn, Facebook, WhatsApp)
+    ═══════════════════════════════════════ -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://axiosky.com/pages/platform/governor.html">
+    <meta property="og:site_name"    content="Axiosky">
+    <meta property="og:locale"       content="en_US">
+    <meta property="og:title"        content="AI Governor — Real-Time Policy Enforcement | Axiosky">
+    <meta property="og:description"  content="Every agent action intercepted. Every decision deterministic. Every violation blocked before execution.">
+    <meta property="og:image"        content="https://axiosky.com/images/og-governance.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"    content="AI Governor — Real-Time Policy Enforcement | Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@axiosky">
+    <meta name="twitter:title"       content="AI Governor — Real-Time Policy Enforcement | Axiosky">
+    <meta name="twitter:description" content="Axiosky Governor: intercept every agent action, enforce policy-as-code in real time, and produce immutable audit trails. Zero trust. Zero ambiguity.">
+    <meta name="twitter:image"       content="https://axiosky.com/images/og-governance.png">
+
+    <!-- ═══════════════════════════════════════
+         TECHNICAL
+    ═══════════════════════════════════════ -->
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         JSON-LD SCHEMA
+    ═══════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axiosky.com/#organization",
+          "name": "Axiosky",
+          "url": "https://axiosky.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://axiosky.com/assets/images/logo.svg"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://axiosky.com/pages/platform/governor.html#software",
+          "name": "Axiosky Governor",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://axiosky.com/pages/platform/governor.html",
+          "description": "Real-time AI policy enforcement engine that intercepts autonomous agent actions, evaluates them against versioned policy-as-code, and blocks violations before execution.",
+          "isPartOf": {
+            "@id": "https://axiosky.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://axiosky.com/pages/platform/governor.html#webpage",
+          "url": "https://axiosky.com/pages/platform/governor.html",
+          "name": "AI Governor — Real-Time Policy Enforcement for Autonomous Agents | Axiosky",
+          "description": "Axiosky Governor intercepts every agent action before execution. Enforce deterministic policy-as-code, block violations instantly, and generate immutable audit trails for governments and regulated enterprises.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://axiosky.com/#organization" }
+        }
+      ]
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,18 +93,22 @@
     <link rel="stylesheet" href="../../css/governor.css">
 
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="../../index.html">
-                    <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <!-- Platform dropdown -->
+    <div class="navbar-logo">
+        <a href="../../index.html">
+            <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
+        </a>
+    </div>
+    
+    <!-- Main nav items - centered -->
+    <ul class="nav-menu">
+    <!-- Platform dropdown -->
     <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle">Platform</a>
         <ul class="dropdown-menu">
@@ -41,62 +118,109 @@
             <li><a href="../../pages/platform/security.html" class="dropdown-link">Security</a></li>
         </ul>
     </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Solutions</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
-                        <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
-                    </ul>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Company</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../pages/company/about.html" class="dropdown-link">About</a></li>
-                        <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
+    
+    <!-- Solutions dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Solutions</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
+            <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
+        </ul>
+    </li>
+    
+    <!-- Company dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Company</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/company/about.html" class="dropdown-link">About Us</a></li>
+            <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
+        </ul>
+    </li>
+</ul>
 
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    
+    <!-- CTA button - right side -->
+    <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
+    
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
     </nav>
 
-    <!-- HERO Section -->
-    
-    <section class="governor-hero">
-        <div class="section-container">
-            <h1 class="hero-headline">The Governor: Intercept, Evaluate, Enforce</h1>
-            <h2 class="hero-subheadline">Real-time policy enforcement before agent actions reach production systems. Every decision deterministic. Every violation prevented. Every outcome auditable.</h2>
-            <p class="hero-paragraph">The Governor is Axiosky's control plane—a runtime layer that sits between autonomous agents and your enterprise systems. It evaluates every proposed action against versioned, machine-enforceable policy before execution. Approvals happen in milliseconds. Violations are blocked automatically. Edge cases escalate to humans with full context. Nothing bypasses governance.</p>
-            
-            <div class="hero-features">
-                <div class="feature-item">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-                    <span>Pre-execution interception</span>
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="snav-mobile" id="snavMobile">
+        <ul class="snav-mobile-list">
+
+<li class="snav-mobile-item">
+    <button class="snav-mobile-btn">Platform
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="snav-mobile-drop">
+        <a href="../../pages/platform/governor.html" class="snav-mobile-link">Governance</a>
+        <a href="../../pages/platform/orchestrator.html" class="snav-mobile-link">Orchestration</a>
+        <a href="../../pages/platform/policy-engine.html" class="snav-mobile-link">Policy Engine</a>
+        <a href="../../pages/platform/security.html" class="snav-mobile-link">Security</a>
+    </div>
+</li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/solutions/government.html" class="snav-mobile-link">Government</a>
+                    <a href="../../pages/solutions/critical-infrastructure.html" class="snav-mobile-link">Compliance-Critical</a>
                 </div>
-                <div class="feature-item">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-                    <span>Deterministic policy enforcement</span>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Company
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/company/about.html" class="snav-mobile-link">About Us</a>
+                    <a href="../../pages/company/team.html" class="snav-mobile-link">Team</a>
                 </div>
-                <div class="feature-item">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-                    <span>Built for real-time operations</span>
-                </div>
-                <div class="feature-item">
-                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg>
-                    <span>Immutable audit trails</span>
+            </li>
+            <div class="snav-mobile-header">
+                <a href="../../pages/request-pilot.html" class="btn btn-request-pilot">Request Pilot</a>
+            </div>
+        </ul>
+    </div>
+
+    <section class="homepagecontent">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="dark-theme-hero">
+        <div class="hero-container hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-h1">The Governor:<br>Intercept, Evaluate, Enforce</h1>
+                <p class="hero-lead">
+                    Real-time policy enforcement before agent actions reach production systems. Every decision deterministic. Every violation prevented. Every outcome auditable.
+                </p>
+
+                <p class="hero-secondlead">
+                    The Governor is Axiosky's control plane—a runtime layer that sits between autonomous agents and your enterprise systems. It evaluates every proposed action against versioned, machine-enforceable policy before execution. Approvals happen in milliseconds. Violations are blocked automatically. Edge cases escalate to humans with full context. Nothing bypasses governance.
+
+                </p>
+
+                <ul class="hero-bullets">
+                <li>Pre-execution interception</li>
+                <li>Deterministic policy enforcement</li>
+                <li>Built for real-time operations</li>
+                <li>Immutable audit trails</li>
+            </ul>
+                
+                <div>
+                    <a href="../../pages/request-pilot.html" class="btn btn-primary">Request Consultation</a>
                 </div>
             </div>
             
-            <div class="hero-ctas">
-                <a href="../../pages/request-pilot.html" class="btn btn--primary btn--lg">Request Technical Deep-Dive</a>
+            <div class="hero-canvas-container">
+                <canvas id="sim-canvas"></canvas>
+            </div>
         </div>
     </section>
 
@@ -105,21 +229,21 @@
         <div class="section-container">
             <h2 class="section-title">Governance That Works in Real Time</h2>
             <div class="capabilities-grid">
-                <div class="capability-card">
-                    <h3 class="capability-title">Regulatory Compliance</h3>
-                    <p class="capability-desc">GDPR, SOX, HIPAA enforcement at runtime</p>
+                <div class="tech-card">
+                    <h3 class="tech-title">Regulatory Compliance</h3>
+                    <p class="capability-desc" style="text-align: center;">DPDP Act, SEBI, RBI enforcement at runtime</p>
                 </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Financial Controls</h3>
-                    <p class="capability-desc">Approval thresholds, segregation of duties</p>
+                <div class="tech-card">
+                    <h3 class="tech-title">Financial Controls</h3>
+                    <p class="capability-desc" style="text-align: center;">Approval thresholds, segregation of duties</p>
                 </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Data Access Governance</h3>
-                    <p class="capability-desc">PII handling, jurisdictional restrictions</p>
+                <div class="tech-card">
+                    <h3 class="tech-title">Data Access Governance</h3>
+                    <p class="capability-desc" style="text-align: center;">PII handling, jurisdictional restrictions</p>
                 </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Operational Safety</h3>
-                    <p class="capability-desc">Rate limits, dependency checks, rollback triggers</p>
+                <div class="tech-card">
+                    <h3 class="tech-title">Operational Safety</h3>
+                    <p class="capability-desc" style="text-align: center;">Rate limits, dependency checks, rollback triggers</p>
                 </div>
             </div>
         </div>
@@ -127,68 +251,108 @@
 
     <!-- Architecture Diagram Section -->
     <section class="section-architecture">
-        <div class="section-container">
-            <h2 class="section-title">Three-Layer Architecture</h2>
-            <div class="architecture-diagram">
-                <div class="arch-layer">
-                    <div class="layer-label">Agent Layer</div>
-                    <div class="layer-content">LLMs, workflows, tools</div>
-                    <div class="layer-action">Proposes Actions</div>
-                </div>
-                <div class="arch-arrow">↓</div>
-                <div class="arch-layer governor-layer">
-                    <div class="layer-label">Governor</div>
-                    <div class="layer-content">Runtime enforcement</div>
-                    <div class="layer-action">Intercept • Evaluate • Enforce</div>
-                </div>
-                <div class="arch-arrow">↓</div>
-                <div class="arch-layer">
-                    <div class="layer-label">Execution Layer</div>
-                    <div class="layer-content">APIs, databases, tools</div>
-                    <div class="layer-action">Approved Actions Only</div>
-                </div>
+    <div class="section-container">
+        <h2 class="section-title">Three-Layer Architecture</h2>
+        <div class="arch-visual-horizontal">
+            <div class="arch-node">
+                <div class="eyebrow-gov">Agent Layer</div>
+                <div class="arch-node-content">LLMs, Workflows, Tools</div>
+                <div class="arch-node-sub">Proposes Actions</div>
             </div>
-            <p class="arch-caption">Every agent action passes through deterministic policy enforcement before execution.</p>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node highlight">
+                <div class="eyebrow-gov">The Governor</div>
+                <div class="arch-node-content">Runtime Enforcement</div>
+                <div class="arch-node-sub accent">Intercept • Evaluate • Enforce</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node">
+                <div class="eyebrow-gov">Execution Layer</div>
+                <div class="arch-node-content">APIs, Databases, Systems</div>
+                <div class="arch-node-sub">Approved Actions Only</div>
+            </div>
         </div>
-    </section>
+        <p class="section-subtitle" style="margin-top: 40px;">Every agent action passes through deterministic policy enforcement before execution.</p>
+    </div>
+</section>
 
     <!-- Problem Section -->
-    <section class="section-problem-governance">
-        <div class="section-container">
-            <h2 class="section-title">Why Governance After Execution Fails</h2>
-            <p class="section-subtitle">Traditional monitoring tools log what already happened. By the time you detect a violation, the damage is done.</p>
-            
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <div class="comparison-header">
-                        <h3 class="comparison-title">Monitoring (Post-Action)</h3>
-                    </div>
-                    <p class="comparison-desc"><strong>What it does:</strong> Logs events after execution. Analyzes patterns. Sends alerts when thresholds are crossed.</p>
-                    <p class="comparison-problem"><strong>The problem:</strong> Violations are discovered in retrospect. Regulatory breaches create liability before detection. Rollback is manual, expensive, and incomplete.</p>
-                    <p class="comparison-example"><strong>Example failure:</strong> Agent transfers 500K to vendor. Monitoring flags it 6 hours later as violating approval policy. Money is gone. Audit finding is inevitable.</p>
-                </div>
-                
-                <div class="comparison-card">
-                    <div class="comparison-header">
-                        <h3 class="comparison-title">Guardrails (Heuristic)</h3>
-                    </div>
-                    <p class="comparison-desc"><strong>What it does:</strong> Probabilistic filters on agent outputs. Semantic similarity checks. Confidence scoring.</p>
-                    <p class="comparison-problem"><strong>The problem:</strong> Non-deterministic. Same input can produce different outcomes. Cannot encode complex regulatory logic. Creates false positives and false negatives.</p>
-                    <p class="comparison-example"><strong>Example failure:</strong> Agent drafts contract clause that's 94% semantically similar to approved template. Guardrail allows it. Clause violates procurement regulation. Legal catches it weeks later.</p>
-                </div>
-                
-                <div class="comparison-card comparison-card-highlight">
-                    <div class="comparison-header">
-                        <h3 class="comparison-title">Governor (Pre-Execution)</h3>
-                    </div>
-                    <p class="comparison-desc"><strong>What it does:</strong> Intercepts every proposed action. Evaluates against deterministic policy code. Enforces decision before execution.</p>
-                    <p class="comparison-result"><strong>The result:</strong> Violations are prevented, not detected. Approvals are provably correct. Audit trail shows enforcement, not just observation.</p>
-                    <p class="comparison-example"><strong>Example success:</strong> Agent proposes 500K transfer. Governor evaluates against approval matrix, payment limits, vendor verification rules. Blocks action. Escalates to CFO with full context. CFO approves or modifies. System executes only after human override. Full audit trail.</p>
+    <section class="section-problem-governance py-16 bg-[#0a0a0a]">
+    <div class="section-container">
+        <header class="mb-10 text-center">
+            <h2 class="section-title   ">Why Governance After Execution Fails</h2>
+            <p class="text-slate-400 text-lg">Traditional monitoring tools log what already happened. By the time you detect a violation, the damage is done.</p>
+        </header>
+
+                <!-- TRACK 1 -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <span>01. Monitoring</span>
+                <span class="text-red-500">Post-Action / Reactive</span>
+            </div>
+            <div class="track" id="track-monitoring">
+                <div class="gate"><div class="gate-label">Log Filter</div></div>
+            </div>
+        </div>
+
+        <!-- TRACK 2 -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <span>02. Guardrails</span>
+                <span class="text-amber-500">Probabilistic / Heuristic</span>
+            </div>
+            <div class="track" id="track-guardrails">
+                <div class="gate" id="gate-guardrail"><div class="gate-label">Similarity Check</div></div>
+            </div>
+        </div>
+
+        <!-- TRACK 3 -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-emerald-500 uppercase tracking-widest">
+                <span>03. The Governor</span>
+                <span class="bg-emerald-500/10 px-2 rounded border border-emerald-500/20">Deterministic / Pre-Execution</span>
+            </div>
+            <div class="track border-emerald-500/20 bg-emerald-500/5" id="track-governor">
+                <div class="scanner" id="gov-scanner"></div>
+                <div class="gate success-gate" style="left: 50%;"><div class="gate-label text-emerald-400">Hard Policy Engine</div></div>
+            </div>
+        </div>
+
+        <!-- DEFINITION GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+            <!-- MONITORING DEF -->
+            <div class="definition-card bg-slate-900/50 p-5 rounded-xl border border-slate-800">
+                <h4 class="text-red-400 font-bold text-sm mb-2 italic">Monitoring</h4>
+                <p class="text-[12px] text-slate-400 leading-relaxed mb-3">Logs events <strong>after</strong> execution. Analyzes patterns to send alerts.</p>
+                <div class="text-[10px] text-red-300/60 font-semibold border-t border-red-900/30 pt-2">
+                    Problem: Damage is done before detection. Liability is already created.
                 </div>
             </div>
-            
-           </div>
-    </section>
+
+            <!-- GUARDRAILS DEF -->
+            <div class="definition-card bg-slate-900/50 p-5 rounded-xl border border-slate-800">
+                <h4 class="text-amber-400 font-bold text-sm mb-2 italic">Guardrails</h4>
+                <p class="text-[12px] text-slate-400 leading-relaxed mb-3">Uses semantic similarity and "guesses" if output is safe.</p>
+                <div class="text-[10px] text-amber-300/60 font-semibold border-t border-amber-900/30 pt-2">
+                    Problem: Non-deterministic. Same input yields different results. Misses logic.
+                </div>
+            </div>
+
+            <!-- GOVERNOR DEF -->
+            <div class="definition-card bg-emerald-900/10 p-5 rounded-xl border border-emerald-500/20 ring-1 ring-emerald-500/20 shadow-lg shadow-emerald-500/5">
+                <h4 class="text-emerald-400 font-bold text-sm mb-2 uppercase tracking-tighter">The Governor</h4>
+                <p class="text-[12px] text-slate-300 leading-relaxed mb-3">Intercepts every proposed action and evaluates against <strong>hard policy code</strong>.</p>
+                <div class="text-[10px] text-emerald-300 font-semibold border-t border-emerald-500/30 pt-2">
+                    Result: Violations prevented. Audit shows enforcement, not observation.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- How Governor Works Section -->
     <section class="section-how-governor">
@@ -196,151 +360,54 @@
             <h2 class="section-title">The Enforcement Mechanism</h2>
             <p class="section-subtitle">Every agent action flows through a deterministic evaluation pipeline. The Governor doesn't guess—it computes.</p>
             
-            <div class="enforcement-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Interception</h3>
-                        <p>Agent proposes action. Orchestrator routes proposal to Governor before execution. Action is suspended in queue.</p>
-                    </div>
-                </div>
-                
-                <div class="step-connector">→</div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Context Assembly</h3>
-                        <p>Governor retrieves agent identity, user authorization, data classification, policy version, historical decisions, system state.</p>
-                    </div>
-                </div>
-                
-                <div class="step-connector">→</div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Policy Evaluation</h3>
-                        <p>Policy Engine executes versioned ruleset. Deterministic logic produces decision: APPROVE, BLOCK, or ESCALATE.</p>
-                    </div>
-                </div>
-                
-                <div class="step-connector">→</div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Enforcement & Audit</h3>
-                        <p>Decision enforced. Every decision logged immutably with timestamp, agent ID, policy version, rule outcomes, decision rationale.</p>
-                    </div>
-                </div>
+            <div class="arch-visual-horizontal">
+            <div class="arch-node">
+                <div class="eyebrow-gov">Interception</div>
+                <div class="arch-node-sub">Agent proposes action. Orchestrator routes proposal to Governor before execution. Action is suspended in queue.</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+            <div class="arch-node">
+                <div class="eyebrow-gov">Context Assembly</div>
+                <div class="arch-node-sub">Governor retrieves agent identity, user authorization, data classification, policy version, historical decisions, system state.</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node">
+                <div class="eyebrow-gov">Policy Evaluation</div>
+                <div class="arch-node-sub">Policy Engine executes versioned ruleset. Deterministic logic produces decision: APPROVE, BLOCK, or ESCALATE.</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node">
+                <div class="eyebrow-gov">Enforcement & Audit</div>
+                <div class="arch-node-sub">Decision enforced. Every decision logged immutably with timestamp, agent ID, policy version, rule outcomes, decision rationale.</div>
             </div>
         </div>
-    </section>
+     </div>
+  </section>
 
     <!-- Scenario Section -->
     <section class="section-scenario">
         <div class="section-container">
             <h2 class="section-title">Seeing Governance Execute</h2>
-            <p class="section-subtitle">A financial services example: Agent proposes a wire transfer</p>
+            <p class="section-subtitle">A financial services example: Agent proposes an RTGS transfer</p>
             
-            <div class="scenario-container">
-                <div class="scenario-step">
-                    <h3 class="scenario-title">Agent Action Proposal</h3>
-                    <div class="scenario-code">
-                        <code>action: initiateWireTransfer<br>
-amount: $475,000<br>
-recipient: VendorID8472<br>
-requesting_agent: APAgent03<br>
-user_context: FinanceManager-SarahChen</code>
+            <div class="terminal">
+                    <div class="terminal-header">
+                        <div style="display: flex; gap: 6px;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+                        </div>
+                        <span style="font-size: 0.7rem; color: #666;">GOVERNOR_PIPELINE_V2.3</span>
+                    </div>
+                    <div class="terminal-body" id="log-container">
+                        <div class="log-entry log-dim">> Initializing enforcement listener...</div>
                     </div>
                 </div>
-                
-                <div class="scenario-divider">↓</div>
-                
-                <div class="scenario-step">
-                    <h3 class="scenario-title">Governor Intercepts</h3>
-                    <div class="scenario-code">
-                        <code>Action queued at 2025-01-15T14:32:18.442Z<br>Retrieving: User authorization, vendor status, approval matrix, transaction history<br>
-Loading: Financial Controls v2.3.1<br>
-<br>Executing ruleset...</br>
-<br>Policy Evaluation</br>
-<br>Rule 1: Amount Threshold Check</br>
-<br>✓ PASS — $475K is under $500K single-transaction limit for Finance Manager role</br>
-
-<br>Rule 2: Dual Authorization Requirement</br>
-<br>✗ FAIL — Transfers >$250K require CFO approval. Current user is Finance Manager.</br>
-
-<br>Rule 3: Vendor Verification</br>
-<br>✓ PASS — Vendor_ID_8472 is active, verified, and has valid banking details</br>
-
-<br>Rule 4: Rate Limiting</br>
-<br>✓ PASS — User has not exceeded daily transaction count (3/10)</br>
-
-<br>Rule 5: Sanctions Screening</br>
-<br>✓ PASS — Recipient not on OFAC or sanctions lists</br>
-
-<br>Decision Output:</br>
-
-<br>DECISION: ESCALATE</br>
-<br>REASON: Dual authorization required (Rule 2 violation)</br>
-<br>ESCALATION_ROUTE: CFO_approval_queue</br>
-
-<br>CONTEXT_PROVIDED:</br>
-<br>- Original agent proposal</br>
-<br>- User attempting action</br>
-<br>- Policy rule triggered</br>
-<br>- Vendor details</br>
-<br>- Recent transaction history</br>
-
-<br>AWAITING: Human approval or rejection</br>
-
-CONTEXT PROVIDED: Original proposal, user authorization, vendor details, recent transaction history</code>
-                    </div>
-                </div>
-                
-                <div class="scenario-divider">↓</div>
-                
-                <div class="scenario-step">
-                    <h3 class="scenario-title">Human Review</h3>
-                    <div class="scenario-code">
-                        <code>CFO Dashboard: Wire Transfer $475,000 to VendorID8472<br>
-RRequested by Finance Manager Sarah Chen | Q4 supplier payment per contract<br>
-Vendor has 12 successful prior payments</code>
-                    </div>
-                    <p class="scenario-action">[APPROVE] [REJECT] [MODIFY]</p>
-                </div>
-                
-                <div class="scenario-divider">↓</div>
-                
-                <div class="scenario-step">
-                    <h3 class="scenario-title">Immutable Audit Record</h3>
-                    <div class="scenario-code">
-                        <code>audit_id: gov20250115143218...<br>
-timestamp: 2025-01-15T14:32:18.442Z<br>
-agent: APAgent03<br>
-user: FinanceManager-SarahChen<br>
-decision: ESCALATE → APPROVED<br>
-triggered_rule: dual_authorization_required<br>
-human_override: true<br>
-override_timestamp: 2025-01-15T14:35:42.018Z<br>
-final_decision: APPROVED<br>
-execution_status: COMPLETED</code>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scenario-takeaway">
-                <h3>What this demonstrates:</h3>
-                <ul class="takeaway-list">
-                    <li>Agent proposed action was suspended, not executed</li>
-                    <li>Policy evaluation completed in real-time</li>
-                    <li>Violation was caught before money moved</li>
-                    <li>Human received full context for informed decision</li>
-                    <li>Every step is recorded immutably</li>
-                    <li>Regulator can reconstruct decision flow years later</li>
-                </ul>
-            </div>
         </div>
     </section>
 
@@ -385,25 +452,26 @@ execution_status: COMPLETED</code>
             <h2 class="section-title">How Governor Fits Into Your Stack</h2>
             <p class="section-subtitle">The Governor integrates at the orchestration layer between agent frameworks and execution environments. No agent code changes required.</p>
             
-            <div class="integration-diagram">
-                <div class="integration-box governor-box">
-                    <h3>Your Agent Layer</h3>
-                    <p>LangChain, AutoGPT, Custom Agents</p>
+            <div class="arch-visual-horizontal">
+            <div class="arch-node">
+                <div class="eyebrow-gov">Your Agent Layer</div>
+                <div class="arch-node-sub">LangChain, AutoGPT, Custom Agents</div>
                 </div>
-                <div class="integration-arrow">↓</div>
-                <div class="integration-box governor-box">
-                    <h3>Axiosky Orchestrator</h3>
-                    <p>Action Proposals Intercepted Here</p>
+
+                <div class="arch-arrow-h"></div>
+                <div class="arch-node">
+                <div class="eyebrow-gov">Axiosky Orchestrator</div>
+                    <div class="arch-node-sub">Action Proposals Intercepted Here</div>
                 </div>
-                <div class="integration-arrow">↓</div>
-                <div class="integration-box governor-box">
-                    <h3>Governor</h3>
-                    <p>Policy Enforcement Layer</p>
+                <div class="arch-arrow-h"></div>
+                <div class="arch-node">
+                <div class="eyebrow-gov">Governor</div>
+                    <div class="arch-node-sub">Policy Enforcement Layer</div>
                 </div>
-                <div class="integration-arrow">↓</div>
-                <div class="integration-box governor-box">
-                    <h3>Your Execution Layer</h3>
-                    <p>Enterprise APIs, Databases, Cloud Systems</p>
+                <div class="arch-arrow-h"></div>
+        <div class="arch-node">
+                <div class="eyebrow-gov">Your Execution Layer</div>
+                    <div class="arch-node-sub">Enterprise APIs, Databases, Cloud Systems</div>
                 </div>
             </div>
         </div>
@@ -414,51 +482,23 @@ execution_status: COMPLETED</code>
         <div class="section-container">
             <h2 class="section-title">Common Questions</h2>
             
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3 class="faq-question">Won't governance slow down our agents?</h3>
-                    <p class="faq-answer">Governor is architected for minimal overhead. Most agent latency comes from LLM inference and external API calls, not decision evaluation. The deterministic pipeline is designed to operate in real-time without creating perceptible delays. For latency-sensitive workloads, Governor supports pre-evaluated decision paths and cached approvals.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">What happens if Governor becomes unavailable?</h3>
-                    <p class="faq-answer">Governor is designed as a resilient control plane with configurable failure behavior. Organizations choose enforcement behavior based on risk tolerance. Options include strict mode (fail-closed), graceful degradation (cached approvals), or failover to secondary instance.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">What policy language does Governor use?</h3>
-                    <p class="faq-answer">Governor supports multiple policy expression methods: Policy DSL (declarative, similar to Rego/OPA), general-purpose code (Python for custom logic), or existing policy formats. Policies are version-controlled and exportable, allowing organizations to retain governance definitions independently.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">How does Governor handle new or unseen agent actions?</h3>
-                    <p class="faq-answer">Governor evaluates actions based on attributes and context, not fixed action names. Policies apply to characteristics like data sensitivity, financial thresholds, required approvals, or data classification. New agent capabilities are still governed as long as they exhibit regulated characteristics.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">Can policies be tested before enforcement?</h3>
-                    <p class="faq-answer">Yes. Governor supports observation mode (policies evaluate without enforcing), incremental rollout (gradual enforcement), and policy comparison (parallel evaluation). This allows teams to validate behavior before full enforcement.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">How do we integrate Governor with our existing systems?</h3>
-                    <p class="faq-answer">Governor integrates at the orchestration layer between agent frameworks and execution environments. No agent code changes required. Integration points include SDKs for popular agent frameworks, REST APIs, and event-driven patterns via message queues.</p>
-                </div>
+            <!-- Minimal FAQ List -->
+            <div id="faq-container" class="border-t border-white/10">
+                <!-- Items injected via JS -->
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section-final-cta">
-        <div class="section-container">
-            <h2 class="section-title">Ready to Govern Your Agents?</h2>
-            <p class="section-subtitle">Start with a technical deep-dive. Our engineers will map your workflows, prototype policy enforcement, and demonstrate auditable outcomes.</p>
-            
-            <div class="final-ctas">
-                <a href="../../pages/request-pilot.html" class="btn btn--primary btn--lg">Request Technical Discussion</a>
-            </div>
+        <!-- ── Global CTA ─────────────────────────────────────────── -->
+<section class="bl-cta">
+    <div class="bl-cta-inner">
+        <p class="bl-cta-label">Axiosky</p>
+        <h2 class="bl-cta-heading">The Standard for<br>AI Governance.</h2>
+        <div class="bl-cta-actions">
+            <a href="../../pages/request-pilot.html" class="btn btn-primary">Request a Demo</a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -515,5 +555,7 @@ execution_status: COMPLETED</code>
     <!-- Scripts -->
     <script src="../../js/main.js"></script>
     <script src="../../js/navigation.js"></script>
+    <script src="../../js/governor.js"></script>
+    <script src="../../js/cookie-banner.js"></script>
 </body>
 </html>

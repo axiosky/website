@@ -13,6 +13,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       return;
     }
 
+    // Skip sec- page nav links — handled by security page script
+    if (href.startsWith('#sec-')) {
+      return;
+    }
+
     e.preventDefault();
     
     const target = document.querySelector(href);
@@ -24,6 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
 
 // ===== BUTTON RIPPLE EFFECT (optional) =====
 document.querySelectorAll('.btn').forEach(button => {

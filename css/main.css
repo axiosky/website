@@ -13,7 +13,7 @@
   
   /* Text */
   --text-primary: #F9FAFB;
-  --text-secondary: #94A3B8;
+  --text-secondary: #a8a8a8;
   --text-muted: #64748B;
   
   /* Accent & Action */
@@ -31,7 +31,7 @@
   /* ===== TYPOGRAPHY ===== */
   --font-heading: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-subheading: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-body: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   
   /* Font Sizes */
   --size-xs: 12px;
@@ -99,6 +99,11 @@
 /* ========================================
    BASE / RESET
    ======================================== */
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
 
 * {
   margin: 0;
@@ -116,7 +121,7 @@ body {
   font-size: var(--size-base);
   line-height: var(--leading-normal);
   color: var(--text-primary);
-  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 50%, var(--bg-primary) 100%);
+  background: #0a0a0a;
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -166,9 +171,7 @@ p {
 }
 
 p:last-child {
-  margin-top: 15px;
-    text-align: center;
-    color: var(--color-text-secondary);
+    color: #a8a8a8;
 }
 
 a {
@@ -179,9 +182,7 @@ a {
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-a:hover {
-  color: var(--accent-blue-light);
-}
+
 
 strong {
   font-weight: var(--weight-semibold);
@@ -206,10 +207,11 @@ section {
    ======================================== */
 
 .section-title {
-  font-size: var(--size-4xl);
-  font-weight: var(--weight-bold);
-  margin-bottom: var(--space-32);
-  text-align: center;
+  font-size: clamp(28px, 4vw, 40px);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-24);
+    text-align: center;
+    color: var(--color-surface);
 }
 
 .section-subtitle {
@@ -300,4 +302,83 @@ section {
   100% {
     transform: translateY(100%);
   }
+}
+
+/* ── Cookie Banner ─────────────────────────────────── */
+/* Add these rules to main.css or a dedicated cookie-banner.css */
+
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #111118;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1rem 1.5rem;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+#cookie-banner.cb-hide {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.cb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cb-text {
+  flex: 1;
+  min-width: 260px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cb-text a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cb-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cb-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.cb-btn:hover { opacity: 0.85; }
+
+.cb-accept {
+  background: #fff;
+  color: #0a0a0f;
+}
+
+.cb-essential {
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.18) !important;
+}
+
+@media (max-width: 600px) {
+  .cb-inner { flex-direction: column; align-items: flex-start; }
+  .cb-actions { width: 100%; }
+  .cb-btn { flex: 1; text-align: center; }
 }

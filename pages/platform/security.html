@@ -3,11 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Platform security and auditability for autonomous agent orchestration. Encryption, RBAC, policy-as-code, and audit-ready controls.">
-    <meta property="og:title" content="Security & Audit — Platform Security | Axiosky">
-    <meta property="og:description" content="Enterprise-grade security and auditability designed for regulated environments.">
-    <meta property="og:type" content="website">
-    <title>Security & Audit - Axiosky</title>
+
+    <!-- ═══════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════ -->
+    <title>Enterprise AI Security Architecture — Zero Trust, Audit & Compliance | Axiosky</title>
+    <meta name="description" content="Axiosky's security architecture delivers Zero Trust segmentation, mTLS service identity, cryptographic audit trails, BYOK key management, and SOC 2 / ISO 27001 aligned controls for regulated AI deployments.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://axiosky.com/pages/platform/security.html">
+
+    <!-- ═══════════════════════════════════════
+         OPEN GRAPH (LinkedIn, Facebook, WhatsApp)
+    ═══════════════════════════════════════ -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://axiosky.com/pages/platform/security.html">
+    <meta property="og:site_name"    content="Axiosky">
+    <meta property="og:locale"       content="en_US">
+    <meta property="og:title"        content="Enterprise AI Security Architecture — Zero Trust & Audit | Axiosky">
+    <meta property="og:description"  content="Defense-in-depth for autonomous AI: Zero Trust segmentation, mTLS, immutable audit logs, BYOK key management, and compliance controls for GDPR, SOC 2, ISO 27001, and CERT-In guidelines.">
+    <meta property="og:image"        content="https://axiosky.com/images/og-security.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"    content="Enterprise AI Security Architecture — Zero Trust & Audit | Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@axiosky">
+    <meta name="twitter:title"       content="Enterprise AI Security Architecture — Zero Trust & Audit | Axiosky">
+    <meta name="twitter:description" content="Axiosky Security: Zero Trust network segmentation, mTLS service auth, cryptographically chained audit logs, and BYOK key management. Built for regulated AI workforces.">
+    <meta name="twitter:image"       content="https://axiosky.com/images/og-security.png">
+
+    <!-- ═══════════════════════════════════════
+         TECHNICAL
+    ═══════════════════════════════════════ -->
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         JSON-LD SCHEMA
+    ═══════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axiosky.com/#organization",
+          "name": "Axiosky",
+          "url": "https://axiosky.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://axiosky.com/assets/images/logo.svg"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://axiosky.com/pages/platform/security.html#software",
+          "name": "Axiosky Security Platform",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://axiosky.com/pages/platform/security.html",
+          "description": "Enterprise security architecture for autonomous AI deployments featuring Zero Trust segmentation, mTLS authentication, immutable audit trails, and compliance controls aligned with SOC 2, ISO 27001, and NIST.",
+          "isPartOf": {
+            "@id": "https://axiosky.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://axiosky.com/pages/platform/security.html#webpage",
+          "url": "https://axiosky.com/pages/platform/security.html",
+          "name": "Enterprise AI Security Architecture — Zero Trust, Audit & Compliance | Axiosky",
+          "description": "Axiosky's security architecture delivers Zero Trust segmentation, mTLS service identity, cryptographic audit trails, BYOK key management, and SOC 2 / ISO 27001 aligned controls for regulated AI deployments.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://axiosky.com/#organization" }
+        }
+      ]
+    }
+    </script>
 <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     
@@ -23,13 +97,15 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="../../index.html">
-                    <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <!-- Platform dropdown -->
+    <div class="navbar-logo">
+        <a href="../../index.html">
+            <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
+        </a>
+    </div>
+    
+    <!-- Main nav items - centered -->
+    <ul class="nav-menu">
+    <!-- Platform dropdown -->
     <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle">Platform</a>
         <ul class="dropdown-menu">
@@ -39,260 +115,682 @@
             <li><a href="../../pages/platform/security.html" class="dropdown-link">Security</a></li>
         </ul>
     </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Solutions</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
-                        <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
-                    </ul>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Company</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../pages/company/about.html" class="dropdown-link">About</a></li>
-                        <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
-
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="security-hero">
-        <div class="section-container">
-            <div class="eyebrow">Security & Auditability</div>
-            <h1 class="hero-headline">Enterprise Security Built Into Architecture</h1>
-            <p class="hero-subheadline">Defense-in-depth controls, policy-as-code enforcement, and immutable audit trails designed for regulated environments.</p>
-            <p class="hero-paragraph">Security is not a layer bolted on top — it is the foundation. Agents propose actions. Orchestrator enforces dependencies. Governor evaluates signed policies. Execution systems are reachable only after approval. All communication is encrypted with mTLS. Every decision is auditable.</p>
-            <div class="hero-ctas">
-                <button class="btn btn--primary btn--lg">Request Security Review</button>
-                <button class="btn btn--secondary btn--lg">Request Audit Pack (NDA)</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECURITY PRINCIPLES SECTION -->
-    <section class="section-principles">
-        <div class="section-container">
-            <h2 class="section-title">Security Principles</h2>
-            <p class="section-subtitle">Eight core principles that guide architecture and operational security.</p>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <div class="principle-icon">🔐</div>
-                    <h3 class="principle-title">Least Privilege</h3>
-                    <p class="principle-desc">Minimal entitlements for users, agents, and services. No unnecessary permissions.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🛡️</div>
-                    <h3 class="principle-title">Defense-in-Depth</h3>
-                    <p class="principle-desc">Layered controls: network, identity, policy, and audit. Multiple checkpoints.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">⚖️</div>
-                    <h3 class="principle-title">Policy-as-Code</h3>
-                    <p class="principle-desc">Deterministic, testable rules. Versioned, signed, and enforced by Governor.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🚫</div>
-                    <h3 class="principle-title">Fail-Safe Defaults</h3>
-                    <p class="principle-desc">Ambiguous checks escalate or block. Never permit by default.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🔒</div>
-                    <h3 class="principle-title">Zero-Trust Segmentation</h3>
-                    <p class="principle-desc">Authenticated & encrypted service-to-service communication. No implicit trust.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">📝</div>
-                    <h3 class="principle-title">Immutable Audit Trails</h3>
-                    <p class="principle-desc">Append-only decision logs with full replayability for compliance review.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🔍</div>
-                    <h3 class="principle-title">Data Minimization</h3>
-                    <p class="principle-desc">PII access limited. Pseudonymization supported. Privacy-by-design.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">✅</div>
-                    <h3 class="principle-title">Secure Defaults</h3>
-                    <p class="principle-desc">TLS 1.3, modern ciphers, hardened configurations out-of-the-box.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ARCHITECTURE SECTION -->
-    <section class="section-architecture">
-        <div class="section-container">
-            <h2 class="section-title">Security Architecture</h2>
-            <p class="section-subtitle">Layered security: untrusted agents → coordinated orchestration → policy evaluation → guarded execution.</p>
-            <div class="architecture-flow">
-                <div class="flow-item">
-                    <div class="flow-badge">🤖</div>
-                    <div class="flow-content">
-                        <h4>Agent Runtime (Untrusted)</h4>
-                        <p>Agents propose actions with intent. Cannot reach execution systems directly.</p>
-                    </div>
-                </div>
-                <div class="flow-separator">↓ mTLS (TLS 1.3)</div>
-                <div class="flow-item">
-                    <div class="flow-badge">🔗</div>
-                    <div class="flow-content">
-                        <h4>Orchestrator</h4>
-                        <p>Enforces dependencies, manages resource locks, routes to Governor. Mandatory routing gate.</p>
-                    </div>
-                </div>
-                <div class="flow-separator">↓ mTLS</div>
-                <div class="flow-item">
-                    <div class="flow-badge">⚖️</div>
-                    <div class="flow-content">
-                        <h4>Governor</h4>
-                        <p>Evaluates signed policy packages. Issues APPROVE / BLOCK / ESCALATE. Produces audit records.</p>
-                    </div>
-                </div>
-                <div class="flow-separator">↓ mTLS</div>
-                <div class="flow-item">
-                    <div class="flow-badge">🎯</div>
-                    <div class="flow-content">
-                        <h4>Execution Layer</h4>
-                        <p>Databases, APIs, external systems. Reachable only after Governor approval via Orchestrator.</p>
-                    </div>
-                </div>
-            </div>
-            <p style="text-align: center; font-style: italic; color: var(--color-text-secondary); margin-top: var(--space-32);">All inter-component traffic is encrypted (TLS 1.3) and authenticated (mTLS with service identities).</p>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="section-features">
-        <div class="section-container">
-            <h2 class="section-title">Security Features</h2>
-            <p class="section-subtitle">Enterprise-grade controls and capabilities.</p>
-            <div class="features-grid">
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">1</div>
-                        <h3 class="feature-title">Identity & Access Management</h3>
-                    </div>
-                    <p class="feature-desc">SSO (SAML/OIDC), SCIM provisioning, MFA, short-lived tokens. For agents: mTLS with X.509 certificates. RBAC & ABAC for fine-grained authorization.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">2</div>
-                        <h3 class="feature-title">Network Segmentation</h3>
-                    </div>
-                    <p class="feature-desc">Agent / Orchestrator / Governor / Execution / Management segments. Agents restricted to Orchestrator only. Explicit firewall rules between layers.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">3</div>
-                        <h3 class="feature-title">Encryption & Key Management</h3>
-                    </div>
-                    <p class="feature-desc">TLS 1.3 for transit, AES-256-GCM at rest. KMS/HSM integration. BYOK support for sovereign deployments. Automated key rotation.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">4</div>
-                        <h3 class="feature-title">Policy Package Signing</h3>
-                    </div>
-                    <p class="feature-desc">Policies are cryptographically signed. Governor validates signature before execution. Tampered packages are rejected.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">5</div>
-                        <h3 class="feature-title">Audit & Compliance</h3>
-                    </div>
-                    <p class="feature-desc">Append-only audit records with policy version hash, user (pseudonymized), action, decision. Replayable for forensics and auditor review.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">6</div>
-                        <h3 class="feature-title">Observability & Monitoring</h3>
-                    </div>
-                    <p class="feature-desc">Structured JSON logs, Prometheus metrics, distributed tracing. Integration with SIEM and APM stacks. Alerting on security events.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HARDENING CHECKLIST SECTION -->
-    <section class="section-checklist">
-        <div class="section-container">
-            <h2 class="section-title">Security Deployment Checklist</h2>
-            <p class="section-subtitle">Quick reference for security architects and infrastructure teams.</p>
-            <div class="checklist-box">
-                <h3 class="checklist-title">Pre-Deployment Validation</h3>
-                <ul class="checklist-list">
-                    <li>Network segmentation per reference architecture (agent → orchestrator → governor → execution)</li>
-                    <li>TLS 1.3 enforced across all components; mTLS for service identities</li>
-                    <li>SSO + SCIM for user provisioning; MFA for admin access</li>
-                    <li>KMS/HSM integration and (optional) BYOK configured</li>
-                    <li>Centralized logging with immutable audit storage</li>
-                    <li>Policy CI/CD (tests + manual compliance gate + signing)</li>
-                    <li>Signed packages for air-gapped/on-prem updates</li>
-                    <li>Incident response plan and security contact established</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="section-faq">
-        <div class="section-container">
-            <h2 class="section-title">Security FAQ</h2>
-            <p class="section-subtitle">Answers to common security and compliance questions.</p>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3 class="faq-question">Can we use our own KMS / BYOK?</h3>
-                    <p class="faq-answer">Yes — BYOK is supported for sovereign and on-prem deployments. Key operations remain under customer control.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">What happens if Governor is unreachable?</h3>
-                    <p class="faq-answer">Default is fail-closed (block actions). Fail-open is configurable per workflow with explicit audit logging.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Do audit logs contain PII?</h3>
-                    <p class="faq-answer">Audit logs use pseudonyms by default. PII is stored separately with policies supporting deletion/pseudonymization.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Can we run Axiosky air-gapped?</h3>
-                    <p class="faq-answer">Yes — signed packages and offline verification workflows support air-gapped deployments.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">How do you prove auditability?</h3>
-                    <p class="faq-answer">Each decision includes policy version/hash and rationale. The system can re-execute policy code to reproduce decisions.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Are penetration test reports public?</h3>
-                    <p class="faq-answer">Executive summaries are shared under NDA to qualified customers. Regular testing is conducted by third parties.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA SECTION -->
-    <section class="section-final-cta">
-        <div class="section-container">
-            <h2 class="section-title">Request a Security Review</h2>
-            <p class="section-subtitle">Schedule a technical deep-dive with our security team. All reviews conducted under NDA.</p>
-            <div class="final-ctas">
-                <button class="btn btn--primary btn--lg">Schedule Security Review</button>
-                <button class="btn btn--secondary btn--lg">Download Hardening Guide (PDF)</button>
-            </div>
-            <p style="font-size: var(--font-size-sm); margin-top: var(--space-24); opacity: 0.9;">Contact: <a href="mailto:security@axiosky.com" style="color: inherit; text-decoration: underline;">security@axiosky.com</a></p>
-        </div>
-    </section>
+    
+    <!-- Solutions dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Solutions</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
+            <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
+        </ul>
+    </li>
+    
+    <!-- Company dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Company</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/company/about.html" class="dropdown-link">About Us</a></li>
+            <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
+        </ul>
+    </li>
+</ul>
 
     
+    <!-- CTA button - right side -->
+    <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
+    
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
+    </nav>
+
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="snav-mobile" id="snavMobile">
+        <ul class="snav-mobile-list">
+
+<li class="snav-mobile-item">
+    <button class="snav-mobile-btn">Platform
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="snav-mobile-drop">
+        <a href="../../pages/platform/governor.html" class="snav-mobile-link">Governance</a>
+        <a href="../../pages/platform/orchestrator.html" class="snav-mobile-link">Orchestration</a>
+        <a href="../../pages/platform/policy-engine.html" class="snav-mobile-link">Policy Engine</a>
+        <a href="../../pages/platform/security.html" class="snav-mobile-link">Security</a>
+    </div>
+</li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/solutions/government.html" class="snav-mobile-link">Government</a>
+                    <a href="../../pages/solutions/critical-infrastructure.html" class="snav-mobile-link">Compliance-Critical</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Company
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/company/about.html" class="snav-mobile-link">About Us</a>
+                    <a href="../../pages/company/team.html" class="snav-mobile-link">Team</a>
+                </div>
+            </li>
+            <div class="snav-mobile-header">
+                <a href="../../pages/request-pilot.html" class="btn btn-request-pilot">Request Pilot</a>
+            </div>
+        </ul>
+    </div>
+
+    <section class="homepagecontent">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO / EXEC SUMMARY
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-hero">
+        <div class="sec-container">
+            <div class="sec-hero-content">
+                <div class="sec-eyebrow" data-animate>Security &amp; Audit</div>
+                <h1 class="sec-hero-title" data-animate>Platform Security</h1>
+                <p class="sec-hero-description" data-animate>
+                    Enterprise-grade security and auditability designed for regulated environments—implemented as defense-in-depth architecture with audit artifacts available under NDA.
+                </p>
+                <p class="sec-hero-detail" data-animate>
+                    Defense-in-depth architecture aligned with NIST Zero Trust principles: network segmentation, mTLS service identities, KMS/HSM key management, policy-as-code with signed packages, and immutable audit trails enabling decision replayability.
+                </p>
+
+                <div class="sec-hero-meta" data-animate>
+                    <div class="sec-contact">
+                        <div class="sec-contact-label">Trust &amp; Security contact</div>
+                        <div class="sec-contact-value">security@axiosky.com</div>
+                        <p>For security reviews, architecture assessments, and responsible vulnerability disclosure.</p>
+                    </div>
+                    <div class="sec-hero-actions">
+                        <a href="../../pages/request-pilot.html" class="sec-btn sec-btn-primary">Request Security Review (NDA)</a>
+                    </div>
+                </div>
+
+                <p class="sec-status-note" data-animate>
+                    Axiosky is in active development with pilot deployments. The security controls and design principles below represent current architecture and implementation targets. Operational SLAs, third-party audit reports, and detailed artifacts are provided to qualified prospects under NDA after initial security consultation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY PAGE NAV -->
+    <div class="sec-page-nav-wrapper" id="secPageNavWrapper">
+        <div class="sec-page-nav" id="secPageNav">
+            <div class="sec-container-wide">
+                <div class="sec-page-nav-inner">
+                    <button class="sec-nav-arrow sec-nav-arrow-left" id="secNavArrowLeft" aria-label="Scroll left">&#8592;</button>
+                    <nav class="sec-page-nav-links" id="secPageNavLinks">
+                        <a href="#sec-principles"      class="sec-page-nav-link">Principles</a>
+                        <a href="#sec-architecture"    class="sec-page-nav-link">Architecture</a>
+                        <a href="#sec-iam"             class="sec-page-nav-link">Identity &amp; Access</a>
+                        <a href="#sec-data-protection" class="sec-page-nav-link">Data Protection</a>
+                        <a href="#sec-policy-security" class="sec-page-nav-link">Policy Security</a>
+                        <a href="#sec-operations"      class="sec-page-nav-link">Monitoring</a>
+                        <a href="#sec-resilience"      class="sec-page-nav-link">Resilience</a>
+                        <a href="#sec-compliance"      class="sec-page-nav-link">Compliance</a>
+                        <a href="#sec-sdlc"            class="sec-page-nav-link">Secure Dev</a>
+                        <a href="#sec-pentest"         class="sec-page-nav-link">Pen Testing</a>
+                        <a href="#sec-deployment"      class="sec-page-nav-link">Deployment</a>
+                        <a href="#sec-faq"             class="sec-page-nav-link">FAQ</a>
+                    </nav>
+                    <button class="sec-nav-arrow sec-nav-arrow-right" id="secNavArrowRight" aria-label="Scroll right">&#8594;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECURITY PRINCIPLES
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section" id="sec-principles">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Security principles</h2>
+                <p>Security is designed into the architecture: governance is enforced by network topology and cryptographic controls, not reliant solely on application-level code discipline.</p>
+            </div>
+            <div class="sec-principles-grid">
+                <div class="sec-principle-card" data-animate>
+                    <h3>Least privilege by default</h3>
+                    <p>Minimal entitlements for users, agents, and services with explicit grants over implicit trust.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Defense in depth</h3>
+                    <p>Layered controls across network segmentation, identity verification, policy enforcement, and audit.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Policy-as-code first</h3>
+                    <p>Deterministic, testable, versioned rules with cryptographic signatures as the basis of enforcement.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Fail-safe defaults</h3>
+                    <p>Ambiguous authorization checks escalate or block rather than permit.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Zero-Trust segmentation</h3>
+                    <p>Authenticated and encrypted service-to-service communication—never trust, always verify.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Immutable audit trails</h3>
+                    <p>Append-only decision logs with cryptographic chaining enabling replayability and forensics.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Data minimization &amp; privacy-by-design</h3>
+                    <p>PII access limited; pseudonymization supported for audit records.</p>
+                </div>
+                <div class="sec-principle-card" data-animate>
+                    <h3>Secure-by-default configurations</h3>
+                    <p>TLS&nbsp;1.3, AEAD ciphers, and hardened defaults aligned with industry standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ARCHITECTURE OVERVIEW
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section sec-section-alt" id="sec-architecture">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Architecture overview</h2>
+                <p>The platform architecture implements Zero Trust principles where agents operate in restricted network segments and all execution is mediated through governance layers.</p>
+            </div>
+            <div class="sec-main" data-animate>
+                <h3>Trust boundaries</h3>
+                <div class="arch-container">
+
+    <div class="arch-layer arch-layer-agent">
+        <div class="arch-layer-header">
+            <div class="arch-layer-dot arch-dot-agent"></div>
+            <span class="arch-layer-title arch-title-agent">Agent Runtime</span>
+        </div>
+        <div class="arch-layer-sub">UNTRUSTED ZONE</div>
+        <div class="arch-layer-bullets">
+            <div class="arch-bullet">Restricted egress — Orchestrator only</div>
+            <div class="arch-bullet">No direct execution layer access</div>
+        </div>
+        <div class="arch-layer-zone">L1</div>
+    </div>
+
+    <div class="arch-connector">
+        <div class="arch-conn-line"></div>
+        <div class="arch-conn-badge">mTLS + TLS 1.3</div>
+        <div class="arch-conn-line"></div>
+        <div class="arch-conn-arrow"></div>
+    </div>
+
+    <div class="arch-layer arch-layer-orch">
+        <div class="arch-layer-header">
+            <div class="arch-layer-dot arch-dot-orch"></div>
+            <span class="arch-layer-title arch-title-orch">Orchestrator</span>
+        </div>
+        <div class="arch-layer-sub">COORDINATION LAYER</div>
+        <div class="arch-layer-bullets">
+            <div class="arch-bullet">Resource locks &amp; dependency graphs</div>
+            <div class="arch-bullet">Mandatory Governor routing</div>
+        </div>
+        <div class="arch-layer-zone">L2</div>
+    </div>
+
+    <div class="arch-connector">
+        <div class="arch-conn-line"></div>
+        <div class="arch-conn-badge">mTLS</div>
+        <div class="arch-conn-line"></div>
+        <div class="arch-conn-arrow"></div>
+    </div>
+
+    <div class="arch-layer arch-layer-gov">
+        <div class="arch-layer-header">
+            <div class="arch-layer-dot arch-dot-gov"></div>
+            <span class="arch-layer-title arch-title-gov">Governor</span>
+        </div>
+        <div class="arch-layer-sub">POLICY ENFORCEMENT</div>
+        <div class="arch-layer-bullets">
+            <div class="arch-bullet">Signed policy evaluation</div>
+            <div class="arch-bullet">APPROVE / BLOCK / ESCALATE decisions</div>
+            <div class="arch-bullet">Immutable audit logging</div>
+        </div>
+        <div class="arch-layer-zone">L3</div>
+    </div>
+
+    <div class="arch-connector">
+        <div class="arch-conn-line"></div>
+        <div class="arch-conn-badge">mTLS</div>
+        <div class="arch-conn-line"></div>
+        <div class="arch-conn-arrow"></div>
+    </div>
+
+    <div class="arch-layer arch-layer-exec">
+        <div class="arch-layer-header">
+            <div class="arch-layer-dot arch-dot-exec"></div>
+            <span class="arch-layer-title arch-title-exec">Execution Layer</span>
+        </div>
+        <div class="arch-layer-sub">AUTHORIZED ACCESS ONLY</div>
+        <div class="arch-layer-bullets">
+            <div class="arch-bullet">Databases, APIs, Cloud Resources</div>
+            <div class="arch-bullet">Reachable only via authorized path</div>
+        </div>
+        <div class="arch-layer-zone">L4</div>
+    </div>
+
+</div>
+
+                <div class="sec-two-col">
+                    <div>
+                        <h4>Network segmentation</h4>
+                        <ul class="sec-list">
+                            <li>Agents operate in isolated network segments with egress restricted to Orchestrator endpoints only.</li>
+                            <li>Orchestrator–Governor–Execution paths protected via dedicated firewall rules.</li>
+                            <li>Direct agent-to-execution connectivity blocked at network level per reference architecture.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Cryptographic verification</h4>
+                        <ul class="sec-list">
+                            <li>All inter-service communication encrypted via TLS&nbsp;1.3 with AEAD ciphers.</li>
+                            <li>Mutual TLS (mTLS) for bidirectional authentication using X.509 certificates.</li>
+                            <li>Policy packages cryptographically signed and verified before loading.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="sec-note">Architectural enforcement depends on proper network configuration, IAM policies, and Orchestrator deployment as the required execution path. Reference architectures and hardening checklists are provided during security consultation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         IDENTITY & ACCESS MANAGEMENT
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section" id="sec-iam">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Identity &amp; access management</h2>
+                <p>Human users authenticate via enterprise SSO; agents and services authenticate via mTLS; authorization is enforced through RBAC and ABAC policies.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Human authentication</h3>
+                    <ul class="sec-list">
+                        <li>SSO via SAML&nbsp;2.0 / OIDC — Okta, Azure AD, Google Workspace, Ping Identity.</li>
+                        <li>SCIM provisioning for automated user lifecycle management.</li>
+                        <li>Short-lived JWTs (15–60 min TTL). MFA required via IdP assertion.</li>
+                    </ul>
+                    <h3>Agent &amp; service authentication</h3>
+                    <ul class="sec-list">
+                        <li>mTLS with X.509 certificates; automated rotation via cert-manager (90 day lifetime).</li>
+                        <li>CRL/OCSP revocation for compromised certificates.</li>
+                        <li>Time-limited scoped API keys and service accounts.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>RBAC / ABAC &amp; key management</h3>
+                    <ul class="sec-list">
+                        <li>Permission model: <code>resource:action:scope</code> — default-deny with explicit grants only.</li>
+                        <li>Context-aware ABAC based on time, location, device posture, and risk score.</li>
+                        <li>KMS: AWS KMS, Azure Key Vault, GCP KMS, HashiCorp Vault.</li>
+                        <li>BYOK and HSM (FIPS 140-2 Level 2+) for regulated deployments.</li>
+                    </ul>
+                    <pre class="sec-code-block">roles:
+  - name: procurement_officer
+    permissions:
+      - workflow:execute:procurement_*
+      - audit:read:own_workflows
+
+  - name: compliance_reviewer
+    permissions:
+      - audit:read:*
+      - decision:replay:*</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         DATA PROTECTION & PRIVACY
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section sec-section-alt" id="sec-data-protection">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Data protection &amp; privacy</h2>
+                <p>Encryption, classification, pseudonymization, and retention controls aligned with privacy-by-design principles.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Data classification</h3>
+                    <table class="sec-table">
+                        <thead><tr><th>Tier</th><th>Definition</th><th>Examples</th></tr></thead>
+                        <tbody>
+                            <tr><td>Public</td><td>Public disclosure intended</td><td>Marketing, public docs</td></tr>
+                            <tr><td>Internal</td><td>Internal, no sensitivity</td><td>Operational logs, config</td></tr>
+                            <tr><td>Confidential</td><td>Business-sensitive</td><td>Financial reports, IP</td></tr>
+                            <tr><td>Restricted</td><td>Regulated data</td><td>PII, PHI, PCI</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>Encryption</h3>
+                    <ul class="sec-list">
+                        <li>AES-256-GCM at rest; DEKs wrapped by customer or platform master keys.</li>
+                        <li>TLS 1.3 + mTLS for all network communication.</li>
+                        <li>BYOK: customer master keys in AWS KMS, Azure Key Vault, or GCP KMS.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>PII &amp; PHI handling</h3>
+                    <ul class="sec-list">
+                        <li>Audit logs use pseudonymous identifiers; mapping table stored with separate access controls.</li>
+                        <li>GDPR Article 25 (privacy-by-design) and right-to-erasure workflows supported.</li>
+                    </ul>
+                    <pre class="sec-code-block">{
+  "audit_id":       "act_20250115_143218_a8f2",
+  "user_pseudonym": "user_9a8b7c6d5e4f",
+  "action":         "approve_contract",
+  "policy_version": "v2.3.1",
+  "decision":       "APPROVE"
+}</pre>
+                    <h3>Retention</h3>
+                    <ul class="sec-list">
+                        <li>Audit logs: 7 years default. Workflow state: 90 days default.</li>
+                        <li>Policy versions: indefinite, Git-managed.</li>
+                        <li>Right-to-erasure: pseudonym mapping removed; audit records preserved per legal obligation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         POLICY SECURITY & AUDITABILITY
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section" id="sec-policy-security">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Policy security &amp; auditability</h2>
+                <p>Policy-as-code is versioned, cryptographically signed, tested, and produces deterministic, replayable audit records.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Policy lifecycle security</h3>
+                    <ul class="sec-list">
+                        <li>Git-based policy code with inline regulation citations and mandatory CI gates.</li>
+                        <li>Signed with Ed25519 / RSA-4096; HSM-backed in production.</li>
+                        <li>Staged rollout: shadow → canary (10%) → staged (50%) → full (100%).</li>
+                    </ul>
+                    <pre class="sec-code-block">$ axiosky policy verify \
+    --package financial_controls_v2.3.1.axp \
+    --public-key /etc/axiosky/keys/policy-signing.pub
+
+✓ Signature valid
+  Signer: compliance@example.com
+  Algorithm: Ed25519</pre>
+                </div>
+                <div>
+                    <h3>Immutable audit trail</h3>
+                    <ul class="sec-list">
+                        <li>Append-only storage — no updates or deletes permitted.</li>
+                        <li>Cryptographic chaining between records for tamper detection.</li>
+                        <li>Audit log write access restricted to the audit service only.</li>
+                    </ul>
+                    <h3>Decision replayability</h3>
+                    <pre class="sec-code-block">$ axiosky audit replay --audit-id act_20250115_143218_a8f2
+
+REPLAY RESULTS:
+  Original Decision:  APPROVE
+  Replayed Decision:  APPROVE
+  Rules Evaluated:    3/3 matched
+  Verdict:            DETERMINISTIC</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         OPERATIONAL SECURITY & MONITORING
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section sec-section-alt" id="sec-operations">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Operational security &amp; monitoring</h2>
+                <p>Structured logging, metrics, distributed tracing, and alerting integrate with enterprise SIEM and observability stacks.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Observability integration</h3>
+                    <ul class="sec-list">
+                        <li>Structured JSON logs with automatic PII redaction and pseudonymized user identity.</li>
+                        <li>Compatible with ELK, Splunk, Datadog, Sumo Logic, Azure Monitor.</li>
+                        <li>Prometheus/OpenMetrics metrics; OpenTelemetry distributed traces across all layers.</li>
+                    </ul>
+                    <pre class="sec-code-block">{
+  "service":       "governor",
+  "action":        "policy_evaluation",
+  "decision":      "APPROVE",
+  "duration_ms":   42
+}</pre>
+                </div>
+                <div>
+                    <h3>Security monitoring &amp; alerting</h3>
+                    <ul class="sec-list">
+                        <li><strong>GovernorUnavailable</strong> — critical if down &gt;1 min.</li>
+                        <li><strong>HighEscalationRate</strong> — warning if &gt;20% for 5 min.</li>
+                        <li><strong>AnomalousAgentActivity</strong> — warning if 3× normal rate.</li>
+                        <li><strong>AuditLogWriteFailure</strong> — critical on any write error.</li>
+                        <li>SIEM export: Splunk, QRadar, Azure Sentinel, Google Chronicle.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         RESILIENCE, INCIDENT RESPONSE & FORENSICS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section" id="sec-resilience">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Resilience, incident response &amp; forensics</h2>
+                <p>High-availability deployment options, configurable fail modes, documented incident lifecycle, and deep forensic capabilities.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>High availability &amp; disaster recovery</h3>
+                    <ul class="sec-list">
+                        <li>Active-active Governor/Orchestrator across multiple AZs; multi-region active-passive or active-active.</li>
+                        <li>Design target: 99.9–99.99% uptime. RPO &lt;1 min; RTO &lt;5 min.</li>
+                    </ul>
+                    <h3>Fail modes</h3>
+                    <ul class="sec-list">
+                        <li><strong>Fail-closed (default):</strong> Governor unreachable → Orchestrator blocks all actions and escalates to human review.</li>
+                        <li><strong>Fail-open (per workflow):</strong> configurable with compliance sign-off; all events flagged in audit logs.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Incident response</h3>
+                    <ul class="sec-list">
+                        <li>NIST SP 800-61 lifecycle: Detection → Triage → Containment → Eradication → Recovery → Post-mortem.</li>
+                        <li>Critical (P0): acknowledge &lt;1h; High (P1): acknowledge &lt;4h.</li>
+                    </ul>
+                    <h3>Forensic capabilities</h3>
+                    <ul class="sec-list">
+                        <li>Full decision history with policy versions, inputs, outcomes, and cryptographic chain verification.</li>
+                        <li>Time-range and attribute filtering; export as JSON, CSV, or Parquet.</li>
+                        <li>Decision replay and "what-if" analysis with alternative policy versions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         COMPLIANCE & ARTIFACTS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section sec-section-alt" id="sec-compliance">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Compliance, assessments &amp; artifacts</h2>
+                <p>Audit artifacts and assessment reports made available to customers and auditors under NDA.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Compliance alignment targets</h3>
+                    <ul class="sec-list">
+                        <li>SOC&nbsp;2 Type II — Security, Availability, Confidentiality <em>(target)</em>.</li>
+                        <li>ISO&nbsp;27001, NIST CSF, NIST SP&nbsp;800-207 (Zero Trust) <em>(alignment target)</em>.</li>
+                        <li>GDPR, DPDP Act (India), and SOC 2-aligned data protection controls.</li>
+                    </ul>
+                    <p class="sec-note">Formal third-party certifications are on the roadmap. Readiness documentation and architecture reviews are available under NDA. Axiosky does not claim certifications until independently verified.</p>
+                </div>
+                <div>
+                    <h3>Artifacts available under NDA</h3>
+                    <ul class="sec-list">
+                        <li>SOC&nbsp;2 readiness documentation and third-party audit reports <em>(in progress)</em>.</li>
+                        <li>Penetration test summaries and remediation status <em>(upon completion)</em>.</li>
+                        <li>SBOM (CycloneDX / SPDX) with CVE references.</li>
+                        <li>Architecture diagrams, data-flow diagrams, and threat models.</li>
+                        <li>Policy mapping matrices and incident response plans.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sec-contact-box" data-animate>
+                <h3>How to request artifacts</h3>
+                <p>Email <code>security@axiosky.com</code> with subject <strong>"Audit Pack Request — [Your Organization Name]"</strong> including your organization, requestor details, purpose, and NDA preference.</p>
+                <p class="sec-note">Acknowledgment within 2 business days; delivery within 1–2 weeks after NDA execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECURE DEVELOPMENT & SUPPLY CHAIN
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section" id="sec-sdlc">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Secure development &amp; supply chain</h2>
+                <p>Secure SDLC across code review, automated security testing, dependency management, SBOM generation, and signed releases.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Development security</h3>
+                    <ul class="sec-list">
+                        <li>Branch protection: <code>main</code> and <code>release/*</code> require reviewed PRs.</li>
+                        <li>SAST via Semgrep; Critical/High findings block merge.</li>
+                        <li>Dependency scanning with Snyk, Dependabot, and Trivy — daily scans.</li>
+                        <li>Distroless container base images; image scanning on build and daily re-scan.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>SBOM &amp; artifact signing</h3>
+                    <ul class="sec-list">
+                        <li>SBOMs at build time in CycloneDX / SPDX with versions, licenses, SHA-256 hashes, and CVE refs.</li>
+                        <li>Policy packages signed with Ed25519/RSA-4096; images signed via Cosign/Sigstore.</li>
+                        <li>SLSA provenance attestations; signature verification enforced at deploy.</li>
+                        <li>GPG-signed release artifacts with published SHA-256 checksums.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PENETRATION TESTING & VULNERABILITY DISCLOSURE
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section sec-section-alt" id="sec-pentest">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Penetration testing &amp; vulnerability disclosure</h2>
+                <p>Periodic third-party security assessments and an open responsible disclosure channel.</p>
+            </div>
+            <div class="sec-two-col" data-animate>
+                <div>
+                    <h3>Penetration testing program</h3>
+                    <ul class="sec-list">
+                        <li>Pre-release, annual, and post-significant-change assessments by independent third parties.</li>
+                        <li>Scope: OWASP Top 10, API security, network segmentation, auth bypass, audit log tampering, policy signing bypass, privilege escalation.</li>
+                        <li>Reports distributed under NDA with remediation validation.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 id="sec-disclosure">Responsible vulnerability disclosure</h3>
+                    <ul class="sec-list">
+                        <li>Report to <code>security@axiosky.com</code> — subject: <strong>"Vulnerability Report"</strong>.</li>
+                        <li>Acknowledgment within 2 business days; triage within 5 business days.</li>
+                        <li>Critical — hotfix within 7 days. High — patch within 30 days.</li>
+                        <li>Coordinated disclosure: 90 days default (negotiable).</li>
+                        <li>Good-faith research will not result in legal action.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         DEPLOYMENT MODELS & HARDENING
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="sec-section" id="sec-deployment">
+        <div class="sec-container-wide">
+            <div class="sec-section-intro" data-animate>
+                <h2>Deployment models &amp; hardening</h2>
+                <p>Managed cloud, on-premises, air-gapped, and hybrid deployments — all with reference architectures and hardening checklists.</p>
+            </div>
+            <div class="sec-deploy-grid" data-animate>
+                <div class="sec-deploy-card">
+                    <h3>Managed cloud (SaaS)</h3>
+                    <ul class="sec-list">
+                        <li>Axiosky operates infrastructure on AWS, Azure, or GCP.</li>
+                        <li>VPC peering, PrivateLink, or IP-allowlisted HTTPS.</li>
+                        <li>Regional data residency; optional customer-managed keys.</li>
+                    </ul>
+                </div>
+                <div class="sec-deploy-card">
+                    <h3>On-premises</h3>
+                    <ul class="sec-list">
+                        <li>Customer-operated Kubernetes or VMs.</li>
+                        <li>Signed container images, Helm charts, deployment playbooks.</li>
+                        <li>Customer manages network policies, CAs, and backups.</li>
+                    </ul>
+                </div>
+                <div class="sec-deploy-card">
+                    <h3>Air-gapped &amp; hybrid</h3>
+                    <ul class="sec-list">
+                        <li>No external connectivity; updates via signed media with offline verification.</li>
+                        <li>Hybrid: Governor/Orchestrator on-prem; agents in cloud via VPN/mTLS tunnels.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- FAQ SECTION -->
+    <section class="section-faq" id="sec-faq">
+        <div class="section-container">
+            <h2>STILL HAVE DOUBT?</h2>
+            <div id="faq-container" class="sec-faq-border-t">
+                <!-- Items injected via JS -->
+            </div>
+        </div>
+    </section>
+
+        <!-- ── Global CTA ─────────────────────────────────────────── -->
+<section class="bl-cta">
+    <div class="bl-cta-inner">
+        <p class="bl-cta-label">Axiosky</p>
+        <h2 class="bl-cta-heading">The Standard for<br>AI Governance.</h2>
+        <div class="bl-cta-actions">
+            <a href="../../pages/request-pilot.html" class="btn btn-primary">Request a Demo</a>
+        </div>
+    </div>
+</section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -346,7 +844,12 @@
     </footer>
 
     <!-- Scripts -->
+
+
+    <!-- Scripts -->
     <script src="../../js/main.js"></script>
     <script src="../../js/navigation.js"></script>
+    <script src="../../js/security.js"></script>
+    <script src="../../js/cookie-banner.js"></script>
 </body>
 </html>

@@ -3,11 +3,85 @@
 <head>
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Governor - Runtime AI governance platform that enforces policy before autonomous agents act. Deterministic decisions, millisecond latency, auditable controls.">
-    <meta name="og:title" content="Governor | Runtime AI Governance for Autonomous Agents">
-    <meta name="og:description" content="Real-time policy enforcement before agent actions reach production systems.">
-    <meta name="og:type" content="website">
-    <title>Orchestration - Axiosky</title>
+
+    <!-- ═══════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════ -->
+    <title>Orchestration | Axiosky</title>
+    <meta name="description" content="Axiosky Orchestrator coordinates autonomous agent fleets with dependency enforcement, resource locking, failure isolation, and mandatory policy routing.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://axiosky.com/pages/platform/orchestrator.html">
+
+    <!-- ═══════════════════════════════════════
+         OPEN GRAPH (LinkedIn, Facebook, WhatsApp)
+    ═══════════════════════════════════════ -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://axiosky.com/pages/platform/orchestrator.html">
+    <meta property="og:site_name"    content="Axiosky">
+    <meta property="og:locale"       content="en_US">
+    <meta property="og:title"        content="AI Agent Orchestrator — Multi-Agent Coordination Runtime | Axiosky">
+    <meta property="og:description"  content="Coordinate autonomous agent fleets without cascading failures. Dependency graphs, resource locks, circuit breakers, and governance-enforced execution for governments and regulated enterprises.">
+    <meta property="og:image"        content="https://axiosky.com/images/og-orchestrator.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"    content="AI Agent Orchestrator — Multi-Agent Coordination Runtime | Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@axiosky">
+    <meta name="twitter:title"       content="AI Agent Orchestrator — Multi-Agent Coordination Runtime | Axiosky">
+    <meta name="twitter:description" content="Axiosky Orchestrator: run multi-agent fleets with dependency enforcement, resource locking, failure isolation, and mandatory Governor policy routing.">
+    <meta name="twitter:image"       content="https://axiosky.com/images/og-orchestrator.png">
+
+    <!-- ═══════════════════════════════════════
+         TECHNICAL
+    ═══════════════════════════════════════ -->
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         JSON-LD SCHEMA
+    ═══════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axiosky.com/#organization",
+          "name": "Axiosky",
+          "url": "https://axiosky.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://axiosky.com/assets/images/logo.svg"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://axiosky.com/pages/platform/orchestrator.html#software",
+          "name": "Axiosky Orchestrator",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://axiosky.com/pages/platform/orchestrator.html",
+          "description": "Multi-agent coordination runtime with DAG workflow execution, dependency enforcement, resource locking, failure isolation, and mandatory governance routing.",
+          "isPartOf": {
+            "@id": "https://axiosky.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://axiosky.com/pages/platform/orchestrator.html#webpage",
+          "url": "https://axiosky.com/pages/platform/orchestrator.html",
+          "name": "AI Agent Orchestrator — Multi-Agent Coordination & Governance Runtime | Axiosky",
+          "description": "Axiosky Orchestrator coordinates autonomous agent fleets with dependency enforcement, resource locking, failure isolation, and mandatory policy routing.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://axiosky.com/#organization" }
+        }
+      ]
+    }
+    </script>
 
       <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,19 +92,23 @@
     <link rel="stylesheet" href="../../css/responsive.css">
     <link rel="stylesheet" href="../../css/orchestrator.css">
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="../../index.html">
-                    <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <!-- Platform dropdown -->
+    <div class="navbar-logo">
+        <a href="../../index.html">
+            <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
+        </a>
+    </div>
+    
+    <!-- Main nav items - centered -->
+    <ul class="nav-menu">
+    <!-- Platform dropdown -->
     <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle">Platform</a>
         <ul class="dropdown-menu">
@@ -40,243 +118,860 @@
             <li><a href="../../pages/platform/security.html" class="dropdown-link">Security</a></li>
         </ul>
     </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Solutions</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
-                        <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
-                    </ul>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Company</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../../pages/company/about.html" class="dropdown-link">About</a></li>
-                        <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
+    
+    <!-- Solutions dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Solutions</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
+            <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
+        </ul>
+    </li>
+    
+    <!-- Company dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Company</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/company/about.html" class="dropdown-link">About Us</a></li>
+            <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
+        </ul>
+    </li>
+</ul>
 
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    
+    <!-- CTA button - right side -->
+    <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
+    
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
     </nav>
+
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="snav-mobile" id="snavMobile">
+        <ul class="snav-mobile-list">
+
+<li class="snav-mobile-item">
+    <button class="snav-mobile-btn">Platform
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="snav-mobile-drop">
+        <a href="../../pages/platform/governor.html" class="snav-mobile-link">Governance</a>
+        <a href="../../pages/platform/orchestrator.html" class="snav-mobile-link">Orchestration</a>
+        <a href="../../pages/platform/policy-engine.html" class="snav-mobile-link">Policy Engine</a>
+        <a href="../../pages/platform/security.html" class="snav-mobile-link">Security</a>
+    </div>
+</li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/solutions/government.html" class="snav-mobile-link">Government</a>
+                    <a href="../../pages/solutions/critical-infrastructure.html" class="snav-mobile-link">Compliance-Critical</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Company
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/company/about.html" class="snav-mobile-link">About Us</a>
+                    <a href="../../pages/company/team.html" class="snav-mobile-link">Team</a>
+                </div>
+            </li>
+            <div class="snav-mobile-header">
+                <a href="../../pages/request-pilot.html" class="btn btn-request-pilot">Request Pilot</a>
+            </div>
+        </ul>
+    </div>
+
+    <section class="homepagecontent">
 
 
 <!-- HERO SECTION -->
-    <section class="orchestration-hero">
-        <div class="section-container">
-            <div class="eyebrow">Orchestration Engine</div>
-            <h1 class="hero-headline">Coordinate Complex AI Workflows</h1>
-            <p class="hero-subheadline">Seamlessly orchestrate multiple agents, manage dependencies, and execute sophisticated multi-step processes with precision.</p>
-            <p class="hero-paragraph">Our orchestration engine handles workflow coordination, state management, and intelligent routing—allowing you to build complex AI systems that work together seamlessly.</p>
-            <div class="hero-ctas">
-                <button class="btn btn--primary btn--lg">Start Building</button>
-                <button class="btn btn--secondary btn--lg">View Documentation</button>
+    <section id="hero" class="dark-theme-hero">
+        <div class="hero-container hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-h1">Multi-Agent Coordination Runtime</h1>
+                <p class="hero-lead">
+                   The Orchestrator is a purpose-built coordination runtime for autonomous agent fleets, designed to enforce dependencies, isolate failures, and route execution through governance policies.
+                </p>
+
+                <p class="hero-secondlead">
+                    Multi-agent systems introduce coordination complexity: dependency violations, resource conflicts, cascading failures, and governance gaps. The Orchestrator provides infrastructure to manage execution graphs, resource isolation, failure containment, and policy-enforced execution—designed to make agent fleet operations more predictable, auditable, and resilient.
+                </p>
+<div>
+    <p class="hero-secondlead" style="font-size: 1.10rem; color: #ffffff"> Design Goals: </p>
+                <ul class="hero-bullets">
+                    <li>Dependency graphs and resource locks to reduce conflicts</li>
+                    <li>Circuit breakers and retry policies to contain failures</li>
+                    <li>Policy routing with audit trails</li>
+                    <li>Long-running workflow support with checkpoints and human review</li>
+                </ul>
+</div>
+                <div>
+                    <a href="../../pages/request-pilot.html" class="btn btn-primary">Request Consultation</a>
+                </div>
+            </div>
+            
+            <div class="hero-canvas-container">
+                <canvas id="sim-canvas"></canvas>
             </div>
         </div>
     </section>
 
-    <!-- WORKFLOW STEPS SECTION -->
-    <section class="section-workflow">
-        <div class="section-container">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">A clear workflow from task definition to execution and monitoring.</p>
-            <div class="workflow-grid">
-                <div class="workflow-card">
-                    <div class="workflow-icon">📋</div>
-                    <h3 class="workflow-title">Define Tasks</h3>
-                    <p class="workflow-desc">Break down complex operations into discrete, manageable tasks with clear inputs and outputs.</p>
+<section class="acw-section-root">
+    <div class="acw-container">
+        <header class="acw-header-layout acw-reveal">
+            <div>
+                <h1 class="acw-main-heading">Why Agent Coordination is Hard</h1>
+            </div>
+            <p class="acw-header-lead">
+                Autonomous agents execute tasks individually. Coordinating fleets at scale introduces systemic operational challenges that code discipline alone cannot fully mitigate.
+            </p>
+        </header>
+
+        <div class="acw-grid">
+            <div class="acw-card acw-reveal">
+                <span class="acw-card-number">01 / DEPENDENCY</span>
+                <h2 class="acw-card-title">Dependency Violations</h2>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Primary Challenge</span>
+                    <p class="acw-card-desc">Agent B initiates execution before Agent A completes its prerequisite, operating on incomplete or inconsistent data.</p>
                 </div>
-                <div class="workflow-card">
-                    <div class="workflow-icon">🔗</div>
-                    <h3 class="workflow-title">Chain Dependencies</h3>
-                    <p class="workflow-desc">Connect tasks in sequences and parallel flows, managing dependencies automatically.</p>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Case Study</span>
+                    <p class="acw-case-text">A payment agent initiates an NEFT transfer before fraud-detection completes. The transfer proceeds on partial analysis.</p>
                 </div>
-                <div class="workflow-card">
-                    <div class="workflow-icon">🤖</div>
-                    <h3 class="workflow-title">Route to Agents</h3>
-                    <p class="workflow-desc">Intelligently assign tasks to specialized agents based on capabilities and workload.</p>
+                <div class="acw-solution-area">
+                    <span class="acw-badge">ORCHESTRATOR APPROACH</span>
+                    <p class="acw-solution-desc">Enforces dependency order through DAG execution. Agent B is blocked at runtime until Agent A signals completion.</p>
                 </div>
-                <div class="workflow-card">
-                    <div class="workflow-icon">⚙️</div>
-                    <h3 class="workflow-title">Execute & Monitor</h3>
-                    <p class="workflow-desc">Run workflows with real-time monitoring, error handling, and automatic retries.</p>
+            </div>
+
+            <div class="acw-card acw-reveal">
+                <span class="acw-card-number">02 / CONCURRENCY</span>
+                <h2 class="acw-card-title">Resource Conflicts</h2>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Primary Challenge</span>
+                    <p class="acw-card-desc">Multiple agents execute concurrent operations on shared resources, causing race conditions or data corruption.</p>
+                </div>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Case Study</span>
+                    <p class="acw-case-text">Agent A updates address while Agent B modifies payment info simultaneously. Last-write-wins semantics lose updates.</p>
+                </div>
+                <div class="acw-solution-area">
+                    <span class="acw-badge">ORCHESTRATOR APPROACH</span>
+                    <p class="acw-solution-desc">Provides distributed resource locks and centralized conflict arbitration to serialize operations.</p>
+                </div>
+            </div>
+
+            <div class="acw-card acw-reveal">
+                <span class="acw-card-number">03 / COMPLIANCE</span>
+                <h2 class="acw-card-title">Governance Gaps</h2>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Primary Challenge</span>
+                    <p class="acw-card-desc">Agents execute actions without policy evaluation, creating compliance violations discovered retrospectively.</p>
+                </div>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Case Study</span>
+                    <p class="acw-case-text">An agent queries patient health records directly, bypassing data-access policy checks and creating ABDM health data policy exposure.</p>
+                </div>
+                <div class="acw-solution-area">
+                    <span class="acw-badge">ORCHESTRATOR APPROACH</span>
+                    <p class="acw-solution-desc">Routes action proposals through the Governor before execution, establishing architectural policy routing.</p>
+                </div>
+            </div>
+
+            <div class="acw-card acw-reveal">
+                <span class="acw-card-number">04 / RESILIENCE</span>
+                <h2 class="acw-card-title">Cascade Failures</h2>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Primary Challenge</span>
+                    <p class="acw-card-desc">Single agent failure propagates to dependent agents, causing workflow collapse and requiring manual recovery.</p>
+                </div>
+                <div class="acw-group">
+                    <span class="acw-mini-label">Case Study</span>
+                    <p class="acw-case-text">A data extraction agent times out; dependent transform agents fail immediately, breaking downstream dashboards.</p>
+                </div>
+                <div class="acw-solution-area">
+                    <span class="acw-badge">ORCHESTRATOR APPROACH</span>
+                    <p class="acw-solution-desc">Circuit breakers, exponential backoff retries, and fallback logic designed to contain failures.</p>
                 </div>
             </div>
         </div>
+
+        <footer class="acw-footer acw-reveal">
+            <div class="acw-footer-label">CORE CHALLENGE</div>
+            <div class="acw-footer-content">
+                Individual agents are tractable. Multi-agent systems create emergent coordination complexity. The Orchestrator provides runtime infrastructure to coordinate agent fleets.
+            </div>
+        </footer>
+    </div>
+</section>
+
+   <section class="of-section-root">
+    <div class="of-layout-container">
+        <header class="of-spec-header of-reveal">
+            <span class="of-spec-eyebrow">Technical Reference</span>
+            <h1 class="of-spec-title">What the Orchestrator Does</h1>
+            <p class="of-spec-lead">
+                A coordination runtime for multi-agent workflows. It manages execution dependencies, resource access, policy routing, and persistent state across long-running processes.
+            </p>
+        </header>
+
+        <section class="of-function-row of-reveal">
+            <div class="of-function-meta">
+                <span class="of-function-index">CORE-01</span>
+                <h3 class="of-function-name">Workflow Execution Engine</h3>
+                <span class="of-tag">DAG Runtime</span>
+            </div>
+            <div class="of-function-content">
+                <p class="of-function-description">Defines multi-step workflows as directed acyclic graphs (DAGs). The Orchestrator parallelizes independent branches while maintaining strict sequential integrity for dependencies.</p>
+                <h4 class="of-sub-label">Architecture</h4>
+                <ul class="of-implementation-list">
+                    <li>Dynamic execution planning</li>
+                    <li>Python/YAML declarative definitions</li>
+                    <li>Parallel execution support</li>
+                    <li>Circular dependency detection</li>
+                </ul>
+                <div class="of-code-container">
+<span class="of-code-keyword">workflow</span> = Workflow(<span class="of-code-string">"onboarding"</span>)
+extract = Step(<span class="of-code-string">"extract_data"</span>, agent=DataExtractor)
+verify = Step(<span class="of-code-string">"verify_kyc"</span>, agent=KYCAgent)
+
+<span class="of-code-comment"># Declare linear dependency</span>
+workflow.add_step(verify, depends_on=[extract])</div>
+            </div>
+        </section>
+
+        <section class="of-function-row of-reveal">
+            <div class="of-function-meta">
+                <span class="of-function-index">CORE-02</span>
+                <h3 class="of-function-name">Dependency Enforcement</h3>
+                <span class="of-tag">Strict Order</span>
+            </div>
+            <div class="of-function-content">
+                <p class="of-function-description">Prevents steps from executing until prerequisites complete successfully. Utilizes a blocking queue and readiness evaluation system.</p>
+                <h4 class="of-sub-label">Implementation</h4>
+                <ul class="of-implementation-list">
+                    <li>Step readiness evaluation</li>
+                    <li>Blocking queue management</li>
+                    <li>Automatic unblocking logic</li>
+                    <li>Workflow validation hooks</li>
+                </ul>
+                <div class="of-trade-off">
+                    <strong>Trade-off:</strong> Prioritizes deterministic correctness over raw speed by introducing execution latency for strict ordering.
+                </div>
+            </div>
+        </section>
+
+        <section class="of-function-row of-reveal">
+            <div class="of-function-meta">
+                <span class="of-function-index">CORE-03</span>
+                <h3 class="of-function-name">Resource Coordination</h3>
+                <span class="of-tag">Concurrency Control</span>
+            </div>
+            <div class="of-function-content">
+                <p class="of-function-description">Manages shared resource access (databases, API quotas, compute slots) via a distributed lock manager with built-in deadlock detection.</p>
+                <h4 class="of-sub-label">Lock Types</h4>
+                <ul class="of-implementation-list">
+                    <li>Data records (Row-level)</li>
+                    <li>API rate buckets</li>
+                    <li>Compute concurrency slots</li>
+                    <li>System sessions</li>
+                </ul>
+                <div class="of-code-container">
+<span class="of-code-comment"># Exclusive lock with 30s timeout</span>
+orchestrator.<span class="of-code-func">acquire_lock</span>(<span class="of-code-string">"customer:12345"</span>, mode=<span class="of-code-string">"exclusive"</span>, timeout=<span class="of-code-keyword">30</span>)</div>
+            </div>
+        </section>
+
+        <section class="of-function-row of-reveal">
+            <div class="of-function-meta">
+                <span class="of-function-index">CORE-04</span>
+                <h3 class="of-function-name">Governor Integration</h3>
+                <span class="of-tag">Policy Routing</span>
+            </div>
+            <div class="of-function-content">
+                <p class="of-function-description">Intercepts agent action proposals and routes them through the Governor for policy evaluation. Ensures a "Governance-first" execution flow.</p>
+                <h4 class="of-sub-label">Execution Flow</h4>
+                <ul class="of-implementation-list">
+                    <li>Proposal interception</li>
+                    <li>Policy evaluation (Approve/Block)</li>
+                    <li>Human-in-the-loop escalation</li>
+                    <li>Immutable audit logging</li>
+                </ul>
+                <div class="of-trade-off">
+                    <strong>Deployment Note:</strong> Requires network segmentation where agents cannot directly reach the execution layer, forcing all traffic through the Orchestrator.
+                </div>
+            </div>
+        </section>
+
+        <section class="of-function-row of-reveal">
+            <div class="of-function-meta">
+                <span class="of-function-index">CORE-05</span>
+                <h3 class="of-function-name">Failure Isolation</h3>
+                <span class="of-tag">Resilience</span>
+            </div>
+            <div class="of-function-content">
+                <p class="of-function-description">Contains failures through retries, exponential backoff, and circuit breakers, preventing a single agent error from collapsing the entire fleet.</p>
+                <h4 class="of-sub-label">Mechanisms</h4>
+                <ul class="of-implementation-list">
+                    <li>Exponential backoff retries</li>
+                    <li>Circuit breaker trip thresholds</li>
+                    <li>Dead-letter queue routing</li>
+                    <li>Compensating transactions</li>
+                </ul>
+                <div class="of-code-container">
+step.retry_policy = RetryPolicy(max_attempts=<span class="of-code-keyword">3</span>, backoff=<span class="of-code-string">"exponential"</span>)
+step.on_failure = fallback_to_cache</div>
+            </div>
+        </section>
+
+        <section class="of-function-row of-reveal">
+            <div class="of-function-meta">
+                <span class="of-function-index">CORE-06</span>
+                <h3 class="of-function-name">State Persistence</h3>
+                <span class="of-tag">Checkpointing</span>
+            </div>
+            <div class="of-function-content">
+                <p class="of-function-description">Maintains workflow state across long-running executions (days to weeks). Supports crash recovery and resumption from the last verified checkpoint.</p>
+                <h4 class="of-sub-label">Capabilities</h4>
+                <ul class="of-implementation-list">
+                    <li>Multi-day review cycles</li>
+                    <li>Human-in-loop persistence</li>
+                    <li>Automatic crash recovery</li>
+                    <li>Pluggable DB backends</li>
+                </ul>
+                <div class="of-trade-off">
+                    <strong>Example:</strong> A workflow pauses for legal review on Day 1 and resumes on Day 3, preserving every byte of prior state.
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+    <section id="architecture" class="arch-container">
+    <header class="arch-header arch-reveal">
+        <span class="arch-eyebrow">Whitepaper // Architecture</span>
+        <h1 class="arch-title">Architecture & Design Principles</h1>
+        <p class="arch-lead">The Orchestrator prioritizes operational reliability, governance enforcement, and failure resilience over raw execution throughput.</p>
+    </header>
+
+    <section class="orchestrator-layout">
+    <div id="left-panel">
+        <div class="ascii-container">
+            <div class="ascii-box">
+                <div class="ascii-header">AGENT LAYER</div>
+                <div class="ascii-items">
+                    <span>[Agent 1]</span>
+                    <span>[Agent 2]</span>
+                    <span>[Agent 3]</span>
+                    <span>[Agent N]</span>
+                </div>
+            </div>
+
+            <div class="ascii-connector">
+                <div class="ascii-line"></div>
+                <div class="ascii-arrow"></div>
+                <div class="ascii-label">(Action Proposals)</div>
+            </div>
+
+            <div class="ascii-box orchestrator-border">
+                <div class="ascii-header">ORCHESTRATOR CORE</div>
+                <div class="feature-item">Workflow Engine (DAG)</div>
+                <div class="feature-item">Dependency Graph</div>
+                <div class="feature-item">Resource Manager</div>
+                <div class="feature-item">State Persistence</div>
+                <div class="feature-item">Governor Integration</div>
+            </div>
+
+            <div class="ascii-connector">
+                <div class="ascii-line"></div>
+                <div class="ascii-arrow"></div>
+                <div class="ascii-label">(Approved Actions)</div>
+            </div>
+
+            <div class="ascii-box">
+                <div class="ascii-header">EXECUTION LAYER</div>
+                <div class="ascii-items">
+                    <span>[Database]</span>
+                    <span>[APIs]</span>
+                    <span>[Cloud]</span>
+                    <span>[Internal]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divider"></div>
+
+   <div id="arch-container">
+        <canvas id="arch-canvas"></canvas>
+    </div>
+</div>
+</section>
+
+    <div class="arch-principles-grid">
+        <section class="arch-principle-item arch-reveal">
+            <div class="arch-meta-side">
+                <span class="arch-principle-num">01 / RELIABILITY</span>
+                <h2 class="arch-principle-name">Fail-Safe, Not Fail-Fast</h2>
+            </div>
+            <div class="arch-content-side">
+                <p class="arch-summary-text">When in doubt, the system pauses and escalates rather than proceeding and risking policy violation or data corruption.</p>
+                <div class="arch-detail-block">
+                    <div>
+                        <h4 class="arch-sub-label">Implementation</h4>
+                        <ul class="arch-detail-list">
+                            <li>Ambiguous policy → Human ESCALATE</li>
+                            <li>Resource conflict → Serialized ops</li>
+                            <li>Missing dependency → Runtime block</li>
+                            <li>Governance fail → Execution halt</li>
+                        </ul>
+                    </div>
+                    <div class="arch-trade-off-box">
+                        <strong>Trade-off:</strong> High-risk edge cases incur latency; design prioritizes zero silent violations over raw throughput.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="arch-principle-item arch-reveal">
+            <div class="arch-meta-side">
+                <span class="arch-principle-num">02 / DECLARATIVE</span>
+                <h2 class="arch-principle-name">Explicit Over Implicit</h2>
+            </div>
+            <div class="arch-content-side">
+                <p class="arch-summary-text">Require explicit declaration of dependencies, resources, and governance requirements in workflow definitions.</p>
+                <div class="arch-detail-block">
+                    <div>
+                        <h4 class="arch-sub-label">Implementation</h4>
+                        <ul class="arch-detail-list">
+                            <li>Resource & policy requirement tags</li>
+                            <li>Static circular dependency detection</li>
+                            <li>Deployment-time gap analysis</li>
+                            <li>Strict runtime contract validation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="arch-sub-label">Benefit</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Enables deep static analysis, early error detection, and non-ambiguous audit trails for complex multi-agent fleets.</p>
+                    </div>
+                </div>
+                <div class="of-code-container">
+<span class="code-kw">step</span> = Step(<span class="code-str">"customer_data_access"</span>, agent=DataAgent)
+step.requires_resources = [<span class="code-str">"customer_db:read"</span>]
+step.governance_policy = <span class="code-str">"data_access_policy_v2.1"</span></div>
+            </div>
+        </section>
+
+        <section class="arch-principle-item arch-reveal">
+            <div class="arch-meta-side">
+                <span class="arch-principle-num">03 / TELEMETRY</span>
+                <h2 class="arch-principle-name">Observable by Default</h2>
+            </div>
+            <div class="arch-content-side">
+                <p class="arch-summary-text">All workflows, steps, and governance decisions are designed to be observable in real-time and historically auditable.</p>
+                <div class="arch-detail-block">
+                    <div>
+                        <h4 class="arch-sub-label">Implementation</h4>
+                        <ul class="arch-detail-list">
+                            <li>Structured JSON logging (PII redacted)</li>
+                            <li>OpenTelemetry native distributed tracing</li>
+                            <li>Real-time metrics export</li>
+                            <li>Historical workflow replay capabilities</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="arch-sub-label">Operational Visibility</h4>
+                        <ul class="arch-detail-list">
+                            <li>Active resource lock wait queues</li>
+                            <li>Human-in-the-loop escalation depths</li>
+                            <li>Governance decision patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="arch-principle-item arch-reveal">
+            <div class="arch-meta-side">
+                <span class="arch-principle-num">04 / RESILIENCE</span>
+                <h2 class="arch-principle-name">Recoverable from Failure</h2>
+            </div>
+            <div class="arch-content-side">
+                <p class="arch-summary-text">Crashes and agent failures should not require manual state reconstitution or intervention.</p>
+                <div class="arch-detail-block">
+                    <div>
+                        <h4 class="arch-sub-label">Implementation</h4>
+                        <ul class="arch-detail-list">
+                            <li>Post-step persistent checkpoints</li>
+                            <li>Idempotent execution semantics</li>
+                            <li>Compensating transaction rollback</li>
+                            <li>Automatic resume from snapshot</li>
+                        </ul>
+                    </div>
+                    <div class="arch-trade-off-box">
+                        <strong>Operational Note:</strong> Recovery typically occurs within seconds in reference deployments utilizing managed PostgreSQL persistence backends.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="arch-principle-item arch-reveal">
+            <div class="arch-meta-side">
+                <span class="arch-principle-num">05 / ENFORCEMENT</span>
+                <h2 class="arch-principle-name">Governance via Architecture</h2>
+            </div>
+            <div class="arch-content-side">
+                <p class="arch-summary-text">Governance is enforced by runtime architecture and network topology, not reliant on agent code discipline.</p>
+                <div class="arch-detail-block">
+                    <div>
+                        <h4 class="arch-sub-label">Implementation</h4>
+                        <ul class="arch-detail-list">
+                            <li>Proposal interception layer</li>
+                            <li>Network isolation via restricted subnets</li>
+                            <li>IAM-restricted agent credentials</li>
+                            <li>Sole execution path enforcement</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="arch-sub-label">Security Posture</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Bypassing governance requires privilege escalation—detectable via infrastructure security monitoring rather than application logs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<section class="comp-section-wrapper">
+    <div class="comp-container">
+        <header class="comp-header-row">
+            <div class="comp-title-group">
+                <span class="comp-pre-title">System Behavior Analysis</span>
+                <h2 class="comp-main-title">Operational Comparison</h2>
+            </div>
+            
+            <div class="comp-toggle-container">
+                <button class="comp-toggle-btn active" id="comp-btn-unmanaged" onclick="setComparisonMode('unmanaged')">Unmanaged</button>
+                <button class="comp-toggle-btn" id="comp-btn-managed" onclick="setComparisonMode('managed')">Managed</button>
+            </div>
+        </header>
+
+        <div class="comp-grid" id="compGridContainer">
+            <div class="comp-card">
+                <div class="comp-accent-bar"></div>
+                <div class="comp-card-content visible" data-comp-state="unmanaged">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Dependency Enforcement</span>
+                        <span class="comp-status-tag comp-status-bad">[RACE]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">[Fraud Agent] .... (lagging)
+      │
+      ▼
+[Payment Agent] ──▶ EXECUTE!
+(Incomplete Data)</div>
+                    </div>
+                    <p class="comp-description"><strong>Violation:</strong> Agent B executes before Agent A completes. Incomplete data flows downstream causing logical errors.</p>
+                </div>
+                <div class="comp-card-content hidden" data-comp-state="managed">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Dependency Enforcement</span>
+                        <span class="comp-status-tag comp-status-good">[ORDERED]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">[Fraud Agent] ─── (done) ───┐
+                            │
+                            ▼
+[Payment Agent] ◀── (wait) ─┘
+(Validated Input)</div>
+                    </div>
+                    <p class="comp-description"><strong>Enforced:</strong> Agent B is strictly blocked at runtime until Agent A signals completion.</p>
+                </div>
+            </div>
+
+            <div class="comp-card">
+                <div class="comp-accent-bar"></div>
+                <div class="comp-card-content visible" data-comp-state="unmanaged">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Resource Locking</span>
+                        <span class="comp-status-tag comp-status-bad">[COLLISION]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">Invoice Agent ──┐
+                ▼
+             [LEDGER]
+                ▲
+Payment Agent ──┘
+(Last write wins)</div>
+                    </div>
+                    <p class="comp-description"><strong>Data Loss:</strong> Two agents write to the same record simultaneously. Race condition causes silent data corruption.</p>
+                </div>
+                <div class="comp-card-content hidden" data-comp-state="managed">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Resource Locking</span>
+                        <span class="comp-status-tag comp-status-good">[LOCKED]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">Invoice Agent ──▶ [LOCK] ──▶ [LEDGER]
+                                ▲
+Payment Agent ──▶ [WAIT] ───────┘
+(Serialized Access)</div>
+                    </div>
+                    <p class="comp-description"><strong>Protected:</strong> Distributed locks serialize access. Conflicting operations are queued automatically.</p>
+                </div>
+            </div>
+
+            <div class="comp-card">
+                <div class="comp-accent-bar"></div>
+                <div class="comp-card-content visible" data-comp-state="unmanaged">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Governor Routing</span>
+                        <span class="comp-status-tag comp-status-bad">[BYPASS]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">   [Agent]
+      │
+      │ (Direct Access)
+      ▼
+[Sensitive Data]
+(No Record)</div>
+                    </div>
+                    <p class="comp-description"><strong>Shadow Ops:</strong> Agent accesses sensitive data directly. No policy check, no audit trail created.</p>
+                </div>
+                <div class="comp-card-content hidden" data-comp-state="managed">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Governor Routing</span>
+                        <span class="comp-status-tag comp-status-good">[ENFORCED]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">   [Agent]
+      │
+      ▼
+ &lt;GOVERNOR&gt; ──▶ [AUDIT LOG]
+      │
+      ▼
+[Sensitive Data]</div>
+                    </div>
+                    <p class="comp-description"><strong>Audited:</strong> Action intercepted by Orchestrator. Governor evaluates policy before execution permission is granted.</p>
+                </div>
+            </div>
+
+            <div class="comp-card">
+                <div class="comp-accent-bar"></div>
+                <div class="comp-card-content visible" data-comp-state="unmanaged">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Failure Isolation</span>
+                        <span class="comp-status-tag comp-status-bad">[CASCADE]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">[FAULT] ──▶ [Crash]
+               │
+[Agent B] ─────┘
+               │
+[Agent C] ─────┘
+(System Halt)</div>
+                    </div>
+                    <p class="comp-description"><strong>System Halt:</strong> Single agent failure propagates downstream. Dependent agents crash sequentially.</p>
+                </div>
+                <div class="comp-card-content hidden" data-comp-state="managed">
+                    <div class="comp-card-header">
+                        <span class="comp-card-label">Failure Isolation</span>
+                        <span class="comp-status-tag comp-status-good">[ISOLATED]</span>
+                    </div>
+                    <div class="comp-schematic">
+                        <div class="comp-schematic-text">[FAULT] ──▶ || CIRCUIT OPEN ||
+
+[Agent B] ──▶ (Fallback Path)
+
+[Agent C] ──▶ (Continues)</div>
+                    </div>
+                    <p class="comp-description"><strong>Contained:</strong> Circuit breakers isolate the failure. Alternative logic allows the fleet to continue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <section class="orch-spec-container">
+        
+        <section class="orch-spec-reveal">
+            <span class="orch-spec-eyebrow">01 // Infrastructure</span>
+            <h2 class="orch-spec-title">Deployment & Routing</h2>
+            
+            <div class="orch-spec-deployment-grid">
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 20px; color: white;">Architectural Policy Routing</h3>
+                    <p style="color: var(--orch-spec-text-secondary); font-size: 15px; margin-bottom: 30px;">
+                        When deployed with correct segmentation, bypassing governance requires network boundary violation or privilege escalation.
+                    </p>
+                    <div class="orch-spec-rule-box">
+                        <div class="orch-spec-rule-row" style="border-bottom: 1px solid var(--orch-spec-border-light); margin-bottom: 10px; color: var(--orch-spec-text-dim);">
+                            <span>SOURCE -> DESTINATION</span>
+                            <span>ACCESS</span>
+                        </div>
+                        <div class="orch-spec-rule-row">
+                            <span>Agent Subnet -> Orchestrator</span>
+                            <span class="orch-spec-status-allow">ALLOW</span>
+                        </div>
+                        <div class="orch-spec-rule-row">
+                            <span>Agent Subnet -> Execution Layer</span>
+                            <span class="orch-spec-status-deny">DENY</span>
+                        </div>
+                        <div class="orch-spec-rule-row">
+                            <span>Orchestrator -> Governor</span>
+                            <span class="orch-spec-status-allow">ALLOW</span>
+                        </div>
+                        <div class="orch-spec-rule-row">
+                            <span>Orchestrator -> Execution Layer</span>
+                            <span class="orch-spec-status-allow">ALLOW</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 20px; color: white;">Verification Checklist</h3>
+                    <ul class="orch-spec-checklist">
+                        <li>Verify agents cannot directly ping execution DBs/APIs</li>
+                        <li>Monitor network flow logs for policy bypass attempts</li>
+                        <li>Alert on executions missing Governor decision IDs</li>
+                        <li>Define fail-safe behavior for Governor unavailability</li>
+                        <li>Conduct quarterly architecture reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="orch-spec-specs-section orch-spec-reveal">
+            <span class="orch-spec-eyebrow">02 // Performance Data</span>
+            <h2 class="orch-spec-title">Technical Specifications</h2>
+            
+            <div class="orch-spec-data-grid">
+                <div class="orch-spec-full-width">
+                    <span class="orch-spec-full-width-text">NOTE: Figures represent design targets and observed performance in reference deployments (Managed Cloud, PostgreSQL Persistence).</span>
+                </div>
+
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Concurrent Workflows</span>
+                    <span class="orch-spec-metric-value">10,000+</span>
+                    <span class="orch-spec-metric-context">Active workflows in reference deployment cluster.</span>
+                </div>
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Orchestration Overhead</span>
+                    <span class="orch-spec-metric-value">&lt;10ms</span>
+                    <span class="orch-spec-metric-context">P95 latency per step (excluding agent execution).</span>
+                </div>
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Target Uptime</span>
+                    <span class="orch-spec-metric-value">99.99%</span>
+                    <span class="orch-spec-metric-context">Multi-AZ managed deployment SLA.</span>
+                </div>
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Failover Time</span>
+                    <span class="orch-spec-metric-value">&lt;30s</span>
+                    <span class="orch-spec-metric-context">Active-passive configuration target.</span>
+                </div>
+
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Lock Latency</span>
+                    <span class="orch-spec-metric-value">&lt;5ms</span>
+                    <span class="orch-spec-metric-context">P95 acquisition in single-region deployment.</span>
+                </div>
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Concurrent Locks</span>
+                    <span class="orch-spec-metric-value">100k+</span>
+                    <span class="orch-spec-metric-context">Distributed locks supported per cluster.</span>
+                </div>
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Audit Write</span>
+                    <span class="orch-spec-metric-value">&lt;20ms</span>
+                    <span class="orch-spec-metric-context">Asynchronous write to immutable audit store.</span>
+                </div>
+                <div class="orch-spec-data-cell">
+                    <span class="orch-spec-metric-label">Recovery Point</span>
+                    <span class="orch-spec-metric-value">&lt;1 min</span>
+                    <span class="orch-spec-metric-context">Dependent on checkpoint frequency settings.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="orch-spec-comparison-section orch-spec-reveal">
+            <span class="orch-spec-eyebrow">03 // Landscape Analysis</span>
+            <h2 class="orch-spec-title">Comparison vs. Alternatives</h2>
+
+            <div class="orch-spec-comp-grid">
+                <div class="orch-spec-comp-card">
+                    <span class="orch-spec-comp-title">Generic Workflow Engines</span>
+                    <p style="font-size: 12px; color: var(--orch-spec-text-dim); margin-bottom: 15px;">Airflow, Prefect, Temporal</p>
+                    <ul class="orch-spec-comp-list">
+                        <li>Focus: ETL pipelines, batch scheduling</li>
+                        <li>Governance: Typically pre/post hooks</li>
+                        <li>Non-deterministic handling: Requires tooling</li>
+                    </ul>
+                    <div class="orch-spec-comp-verdict">
+                        <strong>Verdict:</strong> Use generic engines for data pipelines. Use Orchestrator for autonomous agent fleets.
+                    </div>
+                </div>
+
+                <div class="orch-spec-comp-card">
+                    <span class="orch-spec-comp-title">Agent Frameworks</span>
+                    <p style="font-size: 12px; color: var(--orch-spec-text-dim); margin-bottom: 15px;">LangChain, CrewAI, AutoGPT</p>
+                    <ul class="orch-spec-comp-list">
+                        <li>Focus: Prototyping, prompt chaining</li>
+                        <li>Coordination: Application-level logic</li>
+                        <li>Persistence: Often lacks enterprise state</li>
+                    </ul>
+                    <div class="orch-spec-comp-verdict">
+                        <strong>Verdict:</strong> Use frameworks to build agents. Use Orchestrator to coordinate fleets under governance.
+                    </div>
+                </div>
+
+                <div class="orch-spec-comp-card">
+                    <span class="orch-spec-comp-title">Custom Coordination</span>
+                    <p style="font-size: 12px; color: var(--orch-spec-text-dim); margin-bottom: 15px;">In-house Development</p>
+                    <ul class="orch-spec-comp-list">
+                        <li>Control: Maximum flexibility</li>
+                        <li>Risk: Testing deadlocks is complex</li>
+                        <li>Burden: Maintenance grows non-linearly</li>
+                    </ul>
+                    <div class="orch-spec-comp-verdict">
+                        <strong>Verdict:</strong> Viable for niche requirements. Often migrated to platforms as fleet size scales.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-faq">
+        <div class="section-container">
+            <h2 class="section-title">STILL HAVE DOUBT?</h2>
+            
+            <!-- Minimal FAQ List -->
+            <div id="faq-container" class="border-t border-white/10">
+                <!-- Items injected via JS -->
+            </div>
+        </div>
+    </section>
     </section>
 
-    <!-- FLOW DIAGRAM SECTION -->
-    <section class="section-flow">
-        <div class="section-container">
-            <h2 class="section-title">Orchestration Flow</h2>
-            <p class="section-subtitle">See how tasks flow through the system.</p>
-            <div class="flow-diagram">
-                <div class="flow-box">
-                    <div class="flow-title">User Request</div>
-                    <p class="flow-content">Complex multi-step task requiring agent coordination</p>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-box primary-box">
-                    <div class="flow-title">Orchestration Engine</div>
-                    <p class="flow-content">Analyzes dependencies, creates execution plan, routes to agents</p>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-box">
-                    <div class="flow-title">Agent Execution</div>
-                    <p class="flow-content">Agents process tasks in parallel or sequence as determined</p>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-box">
-                    <div class="flow-title">Result Assembly</div>
-                    <p class="flow-content">Combine results, maintain state, handle errors gracefully</p>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-box">
-                    <div class="flow-title">Response Delivery</div>
-                    <p class="flow-content">Return complete result to user with full audit trail</p>
-                </div>
-            </div>
+        <!-- ── Global CTA ─────────────────────────────────────────── -->
+<section class="bl-cta">
+    <div class="bl-cta-inner">
+        <p class="bl-cta-label">Axiosky</p>
+        <h2 class="bl-cta-heading">The Standard for<br>AI Governance.</h2>
+        <div class="bl-cta-actions">
+            <a href="../../pages/request-pilot.html" class="btn btn-primary">Request a Demo</a>
         </div>
-    </section>
-
-    <!-- CAPABILITIES SECTION -->
-    <section class="section-capabilities">
-        <div class="section-container">
-            <h2 class="section-title">Core Capabilities</h2>
-            <p class="section-subtitle">Powerful features for orchestrating distributed agent systems.</p>
-            <div class="capabilities-grid">
-                <div class="capability-card">
-                    <h3 class="capability-title">Parallel Execution</h3>
-                    <p class="capability-desc">Run independent tasks concurrently to maximize efficiency and reduce latency.</p>
-                </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Dependency Management</h3>
-                    <p class="capability-desc">Automatically resolve task dependencies and execute in optimal order.</p>
-                </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">State Persistence</h3>
-                    <p class="capability-desc">Maintain workflow state across distributed agents with full consistency.</p>
-                </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Error Recovery</h3>
-                    <p class="capability-desc">Automatic retries, fallbacks, and graceful degradation on failures.</p>
-                </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Real-time Monitoring</h3>
-                    <p class="capability-desc">Monitor workflow progress, agent health, and resource utilization live.</p>
-                </div>
-                <div class="capability-card">
-                    <h3 class="capability-title">Load Balancing</h3>
-                    <p class="capability-desc">Distribute tasks across agents based on current load and availability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="section-features">
-        <div class="section-container">
-            <h2 class="section-title">Advanced Features</h2>
-            <p class="section-subtitle">Enterprise-grade orchestration capabilities for demanding applications.</p>
-            <div class="features-grid">
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">1</div>
-                        <h3 class="feature-title">Smart Routing</h3>
-                    </div>
-                    <p class="feature-desc">Route tasks to agents based on expertise, availability, and performance history. The system learns from execution patterns to continuously optimize routing decisions.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">2</div>
-                        <h3 class="feature-title">Context Management</h3>
-                    </div>
-                    <p class="feature-desc">Maintain rich context across multi-step workflows. Share data between agents efficiently while preserving security and isolation boundaries.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">3</div>
-                        <h3 class="feature-title">Workflow Versioning</h3>
-                    </div>
-                    <p class="feature-desc">Version control for your orchestration flows. Roll back changes, A/B test new workflows, and maintain compatibility across versions.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">4</div>
-                        <h3 class="feature-title">Timeout & Throttling</h3>
-                    </div>
-                    <p class="feature-desc">Fine-grained control over execution timing. Set timeouts, rate limits, and retry policies per task or workflow-wide.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">5</div>
-                        <h3 class="feature-title">Event Streaming</h3>
-                    </div>
-                    <p class="feature-desc">Emit detailed events at each stage of workflow execution. Subscribe to events for custom monitoring, logging, and integration.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-header">
-                        <div class="feature-number">6</div>
-                        <h3 class="feature-title">Cost Optimization</h3>
-                    </div>
-                    <p class="feature-desc">Track resource usage per task and workflow. Optimize execution strategies to minimize costs while meeting performance requirements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- USE CASES SECTION -->
-    <section class="section-use-cases">
-        <div class="section-container">
-            <h2 class="section-title">Use Cases</h2>
-            <p class="section-subtitle">Real-world applications of intelligent orchestration.</p>
-            <div class="use-cases-grid">
-                <div class="use-case-card">
-                    <h3 class="use-case-title">Document Processing</h3>
-                    <p class="use-case-desc">Orchestrate extraction, validation, and enrichment agents to process documents at scale with quality assurance.</p>
-                </div>
-                <div class="use-case-card">
-                    <h3 class="use-case-title">Research & Analysis</h3>
-                    <p class="use-case-desc">Coordinate research agents to gather, analyze, and synthesize information into comprehensive reports.</p>
-                </div>
-                <div class="use-case-card">
-                    <h3 class="use-case-title">Content Generation</h3>
-                    <p class="use-case-desc">Chain planning, writing, editing, and publishing agents for high-quality content production at scale.</p>
-                </div>
-                <div class="use-case-card">
-                    <h3 class="use-case-title">Data Transformation</h3>
-                    <p class="use-case-desc">Orchestrate extraction, transformation, and loading agents with dependency management and error handling.</p>
-                </div>
-                <div class="use-case-card">
-                    <h3 class="use-case-title">Customer Support</h3>
-                    <p class="use-case-desc">Route support requests to specialized agents based on issue type, severity, and agent expertise.</p>
-                </div>
-                <div class="use-case-card">
-                    <h3 class="use-case-title">Multi-Agent AI Systems</h3>
-                    <p class="use-case-desc">Build complex systems where agents collaborate, compete, and learn from each other's outputs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA SECTION -->
-    <section class="section-final-cta">
-        <div class="section-container">
-            <h2 class="section-title">Ready to Orchestrate Your AI?</h2>
-            <p class="section-subtitle">Start building sophisticated multi-agent workflows today. Join builders creating the next generation of AI systems.</p>
-            <div class="final-ctas">
-                <button class="btn btn--primary btn--lg">Get Started Free</button>
-                <button class="btn btn--secondary btn--lg">Schedule Demo</button>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -333,5 +1028,7 @@
     <!-- Scripts -->
     <script src="../../js/main.js"></script>
     <script src="../../js/navigation.js"></script>
+    <script src="../../js/orchestrator.js"></script>
+    <script src="../../js/cookie-banner.js"></script>
 </body>
 </html>
