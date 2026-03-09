@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════ -->
+    <title>Policy Engine | Axiosky</title>
+    <meta name="description" content="Axiosky Policy Engine converts DPDP Act, SEBI LODR, RBI, and GFR regulations into deterministic, versioned, testable code. Every rule unit-tested, reviewed by compliance teams, and enforced by the Governor at runtime.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://axiosky.com/policy-engine">
+
+    <!-- ═══════════════════════════════════════
+         OPEN GRAPH (LinkedIn, Facebook, WhatsApp)
+    ═══════════════════════════════════════ -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://axiosky.com/policy-engine">
+    <meta property="og:site_name"    content="Axiosky">
+    <meta property="og:locale"       content="en_US">
+    <meta property="og:title"        content="Policy-as-Code Engine — Regulations into Enforceable AI Rules | Axiosky">
+    <meta property="og:description"  content="Stop relying on prompts for compliance. Axiosky translates DPDP Act, SEBI, RBI, and GFR regulations into deterministic policy code — versioned, tested, reviewed, and enforced at every agent decision.">
+    <meta property="og:image"        content="https://axiosky.com/assets/images/og-policy-engine.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"    content="Policy-as-Code Engine — Regulations into Enforceable AI Rules | Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@axiosky">
+    <meta name="twitter:title"       content="Policy-as-Code Engine — Regulations into Enforceable AI Rules | Axiosky">
+    <meta name="twitter:description" content="Axiosky Policy Engine: translate DPDP Act, SEBI, RBI, and GFR regulations into deterministic policy-as-code. Unit-tested, compliance-reviewed, and enforced in real time. Not prompts. Not heuristics.">
+    <meta name="twitter:image"       content="https://axiosky.com/assets/images/og-policy-engine.png">
+
+    <!-- ═══════════════════════════════════════
+         TECHNICAL
+    ═══════════════════════════════════════ -->
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         JSON-LD SCHEMA
+    ═══════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axiosky.com/#organization",
+          "name": "Axiosky",
+          "url": "https://axiosky.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://axiosky.com/assets/images/logo.svg"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://axiosky.com/policy-engine#software",
+          "name": "Axiosky Policy Engine",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://axiosky.com/policy-engine",
+          "description": "Policy-as-code translation and execution engine that converts regulatory requirements into deterministic, versioned, testable rules enforced at every autonomous agent decision point.",
+          "isPartOf": {
+            "@id": "https://axiosky.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://axiosky.com/policy-engine#webpage",
+          "url": "https://axiosky.com/policy-engine",
+          "name": "Policy-as-Code Engine — Translate Regulations into Enforceable AI Rules | Axiosky",
+          "description": "Axiosky Policy Engine converts DPDP Act, SEBI LODR, RBI, and GFR regulations into deterministic, versioned, testable code. Every rule unit-tested, reviewed by compliance teams, and enforced by the Governor at runtime.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://axiosky.com/#organization" }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/policy-engine.css">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="/">
+                    <img src="/assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Main nav items - centered -->
+            <ul class="nav-menu">
+                <!-- Platform dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Platform</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/governor" class="dropdown-link">Governance</a></li>
+                        <li><a href="/orchestrator" class="dropdown-link">Orchestration</a></li>
+                        <li><a href="/policy-engine" class="dropdown-link">Policy Engine</a></li>
+                        <li><a href="/security" class="dropdown-link">Security</a></li>
+                    </ul>
+                </li>
+
+                <!-- Solutions dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Solutions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/government" class="dropdown-link">Government</a></li>
+                        <li><a href="/critical-infrastructure" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
+                    </ul>
+                </li>
+
+                <!-- Company dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Company</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about" class="dropdown-link">About Us</a></li>
+                        <li><a href="/team" class="dropdown-link">Team</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- CTA button - right side -->
+            <a href="/request-pilot" class="nav-link nav-link-cta">Request Pilot</a>
+
+            <!-- Hamburger (mobile only) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="snav-mobile" id="snavMobile">
+        <ul class="snav-mobile-list">
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Platform
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="/governor" class="snav-mobile-link">Governance</a>
+                    <a href="/orchestrator" class="snav-mobile-link">Orchestration</a>
+                    <a href="/policy-engine" class="snav-mobile-link">Policy Engine</a>
+                    <a href="/security" class="snav-mobile-link">Security</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="/government" class="snav-mobile-link">Government</a>
+                    <a href="/critical-infrastructure" class="snav-mobile-link">Compliance-Critical</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Company
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="/about" class="snav-mobile-link">About Us</a>
+                    <a href="/team" class="snav-mobile-link">Team</a>
+                </div>
+            </li>
+            <div class="snav-mobile-header">
+                <a href="/request-pilot" class="btn btn-request-pilot">Request Pilot</a>
+            </div>
+        </ul>
+    </div>
+
+    <section class="homepagecontent">
+
+    <!-- HERO -->
+    <section class="pe-hero">
+        <div class="pe-hero-container hero-grid">
+            <div class="hero-text">
+                <h1 class="pe-hero-headline">Policy-as-Code for<br>Autonomous Systems</h1>
+                <p class="pe-hero-lead">The Policy Engine translates regulations, internal controls, and operational procedures into deterministic, versioned, testable code that the Governor executes at every decision point.</p>
+                <p class="pe-hero-sub">Compliance requirements exist in natural language. Autonomous agents execute in code. The Policy Engine is the translation layer—converting human-readable policy into machine-enforceable rules, eliminating ambiguity at enforcement time.</p>
+                <div class="pe-hero-actions">
+                    <a href="/request-pilot" class="btn btn-primary">Request Policy Assessment</a>
+                </div>
+            </div>
+            <div class="hero-canvas-container">
+                <canvas id="sim-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY PAGE NAV -->
+    <div class="sec-page-nav-wrapper" id="secPageNavWrapper">
+        <div class="sec-page-nav" id="secPageNav">
+            <div class="sec-container-wide">
+                <div class="sec-page-nav-inner">
+                    <nav class="sec-page-nav-links" id="secPageNavLinks">
+                        <a href="#pe-why-code"      class="sec-page-nav-link">Why Code</a>
+                        <a href="#pe-principles"    class="sec-page-nav-link">Principles</a>
+                        <a href="#pe-how-it-works"  class="sec-page-nav-link">How it Works</a>
+                        <a href="#pe-lifecycle"     class="sec-page-nav-link">Lifecycle</a>
+                        <a href="#pe-library"       class="sec-page-nav-link">Policy Library</a>
+                        <a href="#pe-governor"      class="sec-page-nav-link">Governor Integration</a>
+                        <a href="#pe-examples"      class="sec-page-nav-link">Examples</a>
+                        <a href="#pe-auditability"  class="sec-page-nav-link">Auditability</a>
+                        <a href="#pe-specs"         class="sec-page-nav-link">Specification</a>
+                        <a href="#pe-faq"           class="sec-page-nav-link">FAQ</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: WHY CODE -->
+    <section id="pe-why-code" class="pe-section">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">The Translation Challenge</div>
+                <h2 class="pe-section-title">From Natural Language to Executable Code</h2>
+                <p class="pe-section-lead">Every compliance requirement starts as text. Every enforcement decision must be code. The gap between them is where regulated AI deployments fail.</p>
+            </div>
+
+            <!-- Translation example -->
+            <div class="pe-translation-block" data-animate>
+                <div class="pe-translation-col">
+                    <div class="pe-translation-label pe-label-from">Natural Language</div>
+                    <div class="pe-quote-block">
+                        "Procurement orders exceeding ₹2,00,000 require a minimum of three competitive quotations, conflict-of-interest disclosure from all evaluators, budget verification from finance, and dual approval from the department head and financial authority — unless emergency procurement provisions apply under GFR Rule 154."
+                    </div>
+                </div>
+                <div class="pe-translation-arrow">→</div>
+                <div class="pe-translation-col">
+                    <div class="pe-translation-label pe-label-to">Policy-as-Code</div>
+                    <div class="pe-code-block"><span class="pe-kw">def</span> <span class="pe-fn">evaluate_procurement</span>(action, context):
+    <span class="pe-cm">"""GFR 2017 Rule 154 — competitive procurement policy"""</span>
+    <span class="pe-kw">if</span> action.amount > <span class="pe-num">250000</span>:
+        require(competitive_bidding(min_vendors=<span class="pe-num">3</span>))
+        require(conflict_check(evaluators=context.evaluators))
+        require(budget_verified(finance_approval=<span class="pe-kw">True</span>))
+        require(dual_approval([<span class="pe-str">'dept_head'</span>, <span class="pe-str">'cfo'</span>]))
+
+        <span class="pe-kw">if</span> emergency_provision_7_3_b(context):
+            <span class="pe-kw">return</span> APPROVE_WITH_AUDIT
+
+        <span class="pe-kw">if not</span> all_requirements_met():
+            <span class="pe-kw">return</span> BLOCK
+
+    <span class="pe-kw">return</span> APPROVE</div>
+                </div>
+            </div>
+
+            <!-- Comparison table -->
+            <div class="pe-compare-section" data-animate>
+                <div class="pe-compare-title">Why Prompts Are Not Policy</div>
+                <h3 class="pe-compare-eyebrow">Three Approaches Compared</h3>
+                <div class="pe-compare-table">
+                    <div class="pe-compare-header">
+                        <div>Approach</div>
+                        <div>Strengths</div>
+                        <div>Limitations</div>
+                        <div>Compliance Suitability</div>
+                    </div>
+                    <div class="pe-compare-row">
+                        <div class="pe-compare-name">Prompt Engineering</div>
+                        <div class="pe-compare-cell">Easy to implement, no special tooling</div>
+                        <div class="pe-compare-cell pe-text-warn">Non-deterministic outputs, model drift, injection risks, limited auditability</div>
+                        <div class="pe-compare-verdict pe-verdict-bad">Generally insufficient as primary control</div>
+                    </div>
+                    <div class="pe-compare-row">
+                        <div class="pe-compare-name">Semantic Guardrails</div>
+                        <div class="pe-compare-cell">ML-based detection, confidence scoring</div>
+                        <div class="pe-compare-cell pe-text-warn">Probabilistic ("92% confident"), false positives/negatives, weak traceability</div>
+                        <div class="pe-compare-verdict pe-verdict-mid">Useful as detection layer, not sole evidence</div>
+                    </div>
+                    <div class="pe-compare-row pe-compare-row-highlight">
+                        <div class="pe-compare-name pe-text-accent">Policy-as-Code</div>
+                        <div class="pe-compare-cell">Deterministic, testable, version-controlled, auditable</div>
+                        <div class="pe-compare-cell">Requires translation effort, engineering overhead</div>
+                        <div class="pe-compare-verdict pe-verdict-good">Appropriate for defensible controls and audit evidence</div>
+                    </div>
+                </div>
+                <p class="pe-compare-note">Practical deployment: Many organizations combine approaches — policy-as-code for enforcement; semantic guardrails as complementary detection and monitoring layers during calibration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PRINCIPLES -->
+    <section id="pe-principles" class="pe-section pe-section-alt">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">What Policy-as-Code Means</div>
+                <h2 class="pe-section-title">Four Core Principles</h2>
+                <p class="pe-section-lead">Policy Engine treats compliance like infrastructure-as-code: versioned, testable, deployable, and rollback-ready. Policies are the code that runs your governance — not PDFs documenting aspirational controls.</p>
+            </div>
+
+            <div class="pe-principles-grid">
+
+                <div class="pe-principle-card" data-animate>
+                    <div class="pe-principle-number">01</div>
+                    <h3 class="pe-principle-title">Code, Not Text</h3>
+                    <p class="pe-principle-desc">Policies are expressed as executable logic — Policy DSL, Python, or Rego — not stored as ambiguous prose. Natural language invites interpretation; code produces a single, inspectable outcome.</p>
+                    <div class="pe-code-block pe-code-sm">
+<span class="pe-cm"># Natural language: "oversight for high-risk transactions"</span>
+<span class="pe-kw">if</span> risk_score > <span class="pe-num">7.5</span>:
+    require(human_approval(role=<span class="pe-str">'Risk_Manager'</span>))</div>
+                </div>
+
+                <div class="pe-principle-card" data-animate>
+                    <div class="pe-principle-number">02</div>
+                    <h3 class="pe-principle-title">Version Controlled</h3>
+                    <p class="pe-principle-desc">Every policy change is a commit. Full history of who changed what, why, and when — with ability to revert immediately if an update causes unintended enforcement patterns.</p>
+                    <div class="pe-code-block pe-code-sm">
+<span class="pe-cm">$ git log --oneline policies/financial_controls.py</span>
+a3f7c2e Update dual approval threshold to $300K
+b8d4f1a Add emergency procurement exception (CFO memo)
+c2e9a7b Initial financial controls policy</div>
+                </div>
+
+                <div class="pe-principle-card" data-animate>
+                    <div class="pe-principle-number">03</div>
+                    <h3 class="pe-principle-title">Test-Driven Compliance</h3>
+                    <p class="pe-principle-desc">Every rule has unit and regression tests built from historical cases, edge scenarios, and compliance team examples. Tests demonstrate policy behavior across scenarios and catch regressions before deployment.</p>
+                    <div class="pe-code-block pe-code-sm">
+<span class="pe-kw">def</span> <span class="pe-fn">test_below_threshold_auto_approves</span>():
+    action = ContractAward(value=<span class="pe-num">200000</span>, rationale=<span class="pe-kw">None</span>)
+    assert policy.evaluate(action).result == APPROVE
+
+<span class="pe-kw">def</span> <span class="pe-fn">test_no_rationale_blocks</span>():
+    action = ContractAward(value=<span class="pe-num">300000</span>, rationale=<span class="pe-kw">None</span>)
+    assert policy.evaluate(action).result == BLOCK</div>
+                </div>
+
+                <div class="pe-principle-card" data-animate>
+                    <div class="pe-principle-number">04</div>
+                    <h3 class="pe-principle-title">Continuously Deployed</h3>
+                    <p class="pe-principle-desc">Policy changes follow a release lifecycle: develop → test → stage → promote. When regulations update, policy teams implement, validate, and roll out changes in defined timeframes rather than ad-hoc manual updates.</p>
+                    <div class="pe-timeline-mini">
+                        <div class="pe-timeline-step">Regulation Published</div>
+                        <div class="pe-timeline-arrow">→</div>
+                        <div class="pe-timeline-step">Code Updated</div>
+                        <div class="pe-timeline-arrow">→</div>
+                        <div class="pe-timeline-step">Tests Validated</div>
+                        <div class="pe-timeline-arrow">→</div>
+                        <div class="pe-timeline-step">Staged Rollout</div>
+                        <div class="pe-timeline-arrow">→</div>
+                        <div class="pe-timeline-step pe-step-final">Production</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: HOW IT WORKS -->
+    <section id="pe-how-it-works" class="pe-section">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Translation Process</div>
+                <h2 class="pe-section-title">How Translation Works</h2>
+                <p class="pe-section-lead">The translation process combines governance engineering with legal interpretation. We partner with your compliance and legal teams so codified policy reflects regulatory intent and organizational reality.</p>
+            </div>
+
+            <div class="pe-stages">
+
+                <div class="pe-stage" data-animate>
+                    <div class="pe-stage-meta">
+                        <div class="pe-stage-num">Stage 1</div>
+                        <div class="pe-stage-tag">1–2 weeks</div>
+                    </div>
+                    <div class="pe-stage-content">
+                        <h3 class="pe-stage-title">Requirement Extraction</h3>
+                        <p class="pe-stage-desc">Governance engineers and legal counsel review source material — regulations, policies, SOPs. Extract enforceable requirements: thresholds, approval matrices, prohibited actions, mandatory checks, timing constraints.</p>
+                        <div class="pe-stage-deliverable">
+                            <span class="pe-deliverable-label">Deliverable</span>
+                            Requirements matrix mapping each rule to source regulation (citation + section) and enforcement condition.
+                        </div>
+                        <div class="pe-extraction-example">
+                            <div class="pe-extract-row"><span class="pe-extract-key">Source</span><span class="pe-extract-val">GFR 2017 Rule 173 / CVC Guidelines</span></div>
+                            <div class="pe-extract-row"><span class="pe-extract-key">Condition</span><span class="pe-extract-val">Contract value &gt; $250K</span></div>
+                            <div class="pe-extract-row"><span class="pe-extract-key">Requirement</span><span class="pe-extract-val">Document contract type rationale before award</span></div>
+                            <div class="pe-extract-row"><span class="pe-extract-key">Timing</span><span class="pe-extract-val">Pre-award</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pe-stage" data-animate>
+                    <div class="pe-stage-meta">
+                        <div class="pe-stage-num">Stage 2</div>
+                        <div class="pe-stage-tag">~1 week</div>
+                    </div>
+                    <div class="pe-stage-content">
+                        <h3 class="pe-stage-title">Logic Design</h3>
+                        <p class="pe-stage-desc">Translate requirements into decision logic: conditions, thresholds, dependencies, exception paths. Produce flowcharts and pseudocode for compliance review and sign-off before implementation.</p>
+                        <div class="pe-code-block pe-code-sm">
+<span class="pe-cm">IF action = award_contract</span>
+<span class="pe-cm">AND contract_value > $250,000</span>
+<span class="pe-cm">AND contract_type_rationale = null</span>
+<span class="pe-cm">THEN BLOCK → "GFR 2017 Rule 173 / CVC Guidelines requires documented rationale"</span>
+<span class="pe-cm">ELSE IF rationale.length &lt; 50</span>
+<span class="pe-cm">THEN ESCALATE → contracting_officer_review</span></div>
+                    </div>
+                </div>
+
+                <div class="pe-stage" data-animate>
+                    <div class="pe-stage-meta">
+                        <div class="pe-stage-num">Stage 3</div>
+                        <div class="pe-stage-tag">1–2 weeks</div>
+                    </div>
+                    <div class="pe-stage-content">
+                        <h3 class="pe-stage-title">Code Implementation</h3>
+                        <p class="pe-stage-desc">Governance engineers implement production policy code. Each rule includes inline citation linking back to source regulation for auditability. Code stored in Git with full change history.</p>
+                        <div class="pe-code-block pe-code-sm">
+<span class="pe-kw">class</span> <span class="pe-fn">GeneralFinancialRulesPolicy</span>:
+    THRESHOLD = <span class="pe-num">250000</span>  <span class="pe-cm"># GFR Rule 9(iv) — &#x20B9;2,00,000</span>
+
+    <span class="pe-kw">def</span> <span class="pe-fn">evaluate_contract_award</span>(self, action, context):
+        <span class="pe-cm">"""GFR 2017 Rule 173 / CVC Guidelines"""</span>
+        <span class="pe-kw">if</span> action.contract_value <= self.THRESHOLD:
+            <span class="pe-kw">return</span> PolicyDecision(APPROVE, <span class="pe-str">"Below threshold"</span>)
+
+        <span class="pe-kw">if not</span> action.contract_type_rationale:
+            <span class="pe-kw">return</span> PolicyDecision(BLOCK,
+                <span class="pe-str">"GFR 2017 Rule 173 / CVC Guidelines: Missing rationale"</span>)</div>
+                    </div>
+                </div>
+
+                <div class="pe-stage" data-animate>
+                    <div class="pe-stage-meta">
+                        <div class="pe-stage-num">Stage 4</div>
+                        <div class="pe-stage-tag">~1 week</div>
+                    </div>
+                    <div class="pe-stage-content">
+                        <h3 class="pe-stage-title">Test Suite Development</h3>
+                        <p class="pe-stage-desc">Unit and regression tests covering normal cases, edge cases, and exception paths. Tests written with input cases from historical decisions and compliance scenarios. CI pipeline blocks merges below agreed coverage thresholds.</p>
+                        <div class="pe-test-cases">
+                            <div class="pe-test-row pe-test-pass"><span class="pe-test-icon">✓</span> Below threshold → APPROVE</div>
+                            <div class="pe-test-row pe-test-fail"><span class="pe-test-icon">✗</span> Above threshold, no rationale → BLOCK</div>
+                            <div class="pe-test-row pe-test-escalate"><span class="pe-test-icon">↑</span> Insufficient rationale → ESCALATE</div>
+                            <div class="pe-test-row pe-test-fail"><span class="pe-test-icon">✗</span> Conflict of interest detected → BLOCK</div>
+                        </div>
+                        <div class="pe-stage-deliverable">Target coverage: &gt;90% line coverage, &gt;85% branch coverage</div>
+                    </div>
+                </div>
+
+                <div class="pe-stage" data-animate>
+                    <div class="pe-stage-meta">
+                        <div class="pe-stage-num">Stage 5</div>
+                        <div class="pe-stage-tag">1–2 weeks</div>
+                    </div>
+                    <div class="pe-stage-content">
+                        <h3 class="pe-stage-title">Certification &amp; Deployment</h3>
+                        <p class="pe-stage-desc">Compliance and legal review code, tests, and documentation. Certification packet signed by required stakeholders. Shadow-mode deployment validates before enforcement. Staged rollout with automatic rollback on error spikes.</p>
+                        <div class="pe-certify-grid">
+                            <div class="pe-certify-item"><span class="pe-certify-role">Legal</span> Regulatory mapping confirmed</div>
+                            <div class="pe-certify-item"><span class="pe-certify-role">Compliance</span> Coverage certified</div>
+                            <div class="pe-certify-item"><span class="pe-certify-role">Audit</span> Test coverage validated</div>
+                            <div class="pe-certify-item"><span class="pe-certify-role">Security</span> Technical review complete</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LIFECYCLE -->
+    <section id="pe-lifecycle" class="pe-section pe-section-alt">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Policy Lifecycle Management</div>
+                <h2 class="pe-section-title">Continuous Compliance</h2>
+                <p class="pe-section-lead">Regulations change. Business processes evolve. Risk thresholds shift. The Policy Engine is designed to keep enforcement continuous, auditable, and maintainable as requirements change.</p>
+            </div>
+
+            <div class="pe-lifecycle-grid">
+                <div class="pe-lifecycle-card" data-animate>
+                    <div class="pe-lifecycle-phase">Phase 1</div>
+                    <h3 class="pe-lifecycle-title">Policy Development</h3>
+                    <ul class="pe-lifecycle-list">
+                        <li>Extract enforceable requirements from regulations, SOPs</li>
+                        <li>Design decision logic with compliance and legal teams</li>
+                        <li>Write policy code and unit tests</li>
+                        <li>Validate in shadow mode (observe-only)</li>
+                    </ul>
+                    <div class="pe-lifecycle-duration">2–6 weeks (first domain)</div>
+                </div>
+
+                <div class="pe-lifecycle-card" data-animate>
+                    <div class="pe-lifecycle-phase">Phase 2</div>
+                    <h3 class="pe-lifecycle-title">Certification &amp; Approval</h3>
+                    <ul class="pe-lifecycle-list">
+                        <li>Legal confirms regulatory mapping</li>
+                        <li>Compliance certifies completeness</li>
+                        <li>Internal audit validates test coverage</li>
+                        <li>Security reviews technical implications</li>
+                    </ul>
+                    <div class="pe-lifecycle-gate">Gate: No production deployment until required approvers sign off</div>
+                </div>
+
+                <div class="pe-lifecycle-card" data-animate>
+                    <div class="pe-lifecycle-phase">Phase 3</div>
+                    <h3 class="pe-lifecycle-title">Staged Deployment</h3>
+                    <ul class="pe-lifecycle-list">
+                        <li>Shadow-mode validation (collect "would-have" decisions)</li>
+                        <li>Canary rollout (10%) → staged ramp to 100%</li>
+                        <li>Monitor decision metrics and escalation volumes</li>
+                        <li>Auto-rollback on error spikes or compliance request</li>
+                    </ul>
+                </div>
+
+                <div class="pe-lifecycle-card" data-animate>
+                    <div class="pe-lifecycle-phase">Phase 4</div>
+                    <h3 class="pe-lifecycle-title">Production Operation</h3>
+                    <ul class="pe-lifecycle-list">
+                        <li>Policy enforces decisions in real-time</li>
+                        <li>Continuous monitoring and alerting</li>
+                        <li>Audit records produced for every decision</li>
+                        <li>Operator procedures for escalations and overrides</li>
+                    </ul>
+                </div>
+
+                <div class="pe-lifecycle-card" data-animate>
+                    <div class="pe-lifecycle-phase">Phase 5</div>
+                    <h3 class="pe-lifecycle-title">Monitoring &amp; Iteration</h3>
+                    <ul class="pe-lifecycle-list">
+                        <li>Review operational telemetry (monthly/quarterly)</li>
+                        <li>Identify false positives and false negatives</li>
+                        <li>Tune thresholds based on observed outcomes</li>
+                        <li>Add regression tests for new edge cases</li>
+                    </ul>
+                </div>
+
+                <div class="pe-lifecycle-card" data-animate>
+                    <div class="pe-lifecycle-phase">Phase 6</div>
+                    <h3 class="pe-lifecycle-title">Regulatory Updates</h3>
+                    <ul class="pe-lifecycle-list">
+                        <li>Track regulatory publications and guidance</li>
+                        <li>Impact analysis — which modules are affected?</li>
+                        <li>Code updates, retest, re-certify, re-deploy</li>
+                        <li>Communicate changes to stakeholders and auditors</li>
+                    </ul>
+                    <div class="pe-response-times">
+                        <div class="pe-response-row"><span class="pe-response-type pe-type-critical">Critical risk</span><span class="pe-response-time">1–2 weeks</span></div>
+                        <div class="pe-response-row"><span class="pe-response-type pe-type-standard">Standard updates</span><span class="pe-response-time">4–8 weeks</span></div>
+                        <div class="pe-response-row"><span class="pe-response-type pe-type-guidance">Guidance</span><span class="pe-response-time">Next scheduled review</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: POLICY LIBRARY -->
+    <section id="pe-library" class="pe-section">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Policy Library</div>
+                <h2 class="pe-section-title">Accelerate with Certified Templates</h2>
+                <p class="pe-section-lead">Configurable templates for common regulations and industry standards. Intended as executable starting points — must be reviewed and customized to your organization's processes and legal requirements.</p>
+            </div>
+
+            <div class="pe-library-grid">
+                <div class="pe-library-card" data-animate>
+                    <div class="pe-library-cat">Regulatory Compliance</div>
+                    <div class="pe-library-items">
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">DPDP Act 2023</div>
+                            <ul class="pe-library-rules">
+                                <li>Lawful processing basis (Section 4)</li>
+                                <li>Consent obligations &amp; withdrawal (Section 6)</li>
+                                <li>Data principal rights automation (Sections 11–13)</li>
+                                <li>Automated processing controls (Section 8)</li>
+                            </ul>
+                        </div>
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">Companies Act 2013 / SEBI LODR</div>
+                            <ul class="pe-library-rules">
+                                <li>Board approval thresholds (SEBI LODR Reg. 24)</li>
+                                <li>Internal financial controls &amp; segregation of duties (Sec. 134(5))</li>
+                                <li>Books of accounts &amp; audit trail requirements (Sec. 128)</li>
+                            </ul>
+                        </div>
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">ABDM Health Data Policy</div>
+                            <ul class="pe-library-rules">
+                                <li>Health data access controls (Sec. 3.2)</li>
+                                <li>Purpose limitation &amp; minimum necessary (Sec. 4.1)</li>
+                                <li>Audit logging for health data access (Sec. 7.3)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pe-library-card" data-animate>
+                    <div class="pe-library-cat">Government Procurement</div>
+                    <div class="pe-library-items">
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">GFR 2017 / CVC Guidelines</div>
+                            <ul class="pe-library-rules">
+                                <li>Competitive bidding &amp; quotation verification (Rule 160)</li>
+                                <li>Single tender justification (Rule 161)</li>
+                                <li>Contract award rationale (Rule 173)</li>
+                                <li>Conflict-of-interest disclosure (CVC guidelines)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pe-library-cat pe-library-cat-mt">Financial Services</div>
+                    <div class="pe-library-items">
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">PMLA 2002 / RBI KYC</div>
+                            <ul class="pe-library-rules">
+                                <li>Customer identification &amp; verification (PMLA Sec. 12)</li>
+                                <li>Suspicious transaction reporting (STR) triggers</li>
+                                <li>Politically Exposed Persons (PEP) screening (RBI KYC Master Direction)</li>
+                            </ul>
+                        </div>
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">PCI DSS</div>
+                            <ul class="pe-library-rules">
+                                <li>Cardholder data access restrictions</li>
+                                <li>Transaction monitoring and access controls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pe-library-card" data-animate>
+                    <div class="pe-library-cat">Operational Controls</div>
+                    <div class="pe-library-items">
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">Change Management</div>
+                            <ul class="pe-library-rules">
+                                <li>Change approval workflows and emergency paths</li>
+                                <li>Rollback requirements and audit gates</li>
+                            </ul>
+                        </div>
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">Data Classification</div>
+                            <ul class="pe-library-rules">
+                                <li>Classification tiers, access controls</li>
+                                <li>Encryption and retention enforcement</li>
+                            </ul>
+                        </div>
+                        <div class="pe-library-item">
+                            <div class="pe-library-reg">Approval Hierarchies</div>
+                            <ul class="pe-library-rules">
+                                <li>Amount-based approval matrices</li>
+                                <li>Multi-signature rules and escalation paths</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pe-template-note">Each template includes: policy code with inline citations, test suite, configuration guide, compliance documentation, and deployment guide.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: GOVERNOR INTEGRATION -->
+    <section id="pe-governor" class="pe-section pe-section-alt">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Integration with Governor</div>
+                <h2 class="pe-section-title">Code You Certify Is the Code That Runs</h2>
+                <p class="pe-section-lead">Policy Engine compiles policies into Governor-executable format — no manual translation, no drift between intent and enforcement. What your compliance team certifies is exactly what evaluates every agent action.</p>
+            </div>
+
+            <div class="pe-flow-steps">
+                <div class="pe-flow-step" data-animate>
+                    <div class="pe-flow-num">01</div>
+                    <div class="pe-flow-body">
+                        <h3 class="pe-flow-title">Policy Compilation</h3>
+                        <p class="pe-flow-desc">DSL/Python/Rego compiled into optimized, versioned package. Compilation includes syntax checks, static analysis, and unit test execution. Output: signed package with version, hash, and test results.</p>
+                    </div>
+                </div>
+                <div class="pe-flow-connector" data-animate>↓</div>
+                <div class="pe-flow-step" data-animate>
+                    <div class="pe-flow-num">02</div>
+                    <div class="pe-flow-body">
+                        <h3 class="pe-flow-title">Version Registration</h3>
+                        <p class="pe-flow-desc">Compiled packages registered in central policy registry with full metadata. Registry provides auditable trail: who deployed what and when.</p>
+                    </div>
+                </div>
+                <div class="pe-flow-connector" data-animate>↓</div>
+                <div class="pe-flow-step" data-animate>
+                    <div class="pe-flow-num">03</div>
+                    <div class="pe-flow-body">
+                        <h3 class="pe-flow-title">Distribution to Governors</h3>
+                        <p class="pe-flow-desc">Packages distributed securely to all Governor instances. Cloud (HTTPS/mTLS), On-prem (internal registry), or Air-gapped (signed media). Each Governor validates package signature before loading.</p>
+                    </div>
+                </div>
+                <div class="pe-flow-connector" data-animate>↓</div>
+                <div class="pe-flow-step" data-animate>
+                    <div class="pe-flow-num">04</div>
+                    <div class="pe-flow-body">
+                        <h3 class="pe-flow-title">Hot-Reload &amp; Atomicity</h3>
+                        <p class="pe-flow-desc">Governor supports atomic policy loading — new policy loaded alongside old, in-flight decisions complete under prior version, new decisions immediately use new version. Instant rollback to previous package supported.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pe-guarantees" data-animate>
+                <div class="pe-guarantee-title">Consistency &amp; Verification Guarantees</div>
+                <div class="pe-guarantee-grid">
+                    <div class="pe-guarantee-item"><span class="pe-gi-label">Atomic versioning</span> Governor instances run identical policy versions coordinated by registry</div>
+                    <div class="pe-guarantee-item"><span class="pe-gi-label">Signature verification</span> Governors reject tampered or unsigned packages</div>
+                    <div class="pe-guarantee-item"><span class="pe-gi-label">Rollback time</span> &lt;60s to revert and enforce previous version</div>
+                    <div class="pe-guarantee-item"><span class="pe-gi-label">Drift detection</span> Registry monitors Governor versioning and alerts on drift</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: EXAMPLES -->
+    <section id="pe-examples" class="pe-section">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Regulatory Mapping Examples</div>
+                <h2 class="pe-section-title">From Regulation Text to Enforcement Code</h2>
+                <p class="pe-section-lead">Illustrative templates showing how specific regulations become executable logic. Final deployments require legal and compliance sign-off.</p>
+            </div>
+
+            <div class="pe-examples-tabs" data-animate>
+                <div class="pe-tab-buttons">
+                    <button class="pe-tab-btn active" data-tab="gdpr">DPDP Act S.4</button>
+                    <button class="pe-tab-btn" data-tab="sox">Companies Act / SEBI</button>
+                    <button class="pe-tab-btn" data-tab="far">GFR Rule 161</button>
+                </div>
+
+                <div class="pe-tab-panel active" id="pe-tab-gdpr">
+                    <div class="pe-example-layout">
+                        <div class="pe-example-context">
+                            <div class="pe-example-reg-label">DPDP Act 2023 — Section 4</div>
+                            <p class="pe-example-req">Personal data may be processed only for a lawful purpose for which the Data Principal has given consent, or for certain legitimate uses under Section 7 (state functions, legal obligation, medical emergency, employment).</p>
+                            <div class="pe-example-value">
+                                <div class="pe-ev-row"><span>Audit value</span> Every data processing action produces a lawful basis record — directly traceable to Article 6(1) text.</div>
+                            </div>
+                        </div>
+                        <div class="pe-code-block pe-code-example">
+<span class="pe-kw">def</span> <span class="pe-fn">evaluate_data_processing</span>(action, context):
+    <span class="pe-cm">"""DPDP Act 2023 — Section 4 - Lawful basis for processing"""</span>
+    lawful_bases = []
+
+    <span class="pe-cm"># (a) Consent</span>
+    <span class="pe-kw">if</span> getattr(context, <span class="pe-str">"user_consent"</span>, <span class="pe-kw">None</span>):
+        consent = context.user_consent
+        <span class="pe-kw">if</span> (consent.obtained <span class="pe-kw">and</span>
+            consent.specific_to(action.purpose) <span class="pe-kw">and</span>
+            consent.free_and_informed()):
+            lawful_bases.append(<span class="pe-str">"consent"</span>)
+
+    <span class="pe-cm"># (b) Contract necessity</span>
+    <span class="pe-kw">if</span> (action.purpose == <span class="pe-str">"contract_performance"</span> <span class="pe-kw">and</span>
+        context.contract <span class="pe-kw">and</span>
+        context.contract.includes_data_subject(action.subject)):
+        lawful_bases.append(<span class="pe-str">"contract"</span>)
+
+    <span class="pe-kw">if not</span> lawful_bases:
+        <span class="pe-kw">return</span> PolicyDecision(BLOCK,
+            <span class="pe-str">"DPDP Act S.4: No lawful basis for processing"</span>)
+
+    <span class="pe-kw">return</span> PolicyDecision(APPROVE,
+        basis=lawful_bases[<span class="pe-num">0</span>])</div>
+                    </div>
+                </div>
+
+                <div class="pe-tab-panel" id="pe-tab-sox">
+                    <div class="pe-example-layout">
+                        <div class="pe-example-context">
+                            <div class="pe-example-reg-label">Companies Act 2013 Sec. 134(5) / SEBI LODR Reg. 24</div>
+                            <p class="pe-example-req">Financial transactions above threshold require dual approval from independent signatories. No single person can initiate and approve the same transaction — per Companies Act 2013 Sec. 134(5) internal financial controls requirement.</p>
+                            <div class="pe-example-value">
+                                <div class="pe-ev-row"><span>Audit value</span> Every financial approval produces a segregation record — defensible for Companies Act Sec. 134(5) internal controls audit and SEBI LODR compliance review.</div>
+                            </div>
+                        </div>
+                        <div class="pe-code-block pe-code-example">
+<span class="pe-kw">def</span> <span class="pe-fn">evaluate_financial_transaction</span>(action, context):
+    <span class="pe-cm">"""Companies Act 2013 Sec. 134(5) / SEBI LODR Reg. 24 — Segregation of duties"""</span>
+    <span class="pe-kw">if</span> action.amount <= <span class="pe-num">50000</span>:
+        <span class="pe-kw">return</span> PolicyDecision(APPROVE, <span class="pe-str">"Below threshold"</span>)
+
+    <span class="pe-cm"># Dual approval required</span>
+    <span class="pe-kw">if</span> len(action.approvals) < <span class="pe-num">2</span>:
+        <span class="pe-kw">return</span> PolicyDecision(ESCALATE,
+            escalate_to=<span class="pe-str">"finance_approver"</span>,
+            rationale=<span class="pe-str">"Companies Act S.134(5): Dual approval required"</span>)
+
+    <span class="pe-cm"># Segregation check — initiator cannot approve</span>
+    <span class="pe-kw">if</span> action.initiator <span class="pe-kw">in</span> [a.approver <span class="pe-kw">for</span> a <span class="pe-kw">in</span> action.approvals]:
+        <span class="pe-kw">return</span> PolicyDecision(BLOCK,
+            <span class="pe-str">"Companies Act S.134(5): Initiator cannot be approver"</span>)
+
+    <span class="pe-kw">return</span> PolicyDecision(APPROVE,
+        audit_metadata={<span class="pe-str">"approvers"</span>: action.approvals})</div>
+                    </div>
+                </div>
+
+                <div class="pe-tab-panel" id="pe-tab-far">
+                    <div class="pe-example-layout">
+                        <div class="pe-example-context">
+                            <div class="pe-example-reg-label">GFR 2017 Rule 161 — Single Tender Justification</div>
+                            <p class="pe-example-req">Single tender procurement requires written justification with specific elements. Approving authority level depends on contract value. Deviations must be reported to CVC for contracts above prescribed limits.</p>
+                            <div class="pe-example-value">
+                                <div class="pe-ev-row"><span>Audit value</span> Justification completeness, approving authority level, and CVC reporting requirements enforced at every award — full GFR Rule 161 audit trail.</div>
+                            </div>
+                        </div>
+                        <div class="pe-code-block pe-code-example">
+<span class="pe-kw">def</span> <span class="pe-fn">evaluate_single_tender</span>(action, context):
+    <span class="pe-cm">"""GFR 2017 Rule 161 / CVC Guidelines — Single tender justification"""</span>
+    contract_value = action.contract_value
+    justification = action.justification
+
+    <span class="pe-kw">if not</span> justification:
+        <span class="pe-kw">return</span> PolicyDecision(BLOCK,
+            <span class="pe-str">"GFR Rule 161: Written justification required"</span>)
+
+    required_approver = (
+        <span class="pe-str">"competition_advocate"</span> <span class="pe-kw">if</span> contract_value > <span class="pe-num">750_000</span>
+        <span class="pe-kw">else</span> <span class="pe-str">"contracting_officer"</span>
+    )
+
+    <span class="pe-kw">if</span> justification.approved_by_role != required_approver:
+        <span class="pe-kw">return</span> PolicyDecision(BLOCK,
+            <span class="pe-str">f"GFR Rule 161: Requires {required_approver}"</span>)
+
+    <span class="pe-kw">if</span> contract_value > <span class="pe-num">13_500_000</span> <span class="pe-kw">and not</span> justification.publicly_posted:
+        <span class="pe-kw">return</span> PolicyDecision(BLOCK,
+            <span class="pe-str">"CVC guidelines: Single tender >₹25L requires CVC report"</span>)
+
+    <span class="pe-kw">return</span> PolicyDecision(APPROVE)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: AUDITABILITY -->
+    <section id="pe-auditability" class="pe-section pe-section-alt">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Certification &amp; Auditability</div>
+                <h2 class="pe-section-title">Four Pillars of Audit Evidence</h2>
+                <p class="pe-section-lead">Policy Engine produces artifacts designed to support legal and audit review. These artifacts do not replace legal opinion — they provide the evidence and reproducible trails auditors and counsel need.</p>
+            </div>
+
+            <div class="pe-pillars">
+                <div class="pe-pillar" data-animate>
+                    <div class="pe-pillar-num">Pillar 1</div>
+                    <h3 class="pe-pillar-title">Regulation Mapping Matrix</h3>
+                    <p class="pe-pillar-desc">Spreadsheet mapping every policy rule to source regulation: citation, section, requirement text, implementation approach, test coverage. When auditors ask "How do you ensure DPDP Act compliance?" — you answer with this matrix plus decision records showing enforcement in practice.</p>
+                    <div class="pe-pillar-table">
+                        <div class="pe-ptable-header">
+                            <span>Module</span><span>Rule</span><span>Regulation</span><span>Tests</span>
+                        </div>
+                        <div class="pe-ptable-row">
+                            <span>DPDP Act 2023</span><span>lawful_basis_required</span><span>Art. 6(1)</span><span class="pe-test-count">15 / 100%</span>
+                        </div>
+                        <div class="pe-ptable-row">
+                            <span>Companies Act 2013 / SEBI LODR</span><span>dual_approval_threshold</span><span>§404</span><span class="pe-test-count">12 / 100%</span>
+                        </div>
+                        <div class="pe-ptable-row">
+                            <span>GFR 2017 / CVC Guidelines</span><span>sole_source_justification</span><span>6.302</span><span class="pe-test-count">18 / 100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pe-pillar" data-animate>
+                    <div class="pe-pillar-num">Pillar 2</div>
+                    <h3 class="pe-pillar-title">Certification Documentation</h3>
+                    <p class="pe-pillar-desc">Certification packet signed by legal, compliance, and audit stakeholders attesting that policy code implements mapped regulatory requirements and tests validate expected behavior.</p>
+                    <div class="pe-cert-block">
+                        <div class="pe-cert-quote">"I, [Chief Compliance Officer], certify that DPDP Act Compliance Policy v3.2.1 (hash: sha256:a8f3c2e9...) implements DPDP Act 2023 Sections 4, 6, 7, 8, and 11–13 as applicable to the organization's data processing activities. Effective: 2025-01-15."</div>
+                    </div>
+                </div>
+
+                <div class="pe-pillar" data-animate>
+                    <div class="pe-pillar-num">Pillar 3</div>
+                    <h3 class="pe-pillar-title">Audit Log Integration</h3>
+                    <p class="pe-pillar-desc">Every Governor decision records policy module, version, and hash so specific decisions can be traced to the exact code that evaluated them.</p>
+                    <div class="pe-code-block pe-code-sm">
+{
+  <span class="pe-str">"decision_id"</span>: <span class="pe-str">"gov_20250115143218"</span>,
+  <span class="pe-str">"policy_module"</span>: <span class="pe-str">"DPDP_compliance"</span>,
+  <span class="pe-str">"policy_version"</span>: <span class="pe-str">"3.2.1"</span>,
+  <span class="pe-str">"policy_hash"</span>: <span class="pe-str">"sha256:a8f3c2e9..."</span>,
+  <span class="pe-str">"rules_evaluated"</span>: [{
+    <span class="pe-str">"rule"</span>: <span class="pe-str">"lawful_basis_required"</span>,
+    <span class="pe-str">"outcome"</span>: <span class="pe-str">"PASS"</span>,
+    <span class="pe-str">"basis_used"</span>: <span class="pe-str">"consent"</span>
+  }],
+  <span class="pe-str">"decision"</span>: <span class="pe-str">"APPROVE"</span>
+}</div>
+                </div>
+
+                <div class="pe-pillar" data-animate>
+                    <div class="pe-pillar-num">Pillar 4</div>
+                    <h3 class="pe-pillar-title">Replayability &amp; Forensics</h3>
+                    <p class="pe-pillar-desc">Given any decision record, the system can re-execute the evaluation using the recorded policy version and inputs to demonstrate the outcome is deterministic and reproducible — for disputes, investigations, and regulatory review.</p>
+                    <div class="pe-code-block pe-code-sm">
+<span class="pe-cm">$ axiosky policy replay --decision-id gov_20250115143218</span>
+
+Loading decision... ✓
+Retrieving policy v3.2.1 (sha256:a8f3...)... ✓
+Re-executing policy... ✓
+
+REPLAY RESULTS:
+  Original Decision:  APPROVE
+  Replayed Decision:  APPROVE
+  Rationale Match:    ✓
+  Verdict:            DETERMINISTIC</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SPECIFICATIONS -->
+    <section id="pe-specs" class="pe-section">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Technical Specifications</div>
+                <h2 class="pe-section-title">Design Targets &amp; Performance</h2>
+                <p class="pe-section-lead">Figures represent design targets and observed performance in reference deployments. Production performance varies with topology, hardware, policy complexity, and workload. Load testing required before production sizing.</p>
+            </div>
+
+            <div class="pe-specs-grid">
+                <div class="pe-spec-table" data-animate>
+                    <div class="pe-spec-table-title">Policy Compilation</div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Languages supported</span><span class="pe-spec-val">Policy DSL, Python 3.10+, Rego (OPA)</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Compilation speed</span><span class="pe-spec-val">&lt;5s per module (500–1,000 lines)</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Compiled output size</span><span class="pe-spec-val">200–800 KB per module (typical)</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Test execution</span><span class="pe-spec-val">1,000+ unit tests in &lt;30s (CI)</span></div>
+                </div>
+
+                <div class="pe-spec-table" data-animate>
+                    <div class="pe-spec-table-title">Policy Distribution</div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Distribution model</span><span class="pe-spec-val">Push (cloud) or pull (on-prem / air-gapped)</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Transfer security</span><span class="pe-spec-val">TLS 1.3 with mutual authentication</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Package signing</span><span class="pe-spec-val">Ed25519 digital signatures</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Distribution speed</span><span class="pe-spec-val">&lt;10s to 100+ Governors (cloud, typical)</span></div>
+                </div>
+
+                <div class="pe-spec-table" data-animate>
+                    <div class="pe-spec-table-title">Version Management</div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Storage backend</span><span class="pe-spec-val">Git or compatible VCS</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Versioning scheme</span><span class="pe-spec-val">Semantic versioning (major.minor.patch)</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Rollback time</span><span class="pe-spec-val">&lt;60s to revert and enforce previous version</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Concurrent versions</span><span class="pe-spec-val">A/B testing and canary supported</span></div>
+                </div>
+
+                <div class="pe-spec-table" data-animate>
+                    <div class="pe-spec-table-title">Scale &amp; Capacity</div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Policy modules</span><span class="pe-spec-val">1,000+ per deployment</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Rules per module</span><span class="pe-spec-val">10,000+ without observable degradation</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Max package size</span><span class="pe-spec-val">Up to 10 MB (compiled)</span></div>
+                    <div class="pe-spec-row"><span class="pe-spec-key">Governor fleet</span><span class="pe-spec-val">10,000+ Governors in single deployment</span></div>
+                </div>
+            </div>
+
+            <div class="pe-integrations" data-animate>
+                <div class="pe-int-title">Integration Points</div>
+                <div class="pe-int-grid">
+                    <div class="pe-int-item"><span class="pe-int-label">Git platforms</span>GitHub, GitLab, Bitbucket, Azure DevOps</div>
+                    <div class="pe-int-item"><span class="pe-int-label">CI/CD</span>Jenkins, GitHub Actions, GitLab CI, CircleCI</div>
+                    <div class="pe-int-item"><span class="pe-int-label">Artifact storage</span>S3, Azure Blob, GCS, Artifactory, on-prem NFS</div>
+                    <div class="pe-int-item"><span class="pe-int-label">Secrets</span>HashiCorp Vault, AWS Secrets Manager, Azure Key Vault</div>
+                    <div class="pe-int-item"><span class="pe-int-label">IDE</span>VS Code extension with syntax highlighting &amp; autocomplete</div>
+                    <div class="pe-int-item"><span class="pe-int-label">Notifications</span>Slack, PagerDuty, email, webhooks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FAQ -->
+    <section id="pe-faq" class="pe-section pe-section-alt">
+        <div class="pe-container">
+            <div class="pe-section-header" data-animate>
+                <div class="pe-eyebrow">Common Questions</div>
+                <h2 class="pe-section-title">STILL HAVE DOUBT?</h2>
+            </div>
+            <div id="pe-faq-container" class="pe-faq-border-t">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Global CTA -->
+    <section class="bl-cta">
+        <div class="bl-cta-inner">
+            <p class="bl-cta-label">Axiosky</p>
+            <h2 class="bl-cta-heading">The Standard for<br>AI Governance.</h2>
+            <div class="bl-cta-actions">
+                <a href="/request-pilot" class="btn btn-primary">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    </section><!-- /.homepagecontent -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-title">Platform</h3>
+                <ul class="footer-links">
+                    <li><a href="/governor">Governance</a></li>
+                    <li><a href="/orchestrator">Orchestration</a></li>
+                    <li><a href="/policy-engine">Policy Engine</a></li>
+                    <li><a href="/security">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Solutions</h3>
+                <ul class="footer-links">
+                    <li><a href="/government">Government</a></li>
+                    <li><a href="/critical-infrastructure">Compliance-Critical Infrastructure</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/company/axiosky" class="social-link" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/axiosky" class="social-link" title="X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.91 6.75H2.556l7.73-8.835L1.75 2.25h6.76l4.694 6.207 5.384-6.207zM17.002 18.807h1.844L6.844 3.556H4.897l12.105 15.251z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/axiosky.ai/" class="social-link" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12c0-3.403 2.759-6.162 6.162-6.162s6.162 2.759 6.162 6.162-2.759 6.162-6.162 6.162-6.162-2.759-6.162-6.162zm2.889 0c0 1.861 1.512 3.373 3.373 3.373s3.373-1.512 3.373-3.373-1.512-3.373-3.373-3.373-3.373 1.512-3.373 3.373zm11.294-6.468c0 .795.645 1.44 1.44 1.44s1.44-.645 1.44-1.44-.645-1.44-1.44-1.44-1.44.645-1.44 1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/axiosky" class="social-link" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+        </div>
+
+        <div class="footer-legal">
+            <a href="/privacy">Privacy &amp; Legal</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Axiosky</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/policy-engine.js"></script>
+    <script src="/js/cookie-banner.js"></script>
+</body>
+</html>
