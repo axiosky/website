@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════ -->
+    <title>Governance | Axiosky</title>
+    <meta name="description" content="Axiosky Governor intercepts every agent action before execution. Enforce deterministic policy-as-code, block violations instantly, and generate immutable audit trails.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://axiosky.com/pages/platform/governor.html">
+
+    <!-- ═══════════════════════════════════════
+         OPEN GRAPH (LinkedIn, Facebook, WhatsApp)
+    ═══════════════════════════════════════ -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://axiosky.com/pages/platform/governor.html">
+    <meta property="og:site_name"    content="Axiosky">
+    <meta property="og:locale"       content="en_US">
+    <meta property="og:title"        content="AI Governor — Real-Time Policy Enforcement | Axiosky">
+    <meta property="og:description"  content="Every agent action intercepted. Every decision deterministic. Every violation blocked before execution.">
+    <meta property="og:image"        content="https://axiosky.com/images/og-governance.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"    content="AI Governor — Real-Time Policy Enforcement | Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@axiosky">
+    <meta name="twitter:title"       content="AI Governor — Real-Time Policy Enforcement | Axiosky">
+    <meta name="twitter:description" content="Axiosky Governor: intercept every agent action, enforce policy-as-code in real time, and produce immutable audit trails. Zero trust. Zero ambiguity.">
+    <meta name="twitter:image"       content="https://axiosky.com/images/og-governance.png">
+
+    <!-- ═══════════════════════════════════════
+         TECHNICAL
+    ═══════════════════════════════════════ -->
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Axiosky">
+
+    <!-- ═══════════════════════════════════════
+         JSON-LD SCHEMA
+    ═══════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://axiosky.com/#organization",
+          "name": "Axiosky",
+          "url": "https://axiosky.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://axiosky.com/assets/images/logo.svg"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://axiosky.com/pages/platform/governor.html#software",
+          "name": "Axiosky Governor",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://axiosky.com/pages/platform/governor.html",
+          "description": "Real-time AI policy enforcement engine that intercepts autonomous agent actions, evaluates them against versioned policy-as-code, and blocks violations before execution.",
+          "isPartOf": {
+            "@id": "https://axiosky.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://axiosky.com/pages/platform/governor.html#webpage",
+          "url": "https://axiosky.com/pages/platform/governor.html",
+          "name": "AI Governor — Real-Time Policy Enforcement for Autonomous Agents | Axiosky",
+          "description": "Axiosky Governor intercepts every agent action before execution. Enforce deterministic policy-as-code, block violations instantly, and generate immutable audit trails for governments and regulated enterprises.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://axiosky.com/#organization" }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/governor.css">
+
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+    <div class="navbar-logo">
+        <a href="../../index.html">
+            <img src="../../assets/images/logo.svg" alt="Axiosky Logo" class="logo-img">
+        </a>
+    </div>
+    
+    <!-- Main nav items - centered -->
+    <ul class="nav-menu">
+    <!-- Platform dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Platform</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/platform/governor.html" class="dropdown-link">Governance</a></li>
+            <li><a href="../../pages/platform/orchestrator.html" class="dropdown-link">Orchestration</a></li>
+            <li><a href="../../pages/platform/policy-engine.html" class="dropdown-link">Policy Engine</a></li>
+            <li><a href="../../pages/platform/security.html" class="dropdown-link">Security</a></li>
+        </ul>
+    </li>
+    
+    <!-- Solutions dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Solutions</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/solutions/government.html" class="dropdown-link">Government</a></li>
+            <li><a href="../../pages/solutions/critical-infrastructure.html" class="dropdown-link">Compliance-Critical Infrastructure</a></li>
+        </ul>
+    </li>
+    
+    <!-- Company dropdown -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Company</a>
+        <ul class="dropdown-menu">
+            <li><a href="../../pages/company/about.html" class="dropdown-link">About Us</a></li>
+            <li><a href="../../pages/company/team.html" class="dropdown-link">Team</a></li>
+        </ul>
+    </li>
+</ul>
+
+    
+    <!-- CTA button - right side -->
+    <a href="../../pages/request-pilot.html" class="nav-link nav-link-cta">Request Pilot</a>
+    
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
+    </nav>
+
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="snav-mobile" id="snavMobile">
+        <ul class="snav-mobile-list">
+
+<li class="snav-mobile-item">
+    <button class="snav-mobile-btn">Platform
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="snav-mobile-drop">
+        <a href="../../pages/platform/governor.html" class="snav-mobile-link">Governance</a>
+        <a href="../../pages/platform/orchestrator.html" class="snav-mobile-link">Orchestration</a>
+        <a href="../../pages/platform/policy-engine.html" class="snav-mobile-link">Policy Engine</a>
+        <a href="../../pages/platform/security.html" class="snav-mobile-link">Security</a>
+    </div>
+</li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/solutions/government.html" class="snav-mobile-link">Government</a>
+                    <a href="../../pages/solutions/critical-infrastructure.html" class="snav-mobile-link">Compliance-Critical</a>
+                </div>
+            </li>
+            <li class="snav-mobile-item">
+                <button class="snav-mobile-btn">Company
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="snav-mobile-drop">
+                    <a href="../../pages/company/about.html" class="snav-mobile-link">About Us</a>
+                    <a href="../../pages/company/team.html" class="snav-mobile-link">Team</a>
+                </div>
+            </li>
+            <div class="snav-mobile-header">
+                <a href="../../pages/request-pilot.html" class="btn btn-request-pilot">Request Pilot</a>
+            </div>
+        </ul>
+    </div>
+
+    <section class="homepagecontent">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="dark-theme-hero">
+        <div class="hero-container hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-h1">The Governor:<br>Intercept, Evaluate, Enforce</h1>
+                <p class="hero-lead">
+                    Real-time policy enforcement before agent actions reach production systems. Every decision deterministic. Every violation prevented. Every outcome auditable.
+                </p>
+
+                <p class="hero-secondlead">
+                    The Governor is Axiosky's control plane—a runtime layer that sits between autonomous agents and your enterprise systems. It evaluates every proposed action against versioned, machine-enforceable policy before execution. Approvals happen in milliseconds. Violations are blocked automatically. Edge cases escalate to humans with full context. Nothing bypasses governance.
+
+                </p>
+
+                <ul class="hero-bullets">
+                <li>Pre-execution interception</li>
+                <li>Deterministic policy enforcement</li>
+                <li>Built for real-time operations</li>
+                <li>Immutable audit trails</li>
+            </ul>
+                
+                <div>
+                    <a href="../../pages/request-pilot.html" class="btn btn-primary">Request Consultation</a>
+                </div>
+            </div>
+            
+            <div class="hero-canvas-container">
+                <canvas id="sim-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Capabilities Section -->
+    <section class="section-capabilities">
+        <div class="section-container">
+            <h2 class="section-title">Governance That Works in Real Time</h2>
+            <div class="capabilities-grid">
+                <div class="tech-card">
+                    <h3 class="tech-title">Regulatory Compliance</h3>
+                    <p class="capability-desc" style="text-align: center;">DPDP Act, SEBI, RBI enforcement at runtime</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Financial Controls</h3>
+                    <p class="capability-desc" style="text-align: center;">Approval thresholds, segregation of duties</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Data Access Governance</h3>
+                    <p class="capability-desc" style="text-align: center;">PII handling, jurisdictional restrictions</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Operational Safety</h3>
+                    <p class="capability-desc" style="text-align: center;">Rate limits, dependency checks, rollback triggers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Diagram Section -->
+    <section class="section-architecture">
+    <div class="section-container">
+        <h2 class="section-title">Three-Layer Architecture</h2>
+        <div class="arch-visual-horizontal">
+            <div class="arch-node">
+                <div class="eyebrow-gov">Agent Layer</div>
+                <div class="arch-node-content">LLMs, Workflows, Tools</div>
+                <div class="arch-node-sub">Proposes Actions</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node highlight">
+                <div class="eyebrow-gov">The Governor</div>
+                <div class="arch-node-content">Runtime Enforcement</div>
+                <div class="arch-node-sub accent">Intercept • Evaluate • Enforce</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node">
+                <div class="eyebrow-gov">Execution Layer</div>
+                <div class="arch-node-content">APIs, Databases, Systems</div>
+                <div class="arch-node-sub">Approved Actions Only</div>
+            </div>
+        </div>
+        <p class="section-subtitle" style="margin-top: 40px;">Every agent action passes through deterministic policy enforcement before execution.</p>
+    </div>
+</section>
+
+    <!-- Problem Section -->
+    <section class="section-problem-governance py-16 bg-[#0a0a0a]">
+    <div class="section-container">
+        <header class="mb-10 text-center">
+            <h2 class="section-title   ">Why Governance After Execution Fails</h2>
+            <p class="text-slate-400 text-lg">Traditional monitoring tools log what already happened. By the time you detect a violation, the damage is done.</p>
+        </header>
+
+                <!-- TRACK 1 -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <span>01. Monitoring</span>
+                <span class="text-red-500">Post-Action / Reactive</span>
+            </div>
+            <div class="track" id="track-monitoring">
+                <div class="gate"><div class="gate-label">Log Filter</div></div>
+            </div>
+        </div>
+
+        <!-- TRACK 2 -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <span>02. Guardrails</span>
+                <span class="text-amber-500">Probabilistic / Heuristic</span>
+            </div>
+            <div class="track" id="track-guardrails">
+                <div class="gate" id="gate-guardrail"><div class="gate-label">Similarity Check</div></div>
+            </div>
+        </div>
+
+        <!-- TRACK 3 -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-bold text-emerald-500 uppercase tracking-widest">
+                <span>03. The Governor</span>
+                <span class="bg-emerald-500/10 px-2 rounded border border-emerald-500/20">Deterministic / Pre-Execution</span>
+            </div>
+            <div class="track border-emerald-500/20 bg-emerald-500/5" id="track-governor">
+                <div class="scanner" id="gov-scanner"></div>
+                <div class="gate success-gate" style="left: 50%;"><div class="gate-label text-emerald-400">Hard Policy Engine</div></div>
+            </div>
+        </div>
+
+        <!-- DEFINITION GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+            <!-- MONITORING DEF -->
+            <div class="definition-card bg-slate-900/50 p-5 rounded-xl border border-slate-800">
+                <h4 class="text-red-400 font-bold text-sm mb-2 italic">Monitoring</h4>
+                <p class="text-[12px] text-slate-400 leading-relaxed mb-3">Logs events <strong>after</strong> execution. Analyzes patterns to send alerts.</p>
+                <div class="text-[10px] text-red-300/60 font-semibold border-t border-red-900/30 pt-2">
+                    Problem: Damage is done before detection. Liability is already created.
+                </div>
+            </div>
+
+            <!-- GUARDRAILS DEF -->
+            <div class="definition-card bg-slate-900/50 p-5 rounded-xl border border-slate-800">
+                <h4 class="text-amber-400 font-bold text-sm mb-2 italic">Guardrails</h4>
+                <p class="text-[12px] text-slate-400 leading-relaxed mb-3">Uses semantic similarity and "guesses" if output is safe.</p>
+                <div class="text-[10px] text-amber-300/60 font-semibold border-t border-amber-900/30 pt-2">
+                    Problem: Non-deterministic. Same input yields different results. Misses logic.
+                </div>
+            </div>
+
+            <!-- GOVERNOR DEF -->
+            <div class="definition-card bg-emerald-900/10 p-5 rounded-xl border border-emerald-500/20 ring-1 ring-emerald-500/20 shadow-lg shadow-emerald-500/5">
+                <h4 class="text-emerald-400 font-bold text-sm mb-2 uppercase tracking-tighter">The Governor</h4>
+                <p class="text-[12px] text-slate-300 leading-relaxed mb-3">Intercepts every proposed action and evaluates against <strong>hard policy code</strong>.</p>
+                <div class="text-[10px] text-emerald-300 font-semibold border-t border-emerald-500/30 pt-2">
+                    Result: Violations prevented. Audit shows enforcement, not observation.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- How Governor Works Section -->
+    <section class="section-how-governor">
+        <div class="section-container">
+            <h2 class="section-title">The Enforcement Mechanism</h2>
+            <p class="section-subtitle">Every agent action flows through a deterministic evaluation pipeline. The Governor doesn't guess—it computes.</p>
+            
+            <div class="arch-visual-horizontal">
+            <div class="arch-node">
+                <div class="eyebrow-gov">Interception</div>
+                <div class="arch-node-sub">Agent proposes action. Orchestrator routes proposal to Governor before execution. Action is suspended in queue.</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+            <div class="arch-node">
+                <div class="eyebrow-gov">Context Assembly</div>
+                <div class="arch-node-sub">Governor retrieves agent identity, user authorization, data classification, policy version, historical decisions, system state.</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node">
+                <div class="eyebrow-gov">Policy Evaluation</div>
+                <div class="arch-node-sub">Policy Engine executes versioned ruleset. Deterministic logic produces decision: APPROVE, BLOCK, or ESCALATE.</div>
+            </div>
+
+            <div class="arch-arrow-h"></div>
+
+            <div class="arch-node">
+                <div class="eyebrow-gov">Enforcement & Audit</div>
+                <div class="arch-node-sub">Decision enforced. Every decision logged immutably with timestamp, agent ID, policy version, rule outcomes, decision rationale.</div>
+            </div>
+        </div>
+     </div>
+  </section>
+
+    <!-- Scenario Section -->
+    <section class="section-scenario">
+        <div class="section-container">
+            <h2 class="section-title">Seeing Governance Execute</h2>
+            <p class="section-subtitle">A financial services example: Agent proposes an RTGS transfer</p>
+            
+            <div class="terminal">
+                    <div class="terminal-header">
+                        <div style="display: flex; gap: 6px;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+                        </div>
+                        <span style="font-size: 0.7rem; color: #666;">GOVERNOR_PIPELINE_V2.3</span>
+                    </div>
+                    <div class="terminal-body" id="log-container">
+                        <div class="log-entry log-dim">> Initializing enforcement listener...</div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Grid Section -->
+    <section class="section-technical">
+        <div class="section-container">
+            <h2 class="section-title">Enterprise-Grade Enforcement</h2>
+            <p class="section-subtitle">Built for scale, reliability, and zero-compromise governance</p>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3 class="tech-title">Deterministic Execution</h3>
+                    <p class="tech-desc">Policy evaluation is pure computation. Identical action context = identical decision, every execution.</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Real-Time Architecture</h3>
+                    <p class="tech-desc">Designed for sub-second governance overhead. Optimized pipeline from interception to enforcement creates no user-perceptible delays.</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Multi-Tenancy Isolation</h3>
+                    <p class="tech-desc">Each organization's policies and audit logs are cryptographically isolated. No cross-tenant leakage.</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">High Availability Design</h3>
+                    <p class="tech-desc">Built for resilience with active-active deployment patterns, automatic failover, and distributed architecture to ensure governance reliability.</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Policy Version Control</h3>
+                    <p class="tech-desc">Every policy change is versioned. Rollback to any prior version instantly. AB test policies in staging.</p>
+                </div>
+                <div class="tech-card">
+                    <h3 class="tech-title">Real-Time Observability</h3>
+                    <p class="tech-desc">Monitor governance decisions in real-time. Alert on violations, escalation spikes, or enforcement failures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section-integration">
+        <div class="section-container">
+            <h2 class="section-title">How Governor Fits Into Your Stack</h2>
+            <p class="section-subtitle">The Governor integrates at the orchestration layer between agent frameworks and execution environments. No agent code changes required.</p>
+            
+            <div class="arch-visual-horizontal">
+            <div class="arch-node">
+                <div class="eyebrow-gov">Your Agent Layer</div>
+                <div class="arch-node-sub">LangChain, AutoGPT, Custom Agents</div>
+                </div>
+
+                <div class="arch-arrow-h"></div>
+                <div class="arch-node">
+                <div class="eyebrow-gov">Axiosky Orchestrator</div>
+                    <div class="arch-node-sub">Action Proposals Intercepted Here</div>
+                </div>
+                <div class="arch-arrow-h"></div>
+                <div class="arch-node">
+                <div class="eyebrow-gov">Governor</div>
+                    <div class="arch-node-sub">Policy Enforcement Layer</div>
+                </div>
+                <div class="arch-arrow-h"></div>
+        <div class="arch-node">
+                <div class="eyebrow-gov">Your Execution Layer</div>
+                    <div class="arch-node-sub">Enterprise APIs, Databases, Cloud Systems</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-faq">
+        <div class="section-container">
+            <h2 class="section-title">Common Questions</h2>
+            
+            <!-- Minimal FAQ List -->
+            <div id="faq-container" class="border-t border-white/10">
+                <!-- Items injected via JS -->
+            </div>
+        </div>
+    </section>
+
+        <!-- ── Global CTA ─────────────────────────────────────────── -->
+<section class="bl-cta">
+    <div class="bl-cta-inner">
+        <p class="bl-cta-label">Axiosky</p>
+        <h2 class="bl-cta-heading">The Standard for<br>AI Governance.</h2>
+        <div class="bl-cta-actions">
+            <a href="../../pages/request-pilot.html" class="btn btn-primary">Request a Demo</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-title">Platform</h3>
+                <ul class="footer-links">
+                    <li><a href="governor.html">Governance</a></li>
+                    <li><a href="orchestrator.html">Orchestration</a></li>
+                    <li><a href="policy-engine.html">Policy Engine</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Solutions</h3>
+                <ul class="footer-links">
+                    <li><a href="../../pages/solutions/government.html">Government</a></li>
+                    <li><a href="../../pages/solutions/critical-infrastructure.html">Compliance-Critical Infrastructure</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="../../pages/company/about.html">About</a></li>
+                    <li><a href="../../pages/company/team.html">Team</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/company/axiosky" class="social-link" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/axiosky" class="social-link" title="X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.91 6.75H2.556l7.73-8.835L1.75 2.25h6.76l4.694 6.207 5.384-6.207zM17.002 18.807h1.844L6.844 3.556H4.897l12.105 15.251z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/axiosky.ai/" class="social-link" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12c0-3.403 2.759-6.162 6.162-6.162s6.162 2.759 6.162 6.162-2.759 6.162-6.162 6.162-6.162-2.759-6.162-6.162zm2.889 0c0 1.861 1.512 3.373 3.373 3.373s3.373-1.512 3.373-3.373-1.512-3.373-3.373-3.373-3.373 1.512-3.373 3.373zm11.294-6.468c0 .795.645 1.44 1.44 1.44s1.44-.645 1.44-1.44-.645-1.44-1.44-1.44-1.44.645-1.44 1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/axiosky" class="social-link" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+        </div>
+        
+        <div class="footer-legal">
+            <a href="../../pages/legal/privacy.html">Privacy & Legal</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Axiosky</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/governor.js"></script>
+    <script src="../../js/cookie-banner.js"></script>
+</body>
+</html>
