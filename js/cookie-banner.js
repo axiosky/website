@@ -15,7 +15,7 @@
       <p class="cb-text">
         We use essential cookies to keep the site working. With your consent we
         also use analytics cookies to understand how visitors use axiosky.com.
-        See our <a href="/pages/legal/cookie-policy.html">Cookie Policy</a>.
+        See our <a href="/cookie-policy.html">Cookie Policy</a>.
       </p>
       <div class="cb-actions">
         <button class="cb-btn cb-accept" id="cbAccept">Accept All</button>
